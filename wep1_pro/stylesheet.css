@@ -9,7 +9,7 @@
 
 .header-container {
   display: flex;
-  align-items:flex-start;
+  align-items:flex-end;
   
   max-width: 1100px;
   margin: 0 auto;
