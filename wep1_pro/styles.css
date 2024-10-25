@@ -6,6 +6,8 @@
 
 body {
     font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
 header {
@@ -13,7 +15,6 @@ header {
     padding: 20px;
     border-bottom: 1px solid #ccc;
 }
-
 
 .header-container {
     display: flex;
@@ -34,6 +35,15 @@ nav a {
 
 main {
     padding: 20px;
+    width: 80%;
+    margin: 20px auto;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .product-evaluation h2 {
@@ -58,6 +68,7 @@ main {
     padding: 10px;
     display: flex;
     flex-direction: column;
+    background-color: rgb(235, 228, 214);
 }
 
 .product {
@@ -66,9 +77,10 @@ main {
 
 .product img {
     width: 200px;
-    height:200px;
-    margin: .2em;
+    height: 200px;
+    margin: 0.2em;
 }
+
 .image-placeholder {
     width: 150px;
     height: 150px;
@@ -81,7 +93,7 @@ main {
 
 .product-details h3 {
     font-size: 20px;
-    margin-top: .5em;
+    margin-top: 0.5em;
 }
 
 .stars {
@@ -95,21 +107,54 @@ main {
 .evalText {
     height: 20px;
     width: 500px;
-    border-style:inset;
+    border-style: inset;
     margin: 2px;
-
 }
+
 .button {
     background-color: #5fa968;
     width: 150px;
     height: 30px;
     padding: 5px 50px;
     cursor: pointer;
-    margin: 0 0 0 800px;  
-
+    margin: 0 0 0 800px;
 }
-.product-review {
-    background-color: rgb(235, 228, 214);
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="file"],
+input[type="number"],
+textarea,
+select {
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
 }
 
 footer {
@@ -143,4 +188,8 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+footer .social-icons img {
+    margin: 0 10px;
 }
