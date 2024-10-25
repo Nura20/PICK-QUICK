@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Cart</title>
+    <style>
+        .Gyourcart {
+          
+            text-align: center;
+        }
+        .GcartBody {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .Gorders {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            flex-grow: 1; /* Allows main content to grow and push footer down */
+        }
+        .Gmyorders {
+            text-align: left;
+            margin-bottom: 30px;
+        }
+        .Gcart-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 40px auto;
+            margin-bottom: 3px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px; /* Space between cart and summary */
+        }
+        /* Cart Items */
+        .Gcart-items {
+            width: 65%; /* Takes majority space */
+            border-collapse: collapse;
+        }
+        /* Table Styling */
+        .Gcart-items {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        .Gth-td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .Gproduct-info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .Gimage-placeholder {
+            width: 100px;
+            height: 100px;
+        }
+        input[type="number"] {
+            width: 50px;
+            padding: 5px;
+            font-size: 16px;
+        }
+        .Gdelete-btn {
+            background-color: transparent;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .Gdelete-btn:hover {
+            color: red;
+        }
+        .Gcart-actions {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .Gbuttons-container {
+            display: block;
+            align-items: center; /* Align the buttons vertically on the same line */
+            margin-top: 20px; /* Optional: Add margin if needed */
+        }
+        .Gempty-cart, .Gcheckout {
+            padding: 10px 20px; /* Adjust padding for the buttons */
+            border-radius: 8px;
+            border: none;
+            font-size: 16px;
+            margin-bottom: 60px;
+        }
+        .Gempty-cart {
+            background-color: #e0e0e0;
+            color: black;
+            float: right; /* Align to the right */
+            margin-right: 180px; /* Align with Your Cart */
+        }
+        .Gempty-cart:hover {
+            background-color: #d4d4d4; /* Darker green on hover */
+        }
+        .Gcheckout {
+            margin-left: 450px;
+            background-color: #28a745;
+            color: white;
+            padding-right: 30px;
+        }
+        a.GcheckoutLink:link {
+            color: #333;
+            text-decoration: none;
+        }
+        a.GcheckoutLink:active {
+            color: black;
+        }
+        .Gcheckout:hover {
+            background-color: #218838; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+    <!-- Cart Content -->
+    <h2 class="Gyourcart">Your Cart</h2>
+    <button class="Gempty-cart">Empty Cart</button> <!-- Moved here -->
+    <div class="Gcart-container">
+        <table class="Gcart-items">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Item Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total Price</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Product 1 -->
+                <tr>
+                    <td class="Gth-td">
+                        <div class="Gproduct-info">
+
+
+<img class="Gimage-placeholder" src="pic3.png" alt="peanut butter">
+                        </div>
+                    </td>
+                    <td class="Gth-td">Peanut Butter</td>
+                    <td class="Gth-td">15.00SR</td>
+                    <td class="Gth-td"><input type="number" value="2" min="1"></td>
+                    <td class="Gth-td">30.00SR</td>
+                    <td class="Gth-td">
+                        <button class="Gdelete-btn">🗑️</button>
+                    </td>
+                </tr>
+                <!-- Product 2 -->
+                <tr>
+                    <td class="Gth-td">
+                        <div class="Gproduct-info">
+                            <img class="Gimage-placeholder" src="pic4.png" alt="strawberry wafers">
+                        </div>
+                    </td>
+                    <td class="Gth-td">Strawberry Wafers</td>
+                    <td class="Gth-td">12.00SR</td>
+                    <td class="Gth-td"><input type="number" value="1" min="1"></td>
+                    <td class="Gth-td">12.00SR</td>
+                    <td class="Gth-td"><button class="Gdelete-btn">🗑️</button></td>
+                </tr>
+                <!-- Product 3 -->
+                <tr>
+                    <td class="Gth-td">
+                        <div class="Gproduct-info">
+                            <img class="Gimage-placeholder" src="pic5.png" alt="coconut rolls">
+                        </div>
+                    </td>
+                    <td class="Gth-td">Coconut Rolls</td>
+                    <td class="Gth-td">22.00SR</td>
+                    <td class="Gth-td"><input type="number" value="3" min="1"></td>
+                    <td class="Gth-td">66.00SR</td>
+                    <td class="Gth-td"><button class="Gdelete-btn">🗑️</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="Gbuttons-container">
+        <button class="Gcheckout" onclick="location.href='acknowledge.html'">Check Out</button>
+    </div>
+</body>
+</html>
