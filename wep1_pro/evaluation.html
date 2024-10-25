@@ -66,9 +66,9 @@
 
         .evalText {
             height: 20px;
-            width: 400px; /* Adjusted width for better layout */
+            width: 400px;
             border-style: inset;
-            margin: 2px 0; /* Removed right margin for button below */
+            margin: 2px 0;
         }
 
         .button {
@@ -76,16 +76,37 @@
             width: 150px;
             height: 30px;
             cursor: pointer;
-            margin-top: 10px; /* Added space above the button */
+            margin-top: 10px;
         }
 
+        /* Cancel Button Style */
         .cancel-button {
-            background-color: red;
-            width: 150px;
-            height: 30px;
+            margin-top: 10px;
+            background-color: #f44336; /* Red color for the cancel button */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            width: 150px; /* Same width as submit button */
+            height: 30px; /* Same height as submit button */
             cursor: pointer;
-            margin-top: 10px; /* Space above the cancel button */
-            color: white; /* Text color */
+        }
+
+        /* Product Categories */
+        .product-categories {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 40px 20px;
+            background-color: #fff;
+        }
+
+        /* Reviews Section */
+        .user-reviews {
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         /* Footer Styles */
@@ -107,34 +128,6 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            color: rgb(0, 0, 0);
-            text-decoration: none;
-            margin-bottom: 10px;
-        }
-
-        .contact-item .icon {
-            width: 16px;
-            height: auto;
-            margin-right: 8px;
-        }
-
-        .social-media {
-            display: flex;
-            justify-content: center;
-            flex: 1;
-            margin: 0 20px;
-        }
-
-        .social-icon {
-            display: block;
-            width: 30px;
-            height: auto;
-            margin: 0 10px;
         }
 
         .footer-text {
@@ -201,7 +194,7 @@
             </div>
             <input type="text" class="evalText" name="review_suncream" placeholder="Write your review" required>
             <input type="submit" class="button" value="Submit Review">
-            <input type="button" class="cancel-button" value="Cancel" onclick="window.location.href='user_page.html'">
+            <button type="button" class="cancel-button">Cancel</button>
         </form>
 
         <!-- Second Product Review -->
@@ -216,7 +209,7 @@
             </div>
             <input type="text" class="evalText" name="review_tablet" placeholder="Write your review" required>
             <input type="submit" class="button" value="Submit Review">
-            <input type="button" class="cancel-button" value="Cancel" onclick="window.location.href='user_page.html'">
+            <button type="button" class="cancel-button">Cancel</button>
         </form>
 
     </section>
@@ -225,32 +218,32 @@
 <footer class="site-footer">
     <div class="footer-title">Contact</div>
     <div class="footer-content">
-      <div class="contact-info">
-        <a href="#" class="contact-item">
-          <img src="phone.png" alt=" " class="icon">
-          <span>+966 xx xxx xxxx</span>
-        </a>
-        <a href="#" class="contact-item">
-          <img src="emmail.JPG" alt=" " class="icon">
-          <span>pick-quick@shopping.com</span>
-        </a>
-      </div>
-      
-      <div class="social-media">
-        <a href="https://www.facebook.com/" class="social-icon">
-          <img src="facebook.jpg" alt=" ">
-        </a>
-        <a href="https://twitter.com/?lang=en" class="social-icon">
-          <img src="x.jpg" alt=" ">
-        </a>
-        <a href="https://www.instagram.com/" class="social-icon">
-          <img src="instgram.jpg" alt=" ">
-        </a>
-      </div>
-  
-      <div class="footer-text">
-        <p>© All rights reserved.</p>
-      </div>
+        <div class="contact-info">
+            <a href="#" class="contact-item">
+                <img src="phone.png" alt=" " class="icon">
+                <span>+966 xx xxx xxxx</span>
+            </a>
+            <a href="#" class="contact-item">
+                <img src="emmail.JPG" alt=" " class="icon">
+                <span>pick-quick@shopping.com</span>
+            </a>
+        </div>
+
+        <div class="social-media">
+            <a href="https://www.facebook.com/" class="social-icon">
+                <img src="facebook.jpg" alt=" ">
+            </a>
+            <a href="https://twitter.com/?lang=en" class="social-icon">
+                <img src="x.jpg" alt=" ">
+            </a>
+            <a href="https://www.instagram.com/" class="social-icon">
+                <img src="instgram.jpg" alt=" ">
+            </a>
+        </div>
+
+        <div class="footer-text">
+            <p>© All rights reserved.</p>
+        </div>
     </div>
 </footer>
 
