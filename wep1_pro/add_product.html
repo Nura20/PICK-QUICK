@@ -6,109 +6,70 @@
     <title>Pick Quick/add new product</title>
     <link rel="stylesheet" href="stylesheet.css">
     <style>
-        /* Header Styles */
-        .header {
-            background-color: #fff3e0;
-            padding: 10px 0; /* Adjusted padding for better spacing */
-            border-bottom: 1px solid #ddd;
+        /* Embedded styles specific to this page */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-    
-        .header-container {
-            display: flex;
-            align-items: center; /* Center items vertically */
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-    
-        .logo-link {
-            text-decoration: none;
-            display: flex; /* Ensure logo and name are aligned */
-            align-items: center;
-        }
-    
-        .logo-image {
-            max-height: 60px;
-            width: auto;
-            margin-right: 20px;
-        }
-    
-        .website-name {
-            font-size: 20px;
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
             color: #333;
-            margin-right: auto; /* Push links to the right */
         }
-    
-        .nav {
-            display: flex;
-            gap: 20px;
-        }
-    
-        .nav-link {
-            color: #333;
-            text-decoration: none;
-            font-size: 12px;
-        }
-    
-        .nav-link:hover {
-            color: #b9aaaa;
-        }
-    
-        /* Footer Styles */
-        .site-footer {
-            background-color: #fff3e0;
-            color: #333;
+
+        main {
+            width: 80%;
+            margin: 20px auto;
+            background-color: white;
             padding: 20px;
-            text-align: center; /* Center the footer content */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-    
-        .footer-title {
-            font-size: 18px;
-            margin-bottom: 15px;
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
         }
-    
-        .footer-content {
+
+        form {
             display: flex;
             flex-direction: column;
-            align-items: center;
         }
-    
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-    
-        .contact-item {
-            display: flex;
-            align-items: center;
-            color: rgb(0, 0, 0);
-            text-decoration: none;
+
+        label {
             margin-bottom: 10px;
+            font-weight: bold;
         }
-    
-        .icon {
-            width: 16px; /* Adjusted icon size */
-            height: auto;
-            margin-right: 8px;
+
+        input[type="text"],
+        input[type="file"],
+        textarea,
+        select {
+            margin-bottom: 20px;
+            padding: 10px;
+            font-size: 16px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
-    
-        .social-media {
-            display: flex;
-            justify-content: center;
-            margin: 0 10px;
+
+        button {
+            padding: 10px;
+            font-size: 16px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
         }
-    
-        .social-icon img {
-            width: 24px; /* Standard size for social icons */
-            height: 24px;
-            margin: 0 10px;
+
+        button:hover {
+            background-color: #555;
         }
-    
-        .footer-text {
-            font-size: 14px;
-            margin-top: 10px; /* Space above copyright */
-            color: #000;
+        
+        .nav-separator {
+            margin: 0 10px; /* Space around the separator */
         }
     </style>
 </head>
