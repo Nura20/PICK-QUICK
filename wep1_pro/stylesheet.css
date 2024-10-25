@@ -13,10 +13,9 @@
   margin: 0 auto;
 }
 
-.logo-link {
+.logo-container {
   display: flex;
   align-items: center;
-  text-decoration: none;
 }
 
 .logo-image {
@@ -29,6 +28,10 @@
   font-size: 20px;
   color: #333;
   margin: 0;
+}
+
+.nav-container {
+  margin-left: auto; /* Creates space between logo and navigation */
 }
 
 .nav {
