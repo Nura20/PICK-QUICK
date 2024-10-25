@@ -36,7 +36,8 @@
                 </div>
             </div>
 
-            <div class="product-review">
+            <!-- First Product Review -->
+            <form action="submit_review.php" method="post" class="product-review">
                 <div class="product">
                     <img src="/Users/mutabalasmari/Desktop/PICK-QUICK/wep1_pro/images/suncream.jpg" alt="suncream" >
                     <div class="product-details">
@@ -46,27 +47,23 @@
                         <div class="stars">★★★★★</div>
                     </div>
                 </div>
-                <input type="text" class="evalText">
-                <input type="submit" class="button">
+                <input type="text" class="evalText" name="review_suncream" placeholder="Write your review" required>
+                <input type="submit" class="button" value="Submit Review">
+            </form>
 
-            </div>
-
-            <div class="product-review">
+            <!-- Second Product Review -->
+            <form action="submit_review.php" method="post" class="product-review">
                 <div class="product">
-                    <img src="/Users/mutabalasmari/Desktop/PICK-QUICK/wep1_pro/images/tap.png" alt="taplet" >
+                    <img src="/Users/mutabalasmari/Desktop/PICK-QUICK/wep1_pro/images/tap.png" alt="tablet" >
                     <div class="product-details">
-                        <h3>Taplet</h3>
+                        <h3>Tablet</h3>
                         <p>HUION H610 PRO V2 USB Pad Art Digital Handwriting Drawing Kit</p>
                         <div class="stars">★★★★★</div>
                     </div>
                 </div>
-                <!-- <p class="description">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem felis nec erat.
-                </p> -->
-                <input type="text" class="evalText">
-                <input type="submit"  class="button" >
-
-            </div>
+                <input type="text" class="evalText" name="review_tablet" placeholder="Write your review" required>
+                <input type="submit" class="button" value="Submit Review">
+            </form>
 
         </section>
     </main>
