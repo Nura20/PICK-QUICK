@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pick quick</title>
+    <title>Pick Quick</title>
     <link rel="stylesheet" href="stylesheet.css"> <!-- External stylesheet -->
     <style>
         /* Embedded styles specific to this page */
@@ -104,7 +104,7 @@
 
     <main>
         <h1>Add New Product</h1>
-        <form action="submit_product.php" method="post" enctype="multipart/form-data">
+        <form action="" method="post">
             <label for="product-name">Product Name:</label>
             <input type="text" id="product-name" name="product_name" required>
 
@@ -116,9 +116,10 @@
 
             <label for="product-category">Category:</label>
             <select id="product-category" name="product_category" required>
-                <option value="furniture">Furniture</option>
-                <option value="beauty">Beauty</option>
-                <option value="kid_toys">Kid Toys</option>
+                <option value="womens">Women's</option>
+                <option value="mens">Men's</option>
+                <option value="kids">Kid's</option>
+                <option value="accessories">Accessories</option>
             </select>
 
             <label for="product-quantity">Quantity:</label>
@@ -126,11 +127,12 @@
 
             <label for="product-description">Description:</label>
             <textarea id="product-description" name="product_description" rows="5" required></textarea>
+
             <!-- Add Button -->
             <button type="submit">Add Product</button>
             
             <!-- Cancel Button -->
-            <button type="button" href='homepage.html' style="margin-top: 10px; background-color: #f44336; color: white;">Cancel</button>
+            <button type="button" onclick="window.location.href='homepage.html'" style="margin-top: 10px; background-color: #f44336; color: white;">Cancel</button>
         </form>
     </main>
 
