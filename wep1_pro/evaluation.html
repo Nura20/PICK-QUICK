@@ -7,185 +7,143 @@
     <link rel="stylesheet" href="stylesheet.css">
     <style>
         .logo {
-    width: 100px;
-    height: auto;
-}
+            width: 100px;
+            height: auto;
+        }
 
-nav a {
-    margin: 0 10px;
-    text-decoration: none;
-    color: black;
-}
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: black;
+        }
 
-main {
-    padding: 20px;
-    width: 80%;
-    margin: 20px auto;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+        main {
+            padding: 20px;
+            width: 80%;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
 
-h1 {
-    text-align: center;
-    margin-bottom: 20px;
-}
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
 
-.product-evaluation h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
+        .product-evaluation h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
 
-.order-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
+        .order-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
 
-.dropdown select {
-    padding: 5px;
-}
+        .dropdown select {
+            padding: 5px;
+        }
 
-.product-review {
-    border: 1px solid #ccc;
-    margin-bottom: 20px;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(235, 228, 214);
-}
+        .product-review {
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            background-color: rgb(235, 228, 214);
+        }
 
-.product {
-    display: flex;
-}
+        .product {
+            display: flex;
+        }
 
-.product img {
-    width: 200px;
-    height: 200px;
-    margin: 0.2em;
-}
+        .product img {
+            width: 200px;
+            height: 200px;
+            margin: 0.2em;
+        }
 
-.image-placeholder {
-    width: 150px;
-    height: 150px;
-    background-color: #eaeaea;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 20px;
-}
+        .product-details h3 {
+            font-size: 20px;
+            margin-top: 0.5em;
+        }
 
-.product-details h3 {
-    font-size: 20px;
-    margin-top: 0.5em;
-}
+        .stars {
+            color: gold;
+        }
 
-.stars {
-    color: gold;
-}
+        .evalText {
+            height: 20px;
+            width: 500px;
+            border-style: inset;
+            margin: 2px;
+        }
 
-.description {
-    margin-top: 10px;
-}
+        .button {
+            background-color: #5fa968;
+            width: 150px;
+            height: 30px;
+            padding: 5px 50px;
+            cursor: pointer;
+            margin: 0 0 0 800px;
+        }
 
-.evalText {
-    height: 20px;
-    width: 500px;
-    border-style: inset;
-    margin: 2px;
-}
+        form {
+            display: flex;
+            flex-direction: column;
+        }
 
-.button {
-    background-color: #5fa968;
-    width: 150px;
-    height: 30px;
-    padding: 5px 50px;
-    cursor: pointer;
-    margin: 0 0 0 800px;
-}
+        footer {
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-top: 1px solid #ccc;
+            text-align: center;
+        }
 
-form {
-    display: flex;
-    flex-direction: column;
-}
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-label {
-    margin-bottom: 10px;
-    font-weight: bold;
-}
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-input[type="text"],
-input[type="file"],
-input[type="number"],
-textarea,
-select {
-    margin-bottom: 20px;
-    padding: 10px;
-    font-size: 16px;
-    width: 100%;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
+        .icons {
+            display: flex;
+        }
 
-button {
-    padding: 10px;
-    font-size: 16px;
-    background-color: #333;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
+        .icon {
+            width: 30px;
+            height: 30px;
+            background-color: #eaeaea;
+            margin: 0 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-button:hover {
-    background-color: #555;
-}
-
-footer {
-    background-color: #f4f4f4;
-    padding: 20px;
-    border-top: 1px solid #ccc;
-    text-align: center;
-}
-
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.contact-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.icons {
-    display: flex;
-}
-
-.icon {
-    width: 30px;
-    height: 30px;
-    background-color: #eaeaea;
-    margin: 0 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+        .social-icon img {
+            width: 30px;
+            height: 30px;
+        }
     </style>
 </head>
 <body>
 
-    <header class="header">
-        <div class="header-container">
-          <a href="#" class="logo-link">
+<header class="header">
+    <div class="header-container">
+        <a href="#" class="logo-link">
             <img src="logo.jpg" alt="logo" class="logo-image">
-          </a>
-          <h1 class="website-name">Pick Quick</h1>
-          <nav class="nav">
-            <a href="#" class="nav-link">Home
-            </a>
+        </a>
+        <h1 class="website-name">Pick Quick</h1>
+        <nav class="nav">
+            <a href="#" class="nav-link">Home</a>
             <span class="nav-separator">|</span>
             <a href="#" class="nav-link">Seller page</a>
             <span class="nav-separator">|</span>
@@ -195,95 +153,91 @@ footer {
             <span class="nav-separator">|</span>
             <a href="#" class="nav-link">Men's page</a>
             <span class="nav-separator">|</span>
-            <a href="#" class="nav-link">kid's page</a>
+            <a href="#" class="nav-link">Kid's page</a>
             <span class="nav-separator">|</span>
-            <a href="#" class="nav-link">Accessories's page</a>
+            <a href="#" class="nav-link">Accessories page</a>
             <span class="nav-separator">|</span>
             <a href="#" class="nav-link">Cart</a>
-           
-          </nav>
-        </div>
-      </header>
+        </nav>
+    </div>
+</header>
 
-    <main>
-        <section class="product-evaluation">
-            <h2>Product Evaluation</h2>
-            <div class="order-info">
-                <p>Order #1234</p>
-                <p>Price: 45.23$</p>
-                <div class="dropdown">
-                    <select>
-                        <option>Select order</option>
-                        <option>#1234</option>
-                        <option>#5678</option>
-                    </select>
+<main>
+    <section class="product-evaluation">
+        <h2>Product Evaluation</h2>
+        <div class="order-info">
+            <p>Order #1234</p>
+            <p>Price: 45.23$</p>
+            <div class="dropdown">
+                <select>
+                    <option>Select order</option>
+                    <option>#1234</option>
+                    <option>#5678</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- First Product Review -->
+        <form action="submit_review.php" method="post" class="product-review">
+            <div class="product">
+                <img src="suncream.jpg" alt="suncream">
+                <div class="product-details">
+                    <h3>SunCream</h3>
+                    <p>EELHOE Lightweight Sunscreen Lotion - Hydrating and Refreshing Sun Protection 
+                        <br>for Moisturized and Nourished Skin</p>
+                    <div class="stars">★★★★★</div>
                 </div>
             </div>
+            <input type="text" class="evalText" name="review_suncream" placeholder="Write your review" required>
+            <input type="submit" class="button" value="Submit Review">
+        </form>
 
-            <!-- First Product Review -->
-            <form action="submit_review.php" method="post" class="product-review">
-                <div class="product">
-                    <img src="suncream.jpg" alt="suncream" >
-                    <div class="product-details">
-                        <h3>SunCream</h3>
-                        <p>EELHOE Lightweight Sunscreen Lotion - Hydrating and Refreshing Sun Protection 
-                        <br>for Moisturized and Nourished Skin</p>
-                        <div class="stars">★★★★★</div>
-                    </div>
+        <!-- Second Product Review -->
+        <form action="submit_review.php" method="post" class="product-review">
+            <div class="product">
+                <img src="tap.png" alt="tablet">
+                <div class="product-details">
+                    <h3>Tablet</h3>
+                    <p>HUION H610 PRO V2 USB Pad Art Digital Handwriting Drawing Kit</p>
+                    <div class="stars">★★★★★</div>
                 </div>
-                <input type="text" class="evalText" name="review_suncream" placeholder="Write your review" required>
-                <input type="submit" class="button" value="Submit Review">
-            </form>
+            </div>
+            <input type="text" class="evalText" name="review_tablet" placeholder="Write your review" required>
+            <input type="submit" class="button" value="Submit Review">
+        </form>
 
-            <!-- Second Product Review -->
-            <form action="submit_review.php" method="post" class="product-review">
-                <div class="product">
-                    <img src="tap.png" alt="tablet" >
-                    <div class="product-details">
-                        <h3>Tablet</h3>
-                        <p>HUION H610 PRO V2 USB Pad Art Digital Handwriting Drawing Kit</p>
-                        <div class="stars">★★★★★</div>
-                    </div>
-                </div>
-                <input type="text" class="evalText" name="review_tablet" placeholder="Write your review" required>
-                <input type="submit" class="button" value="Submit Review">
-            </form>
+    </section>
+</main>
 
-        </section>
-    </main>
-
-    <footer class="site-footer">
-        <div class="footer-title">contact</div>
-        <div class="footer-content">
-          <div class="contact-info">
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="contact-info">
+            <p>Contact us</p>
             <a href="#" class="contact-item">
-              <img src="phone.png" alt=" " class="icon">
-              <span>+966 xx xxx xxxx</span>
+                <img src="phone.png" alt="phone" class="icon">
+                <span>+966 xx xxx xxxx</span>
             </a>
             <a href="#" class="contact-item">
-              <img src="emmail.JPG" alt=" " class="icon">
-              
-              <span>pick-quick@shopping.com</span>
+                <img src="emmail.JPG" alt="email" class="icon">
+                <span>pick-quick@shopping.com</span>
             </a>
-          </div>
-          
-          <div class="social-media">
-            
+        </div>
+        <div class="social-media">
             <a href="https://www.facebook.com/" class="social-icon">
-              <img src="facebook.jpg" alt=" ">
+                <img src="facebook.jpg" alt="Facebook">
             </a>
             <a href="https://twitter.com/?lang=en" class="social-icon">
-              <img src="x.jpg" alt=" ">
+                <img src="x.jpg" alt="X">
             </a>
             <a href="https://www.instagram.com/" class="social-icon">
-              <img src="instgram.jpg" alt=" ">
+                <img src="instgram.jpg" alt="Instagram">
             </a>
-          </div>
-      
-          <div class="footer-text">
-            <p>© All rights reserved.</p>
-          </div>
         </div>
-      </footer>
+        <div class="footer-text">
+            <p>© All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
 </body>
 </html>
