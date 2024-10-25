@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New Product Page</title>
-    <link rel="stylesheet" href="stylesheet.css"> <!-- Link to the external stylesheet -->
+    <link rel="stylesheet" href="stylesheet.css"> <!-- External stylesheet -->
     <style>
-        /* Existing embedded styles */
+        /* Embedded styles specific to this page */
         * {
             margin: 0;
             padding: 0;
@@ -74,31 +74,18 @@
 
     <header class="header">
         <div class="header-container">
-          <a href="#" class="logo-link">
-            <img src="logo.jpg" alt="logo" class="logo-image">
-          </a>
-          <h1 class="website-name">Pick Quick</h1>
-          <nav class="nav">
-            <a href="#" class="nav-link">Home
+            <a href="#" class="logo-link">
+                <img src="logo.png" alt="Logo" class="logo-image">
+                <span class="website-name">Website Name</span>
             </a>
-            <span class="nav-separator">|</span>
-            <a href="#" class="nav-link">Seller page</a>
-            <span class="nav-separator">|</span>
-            <a href="#" class="nav-link">User page</a>
-            <span class="nav-separator">|</span>
-            <a href="#" class="nav-link">Women's page</a>
-            <span class="nav-separator">|</span>
-            <a href="#" class="nav-link">Men's page</a>
-            <span class="nav-separator">|</span>
-            <a href="#" class="nav-link">kid's page</a>
-            <span class="nav-separator">|</span>
-            <a href="#" class="nav-link">Accessories's page</a>
-            <span class="nav-separator">|</span>
-            <a href="#" class="nav-link">Cart</a>
-           
-          </nav>
+            <nav class="nav">
+                <a href="#" class="nav-link">User Page</a>
+                <a href="#" class="nav-link">Seller Page</a>
+                <a href="#" class="nav-link">Category Page</a>
+                <a href="#" class="nav-link">Cart</a>
+            </nav>
         </div>
-      </header>
+    </header>
 
     <main>
         <h1>Add New Product</h1>
@@ -126,42 +113,23 @@
             <textarea id="product-description" name="product_description" rows="5" required></textarea>
 
             <button type="submit">Add Product</button>
+            
+            <!-- Cancel Button -->
+            <button type="button" onclick="window.location.href='seller_page.html'" style="margin-top: 10px; background-color: #f44336; color: white;">Cancel</button>
         </form>
     </main>
 
     <footer class="site-footer">
-        <div class="footer-title">contact</div>
         <div class="footer-content">
-          <div class="contact-info">
-            <a href="#" class="contact-item">
-              <img src="phone.png" alt=" " class="icon">
-              <span>+966 xx xxx xxxx</span>
-            </a>
-            <a href="#" class="contact-item">
-              <img src="emmail.JPG" alt=" " class="icon">
-              
-              <span>pick-quick@shopping.com</span>
-            </a>
-          </div>
-          
-          <div class="social-media">
-            
-            <a href="https://www.facebook.com/" class="social-icon">
-              <img src="facebook.jpg" alt=" ">
-            </a>
-            <a href="https://twitter.com/?lang=en" class="social-icon">
-              <img src="x.jpg" alt=" ">
-            </a>
-            <a href="https://www.instagram.com/" class="social-icon">
-              <img src="instgram.jpg" alt=" ">
-            </a>
-          </div>
-      
-          <div class="footer-text">
-            <p>© All rights reserved.</p>
-          </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <div class="social-icons">
+                <img src="facebook-icon.png" alt="Facebook" width="30">
+                <img src="twitter-icon.png" alt="Twitter" width="30">
+                <img src="instagram-icon.png" alt="Instagram" width="30">
+            </div>
+            <p>&copy; All rights reserved</p>
         </div>
-      </footer>
+    </footer>
 
 </body>
 </html>
