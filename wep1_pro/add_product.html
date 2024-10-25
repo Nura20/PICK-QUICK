@@ -3,170 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pick Quick/add new product</title>
+    <title>Pick Quick / Add New Product</title>
     <link rel="stylesheet" href="stylesheet.css">
-    <style>
-        /* Embedded styles specific to this page */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        main {
-            width: 80%;
-            margin: 20px auto;
-            background-color: white;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        label {
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-
-        input[type="text"],
-        input[type="file"],
-        textarea,
-        select {
-            margin-bottom: 20px;
-            padding: 10px;
-            font-size: 16px;
-            width: 100%;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        button {
-            padding: 10px;
-            font-size: 16px;
-            background-color: #333;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #555;
-        }
-        
-        .nav-separator {
-            margin: 0 10px; /* Space around the separator */
-        }
-    </style>
 </head>
-<body>
+<body style="margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; background-color: #f4f4f4; color: #333;">
 
     <header class="header">
         <div class="header-container">
-          <a href="#" class="logo-link">
-            <img src="logo.jpg" alt="logo" class="logo-image">
-          </a>
-          <h1 class="website-name">Pick Quick</h1>
-          <nav class="nav">
-            <a href="#" class="nav-link" accesskey="h">Home
+            <a href="#" class="logo-link">
+                <img src="logo.jpg" alt="logo" class="logo-image">
             </a>
-            <span class="nav-separator">|</span>
-            <a href="#" class="nav-link">Seller page</a>
-            <span class="nav-separator">|</span>
-            <a href="#" class="nav-link" >User page</a>
-            <span class="nav-separator">|</span>
-            <a href="#" class="nav-link">Women's fashion</a>
-            <span class="nav-separator">|</span>
-            <a href="#" class="nav-link">Men's fashion</a>
-            <span class="nav-separator">|</span>
-            <a href="#" class="nav-link">kid's fashion</a>
-            <span class="nav-separator">|</span>
-            <a href="#" class="nav-link">Accessories</a>
-            <span class="nav-separator">|</span>
-            <a href="#" class="nav-link">Cart</a>
-           
-          </nav>
+            <h1 class="website-name">Pick Quick</h1>
+            <nav class="nav">
+                <a href="#" class="nav-link" accesskey="h">Home</a>
+                <span class="nav-separator" style="margin: 0 10px;">|</span>
+                <a href="#" class="nav-link">Seller page</a>
+                <span class="nav-separator" style="margin: 0 10px;">|</span>
+                <a href="#" class="nav-link">User page</a>
+                <span class="nav-separator" style="margin: 0 10px;">|</span>
+                <a href="#" class="nav-link">Women's fashion</a>
+                <span class="nav-separator" style="margin: 0 10px;">|</span>
+                <a href="#" class="nav-link">Men's fashion</a>
+                <span class="nav-separator" style="margin: 0 10px;">|</span>
+                <a href="#" class="nav-link">Kid's fashion</a>
+                <span class="nav-separator" style="margin: 0 10px;">|</span>
+                <a href="#" class="nav-link">Accessories</a>
+                <span class="nav-separator" style="margin: 0 10px;">|</span>
+                <a href="#" class="nav-link">Cart</a>
+            </nav>
         </div>
-      </header>
+    </header>
 
-    <main>
-        <h1>Add New Product</h1>
-        <form action="" method="post">
-            <label for="product-name">Product Name:</label>
-            <input type="text" id="product-name" name="product_name" required>
+    <main style="width: 80%; margin: 20px auto; background-color: white; padding: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+        <h1 style="text-align: center; margin-bottom: 20px;">Add New Product</h1>
+        <form action="" method="post" style="display: flex; flex-direction: column;">
+            <label for="product-name" style="margin-bottom: 10px; font-weight: bold;">Product Name:</label>
+            <input type="text" id="product-name" name="product_name" required style="margin-bottom: 20px; padding: 10px; font-size: 16px; width: 100%; border: 1px solid #ccc; border-radius: 5px;">
 
-            <label for="product-photo">Product Photo:</label>
-            <input type="file" id="product-photo" name="product_photo" accept="image/*" required>
+            <label for="product-photo" style="margin-bottom: 10px; font-weight: bold;">Product Photo:</label>
+            <input type="file" id="product-photo" name="product_photo" accept="image/*" required style="margin-bottom: 20px; padding: 10px; font-size: 16px; width: 100%; border: 1px solid #ccc; border-radius: 5px;">
 
-            <label for="product-price">Price:</label>
-            <input type="text" id="product-price" name="product_price" required>
+            <label for="product-price" style="margin-bottom: 10px; font-weight: bold;">Price:</label>
+            <input type="text" id="product-price" name="product_price" required style="margin-bottom: 20px; padding: 10px; font-size: 16px; width: 100%; border: 1px solid #ccc; border-radius: 5px;">
 
-            <label for="product-category">Category:</label>
-            <select id="product-category" name="product_category" required>
+            <label for="product-category" style="margin-bottom: 10px; font-weight: bold;">Category:</label>
+            <select id="product-category" name="product_category" required style="margin-bottom: 20px; padding: 10px; font-size: 16px; width: 100%; border: 1px solid #ccc; border-radius: 5px;">
                 <option value="womens">Women's</option>
                 <option value="mens">Men's</option>
                 <option value="kids">Kid's</option>
                 <option value="accessories">Accessories</option>
             </select>
 
-            <label for="product-quantity">Quantity:</label>
-            <input type="text" id="product-quantity" name="product_quantity" required>
+            <label for="product-quantity" style="margin-bottom: 10px; font-weight: bold;">Quantity:</label>
+            <input type="text" id="product-quantity" name="product_quantity" required style="margin-bottom: 20px; padding: 10px; font-size: 16px; width: 100%; border: 1px solid #ccc; border-radius: 5px;">
 
-            <label for="product-description">Description:</label>
-            <textarea id="product-description" name="product_description" rows="5" required></textarea>
+            <label for="product-description" style="margin-bottom: 10px; font-weight: bold;">Description:</label>
+            <textarea id="product-description" name="product_description" rows="5" required style="margin-bottom: 20px; padding: 10px; font-size: 16px; width: 100%; border: 1px solid #ccc; border-radius: 5px;"></textarea>
 
             <!-- Add Button -->
-            <button type="submit">Add Product</button>
+            <button type="submit" style="padding: 10px; font-size: 16px; background-color: #333; color: white; border: none; border-radius: 5px; cursor: pointer;">Add Product</button>
         </form>
     </main>
 
     <footer class="site-footer">
-        <div class="footer-title">contact</div>
+        <div class="footer-title">Contact</div>
         <div class="footer-content">
-          <div class="contact-info">
-            <a href="#" class="contact-item">
-              <img src="phone.png" alt=" " class="icon">
-              <span>+966 xx xxx xxxx</span>
-            </a>
-            <a href="#" class="contact-item">
-              <img src="emmail.JPG" alt=" " class="icon">
-              
-              <span>pick-quick@shopping.com</span>
-            </a>
-          </div>
-          
-          <div class="social-media">
-            
-            <a href="https://www.facebook.com/" class="social-icon">
-              <img src="facebook.jpg" alt=" ">
-            </a>
-            <a href="https://twitter.com/?lang=en" class="social-icon">
-              <img src="x.jpg" alt=" ">
-            </a>
-            <a href="https://www.instagram.com/" class="social-icon">
-              <img src="instgram.jpg" alt=" ">
-            </a>
-          </div>
-      
-          <div class="footer-text">
-            <p>© All rights reserved.</p>
-          </div>
+            <div class="contact-info">
+                <a href="#" class="contact-item">
+                    <img src="phone.png" alt="" class="icon">
+                    <span>+966 xx xxx xxxx</span>
+                </a>
+                <a href="#" class="contact-item">
+                    <img src="emmail.JPG" alt="" class="icon">
+                    <span>pick-quick@shopping.com</span>
+                </a>
+            </div>
+
+            <div class="social-media">
+                <a href="https://www.facebook.com/" class="social-icon">
+                    <img src="facebook.jpg" alt="">
+                </a>
+                <a href="https://twitter.com/?lang=en" class="social-icon">
+                    <img src="x.jpg" alt="">
+                </a>
+                <a href="https://www.instagram.com/" class="social-icon">
+                    <img src="instgram.jpg" alt="">
+                </a>
+            </div>
+
+            <div class="footer-text">
+                <p>© All rights reserved.</p>
+            </div>
         </div>
-      </footer>
+    </footer>
 
 </body>
 </html>
