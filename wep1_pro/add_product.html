@@ -3,99 +3,222 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pick Quick / Add New Product</title>
+    <title>Pick Quick/add new product</title>
     <link rel="stylesheet" href="stylesheet.css">
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+    
+        /* Header Styles */
+        .header {
+            background-color: #fff3e0;
+            padding: 10px 0; /* Adjusted padding for better spacing */
+            border-bottom: 1px solid #ddd;
+        }
+    
+        .header-container {
+            display: flex;
+            align-items: center; /* Center items vertically */
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+    
+        .logo-link {
+            text-decoration: none;
+            display: flex; /* Ensure logo and name are aligned */
+            align-items: center;
+        }
+    
+        .logo-image {
+            max-height: 60px;
+            width: auto;
+            margin-right: 20px;
+        }
+    
+        .website-name {
+            font-size: 20px;
+            color: #333;
+            margin-right: auto; /* Push links to the right */
+        }
+    
+        .nav {
+            display: flex;
+            gap: 20px;
+        }
+    
+        .nav-link {
+            color: #333;
+            text-decoration: none;
+            font-size: 12px;
+        }
+    
+        .nav-link:hover {
+            color: #b9aaaa;
+        }
+    
+        /* Footer Styles */
+        .site-footer {
+            background-color: #fff3e0;
+            color: #333;
+            padding: 20px;
+            text-align: center; /* Center the footer content */
+        }
+    
+        .footer-title {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+    
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+    
+        .contact-item {
+            display: flex;
+            align-items: center;
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+    
+        .icon {
+            width: 16px; /* Adjusted icon size */
+            height: auto;
+            margin-right: 8px;
+        }
+    
+        .social-media {
+            display: flex;
+            justify-content: center;
+            margin: 0 10px;
+        }
+    
+        .social-icon img {
+            width: 24px; /* Standard size for social icons */
+            height: 24px;
+            margin: 0 10px;
+        }
+    
+        .footer-text {
+            font-size: 14px;
+            margin-top: 10px; /* Space above copyright */
+            color: #000;
+        }
+    </style>
 </head>
-<body style="margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; background-color: #f4f4f4; color: #333;">
+<body>
 
     <header class="header">
         <div class="header-container">
-            <a href="#" class="logo-link">
-                <img src="logo.jpg" alt="logo" class="logo-image">
+          <a href="#" class="logo-link">
+            <img src="logo.jpg" alt="logo" class="logo-image">
+          </a>
+          <h1 class="website-name">Pick Quick</h1>
+          <nav class="nav">
+            <a href="#" class="nav-link" accesskey="h">Home
             </a>
-            <h1 class="website-name">Pick Quick</h1>
-            <nav class="nav">
-                <a href="#" class="nav-link" accesskey="h">Home</a>
-                <span class="nav-separator" style="margin: 0 10px;">|</span>
-                <a href="#" class="nav-link">Seller page</a>
-                <span class="nav-separator" style="margin: 0 10px;">|</span>
-                <a href="#" class="nav-link">User page</a>
-                <span class="nav-separator" style="margin: 0 10px;">|</span>
-                <a href="#" class="nav-link">Women's fashion</a>
-                <span class="nav-separator" style="margin: 0 10px;">|</span>
-                <a href="#" class="nav-link">Men's fashion</a>
-                <span class="nav-separator" style="margin: 0 10px;">|</span>
-                <a href="#" class="nav-link">Kid's fashion</a>
-                <span class="nav-separator" style="margin: 0 10px;">|</span>
-                <a href="#" class="nav-link">Accessories</a>
-                <span class="nav-separator" style="margin: 0 10px;">|</span>
-                <a href="#" class="nav-link">Cart</a>
-            </nav>
+            <span class="nav-separator">|</span>
+            <a href="#" class="nav-link">Seller page</a>
+            <span class="nav-separator">|</span>
+            <a href="#" class="nav-link" >User page</a>
+            <span class="nav-separator">|</span>
+            <a href="#" class="nav-link">Women's fashion</a>
+            <span class="nav-separator">|</span>
+            <a href="#" class="nav-link">Men's fashion</a>
+            <span class="nav-separator">|</span>
+            <a href="#" class="nav-link">kid's fashion</a>
+            <span class="nav-separator">|</span>
+            <a href="#" class="nav-link">Accessories</a>
+            <span class="nav-separator">|</span>
+            <a href="#" class="nav-link">Cart</a>
+           
+          </nav>
         </div>
-    </header>
+      </header>
 
-    <main style="width: 80%; margin: 20px auto; background-color: white; padding: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
-        <h1 style="text-align: center; margin-bottom: 20px;">Add New Product</h1>
-        <form action="" method="post" style="display: flex; flex-direction: column;">
-            <label for="product-name" style="margin-bottom: 10px; font-weight: bold;">Product Name:</label>
-            <input type="text" id="product-name" name="product_name" required style="margin-bottom: 20px; padding: 10px; font-size: 16px; width: 100%; border: 1px solid #ccc; border-radius: 5px;">
+    <main>
+        <h1>Add New Product</h1>
+        <form action="" method="post">
+            <label for="product-name">Product Name:</label>
+            <input type="text" id="product-name" name="product_name" required>
 
-            <label for="product-photo" style="margin-bottom: 10px; font-weight: bold;">Product Photo:</label>
-            <input type="file" id="product-photo" name="product_photo" accept="image/*" required style="margin-bottom: 20px; padding: 10px; font-size: 16px; width: 100%; border: 1px solid #ccc; border-radius: 5px;">
+            <label for="product-photo">Product Photo:</label>
+            <input type="file" id="product-photo" name="product_photo" accept="image/*" required>
 
-            <label for="product-price" style="margin-bottom: 10px; font-weight: bold;">Price:</label>
-            <input type="text" id="product-price" name="product_price" required style="margin-bottom: 20px; padding: 10px; font-size: 16px; width: 100%; border: 1px solid #ccc; border-radius: 5px;">
+            <label for="product-price">Price:</label>
+            <input type="text" id="product-price" name="product_price" required>
 
-            <label for="product-category" style="margin-bottom: 10px; font-weight: bold;">Category:</label>
-            <select id="product-category" name="product_category" required style="margin-bottom: 20px; padding: 10px; font-size: 16px; width: 100%; border: 1px solid #ccc; border-radius: 5px;">
+            <label for="product-category">Category:</label>
+            <select id="product-category" name="product_category" required>
                 <option value="womens">Women's</option>
                 <option value="mens">Men's</option>
                 <option value="kids">Kid's</option>
                 <option value="accessories">Accessories</option>
             </select>
 
-            <label for="product-quantity" style="margin-bottom: 10px; font-weight: bold;">Quantity:</label>
-            <input type="text" id="product-quantity" name="product_quantity" required style="margin-bottom: 20px; padding: 10px; font-size: 16px; width: 100%; border: 1px solid #ccc; border-radius: 5px;">
+            <label for="product-quantity">Quantity:</label>
+            <input type="text" id="product-quantity" name="product_quantity" required>
 
-            <label for="product-description" style="margin-bottom: 10px; font-weight: bold;">Description:</label>
-            <textarea id="product-description" name="product_description" rows="5" required style="margin-bottom: 20px; padding: 10px; font-size: 16px; width: 100%; border: 1px solid #ccc; border-radius: 5px;"></textarea>
+            <label for="product-description">Description:</label>
+            <textarea id="product-description" name="product_description" rows="5" required></textarea>
 
             <!-- Add Button -->
-            <button type="submit" style="padding: 10px; font-size: 16px; background-color: #333; color: white; border: none; border-radius: 5px; cursor: pointer;">Add Product</button>
+            <button type="submit">Add Product</button>
         </form>
     </main>
 
     <footer class="site-footer">
-        <div class="footer-title">Contact</div>
+        <div class="footer-title">contact</div>
         <div class="footer-content">
-            <div class="contact-info">
-                <a href="#" class="contact-item">
-                    <img src="phone.png" alt="" class="icon">
-                    <span>+966 xx xxx xxxx</span>
-                </a>
-                <a href="#" class="contact-item">
-                    <img src="emmail.JPG" alt="" class="icon">
-                    <span>pick-quick@shopping.com</span>
-                </a>
-            </div>
-
-            <div class="social-media">
-                <a href="https://www.facebook.com/" class="social-icon">
-                    <img src="facebook.jpg" alt="">
-                </a>
-                <a href="https://twitter.com/?lang=en" class="social-icon">
-                    <img src="x.jpg" alt="">
-                </a>
-                <a href="https://www.instagram.com/" class="social-icon">
-                    <img src="instgram.jpg" alt="">
-                </a>
-            </div>
-
-            <div class="footer-text">
-                <p>© All rights reserved.</p>
-            </div>
+          <div class="contact-info">
+            <a href="#" class="contact-item">
+              <img src="phone.png" alt=" " class="icon">
+              <span>+966 xx xxx xxxx</span>
+            </a>
+            <a href="#" class="contact-item">
+              <img src="emmail.JPG" alt=" " class="icon">
+              
+              <span>pick-quick@shopping.com</span>
+            </a>
+          </div>
+          
+          <div class="social-media">
+            
+            <a href="https://www.facebook.com/" class="social-icon">
+              <img src="facebook.jpg" alt=" ">
+            </a>
+            <a href="https://twitter.com/?lang=en" class="social-icon">
+              <img src="x.jpg" alt=" ">
+            </a>
+            <a href="https://www.instagram.com/" class="social-icon">
+              <img src="instgram.jpg" alt=" ">
+            </a>
+          </div>
+      
+          <div class="footer-text">
+            <p>© All rights reserved.</p>
+          </div>
         </div>
-    </footer>
+      </footer>
 
 </body>
 </html>
