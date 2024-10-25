@@ -1,310 +1,105 @@
- /* Header Styles */
-.header {
-  background-color: #fff3e0;
-  padding: 2px 0;
-  border-bottom: 1px solid #ddd;
-  
-}
-
-
+/* Header Styling */
 .header-container {
   display: flex;
-  align-items:flex-end;
-  
-  max-width: 1100px;
-  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%; /* Use percentage-based padding for fluid layout */
+  background-color: #f4f4f4;
+  width: 100%; /* Full-width container */
+  box-sizing: border-box; /* Ensures padding is included in element's total width */
 }
 
-.logo-link {
+.logo {
+  max-width: 100px; /* Limit the max width of the logo */
+  height: auto; /* Auto-adjust height based on width */
+}
+
+h1.website-name {
+  font-size: 2rem; /* Font size scales well across devices */
+  margin: 0;
+  flex-grow: 1; /* Allow h1 to grow and take available space */
+  text-align: center;
+}
+
+nav.nav {
+  display: flex;
+  flex-wrap: wrap; /* Allow navigation links to wrap on small screens */
+  justify-content: center;
+}
+
+nav.nav a {
+  margin: 0 10px;
   text-decoration: none;
+  color: black;
+  font-size: 1rem; /* Font size scales based on viewport */
+}
+
+@media (max-width: 600px) {
+  .header-container {
+      flex-direction: column; /* Stack logo, title, and navigation vertically on smaller screens */
+      align-items: center;
+  }
+  nav.nav a {
+      margin: 5px 0; /* Increase space between links in stacked mode */
+  }
+}
+
+/* Footer Styling */
+footer.site-footer {
+  background-color: #f4f4f4;
+  padding: 1rem 5%; /* Flexible padding using percentages */
+  box-sizing: border-box; /* Includes padding in total width calculation */
+  border-top: 1px solid #ccc;
+  text-align: center; /* Center-align the content in footer */
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap; /* Flex-wrap to allow the footer elements to adapt to smaller screens */
+  justify-content: space-between; /* Evenly distribute footer elements */
   align-items: center;
 }
 
-.logo-image {
-    display: flex;
-    align-items: flex-start;
-  max-height: 60px;
-  width: auto;
-  margin-right: 20px; 
-  margin-left: 20px; 
+.contact-info, .social-media, .footer-text {
+  flex-basis: 100%; /* On smaller screens, each section takes full width */
+  text-align: center;
+  margin-bottom: 10px;
 }
 
-.website-name {
-    
-  font-size: 20px;
-  color: #333;
-  margin-right: 500px;
-}
-
-.nav {
+.social-media {
   display: flex;
-  gap: 20px;
-
+  justify-content: center; /* Center-align social media icons */
 }
 
-.nav-link {
-  color: #333;
-  text-decoration: none;
-  font-size: 12px;
-  margin-left: -1px;
+.social-media a {
+  margin: 0 5px;
 }
 
-.nav-link:hover {
-  color: #b9aaaa;
+.social-media img {
+  width: 30px; /* Icon size is fluid and adjusts well */
+  height: 30px;
 }
 
-.vision {
-    padding: 40px 20px;
-    text-align: center;
-  }
-  
-  .vision-title {
-    font-size: 24px;
-    color: #e59e33;
-    margin-bottom: 10px;
-  }
-  
-  .vision-text {
-    font-size: 20px;
-    color: #666;
-  }
-  
-  
-  img {
-    overflow-clip-margin: content-box;
-    overflow: clip;
+.contact-info .contact-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
 }
 
-.offers {
-    padding: 50px 20px; /* Padding for the offers section */
-    background-color: #f9f9f9; /* Light background for contrast */
-  }
-  
-  .offers-title {
-    text-align: center; /* Center the title */
-    font-size: 28px; /* Title size */
-    margin-bottom: 30px; /* Space below the title */
-  }
-  
-  .offers-container {
-    display: flex;
-    flex-wrap: wrap; /* Allow items to wrap to the next line */
-    justify-content: center; /* Center the offer items */
-    gap: 20px; /* Space between the items */
-  }
-  
-  .offer-item {
-    text-align: center; /* Center the text under the image */
-    width: 200px; /* Set a fixed width for the items */
-  }
-  
-  .offer-image {
-    width: 100%; /* Make image responsive */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 8px; /* Rounded corners for the images */
-    transition: transform 0.2s; /* Smooth transition for hover effect */
-  }
-  
-  .offer-item:hover .offer-image {
-    transform: scale(1.05); /* Slightly enlarge the image on hover */
-  }
-  
-  .offer-title {
-    margin-top: 10px; /* Space above the title */
-    font-size: 14px; /* Title size */
-    color: #333; /* Title color */
-    font-style: normal;
-  }
-
-
-  /* Product Categories Styles */
-  .product-categories {
-    display: flex;
-    align-items: center; /* Center items vertically */
-    gap: 20px; /* Space between category items */
-    padding: 40px 20px;
-    background-color: #fff;
-  }
-  
-  .category-item {
-    background-color: #f5f5f5;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-  
-  .category-scroller {
-    width: 2px; /* Width of the scroller */
-    height: 80px; /* Height of the scroller */
-    background-color: #000000; /* Color of the scroller */
-  }
-  
-  .arrow {
-    background-color: transparent; /* Transparent background */
-    border: none; /* No border */
-    font-size: 24px; /* Arrow size */
-    cursor: pointer; /* Pointer cursor on hover */
-    color: #000000; /* Arrow color */
-  }
-  
-  .arrow:hover {
-    color: #000000; /* Change color on hover */
-  }  
-  
-  .category-title {
-    color:rgb(67, 68, 70);
-    font: size 16px;
-    font-family: 'Arial', sans-serif;
-    text-align: center;
-  }
-  
-  
-  .category-icons {
-    display: flex;
-    justify-content: center;
-    gap: 80px;
-    margin-top: 20px;
-  }
-  
-  .category-icon {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  
-  .category-icon img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-  
-  .category-icon span {
-    margin-top: 8px;
-    font-size: 14px;
-    font-weight: bold;
-  }
-
-  .user-reviews {
-    padding: 20px 20px; /* Padding for the reviews section */
-    background-color: #f0f0f0; /* Light background for contrast */
-    border-radius: 8px; /* Optional: rounded corners */
-    max-width: 800px; /* Set a max width for the section */
-    margin: 0 auto; /* Center the section */
-  }
-  
-  .reviews-title {
-    text-align: center; /* Center the title */
-    font-size: 28px; /* Title size */
-    margin-bottom: 30px; /* Space below the title */
-  }
-  
-  .review {
-    background-color: white; /* White background for each review */
-    padding: 20px; /* Padding inside each review */
-    margin-bottom: 20px; /* Space between reviews */
-    border-radius: 5px; /* Rounded corners for reviews */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  }
-  
-  .review-header {
-    display: flex;
-    justify-content: space-between; /* Space between name and rating */
-    margin-bottom: 10px; /* Space below the header */
-  }
-  
-  .user-name {
-    font-weight: bold; /* Bold font for user name */
-    color: #333; /* Dark color for contrast */
-  }
-  
-  .user-rating {
-    color: gold; /* Gold color for star ratings */
-  }
-  
-  .review-text {
-    color: #666; /* Gray color for review text */
-    font-size: 16px; /* Font size for review text */
-  }
-
-  .site-footer {
-    background-color: #fff3e0;
-    color: white;
-    padding: 2px;
-  }
-  .footer-title {
-    text-align: center; /* Center the title */
-    font-size: 18px; /* Adjust the font size as needed */
-    color: rgb(0, 0, 0); /* Title color */
-    margin-bottom: 15px; /* Space between title and content */
-}
-  
-  .footer-content {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    
-  }
-  
-  .contact-info {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-right: 20px;
-   
-  }
-  
-  .contact-item {
-    display: flex;
-    align-items: center;
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-    margin-bottom: 10px;
-  }
-  
-  .contact-item .icon {
-    width: 16px; /* Smaller size for contact icons */
-    height: auto;
-    margin-right: 8px;
+.contact-info .icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px; /* Space between the icon and contact text */
 }
 
-  
- 
-  .social-media {
-    display: flex;
-    justify-content: center;
-    flex: 1;
-    margin: 0 20px;
-  }
-  .media-title {
-    text-align: center; /* Center the title */
-    font-size: 28px; /* Title size */
-    margin-bottom: 30px; /* Space below the title */
-    color: #000000;
-  }
-  
-  .social-icon {
-    display: block;
-    width: 30px;
-    height: auto;
-    margin: 0 10px;
-  }
-  
-  .social-icon img {
-    width: 24px; /* Smaller size for social media icons */
-    height: 24px; /* Maintain aspect ratio */
-    margin: 0 10px;
-    align-items: center;
+.footer-text p {
+  margin: 0; /* Ensure no extra margin on footer text */
+  font-size: 1rem;
 }
 
-
-  .footer-text {
-    text-align: right;
-    color: #000000;
-    font-size: 14px;
-    margin-top: auto; /* Pushes copyright to the bottom */
+@media (min-width: 600px) {
+  .contact-info, .social-media, .footer-text {
+      flex-basis: 30%; /* Allow three sections to align side by side on larger screens */
   }
+}
