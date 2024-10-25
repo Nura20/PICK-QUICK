@@ -79,97 +79,13 @@
             margin-top: 10px; /* Added space above the button */
         }
 
-        /* Product Categories */
-        .product-categories {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            padding: 40px 20px;
-            background-color: #fff;
-        }
-
-        .category-item {
-            background-color: #f5f5f5;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        .category-title {
-            font-size: 16px;
-            color: #434446;
-            text-align: center;
-        }
-
-        .category-icons {
-            display: flex;
-            justify-content: center;
-            gap: 80px;
-            margin-top: 20px;
-        }
-
-        .category-icon {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .category-icon img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        .category-icon span {
-            margin-top: 8px;
-            font-size: 14px;
-            font-weight: bold;
-        }
-
-        /* Reviews Section */
-        .user-reviews {
-            padding: 20px;
-            background-color: #f0f0f0;
-            border-radius: 8px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .reviews-title {
-            text-align: center;
-            font-size: 28px;
-            margin-bottom: 30px;
-        }
-
-        .review {
-            background-color: white;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .review-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-        }
-
-        .user-name {
-            font-weight: bold;
-            color: #333;
-        }
-
-        .user-rating {
-            color: gold;
-        }
-
-        .review-text {
-            color: #666;
-            font-size: 16px;
+        .cancel-button {
+            background-color: red;
+            width: 150px;
+            height: 30px;
+            cursor: pointer;
+            margin-top: 10px; /* Space above the cancel button */
+            color: white; /* Text color */
         }
 
         /* Footer Styles */
@@ -285,6 +201,7 @@
             </div>
             <input type="text" class="evalText" name="review_suncream" placeholder="Write your review" required>
             <input type="submit" class="button" value="Submit Review">
+            <input type="button" class="cancel-button" value="Cancel" onclick="window.location.href='user_page.html'">
         </form>
 
         <!-- Second Product Review -->
@@ -299,13 +216,14 @@
             </div>
             <input type="text" class="evalText" name="review_tablet" placeholder="Write your review" required>
             <input type="submit" class="button" value="Submit Review">
+            <input type="button" class="cancel-button" value="Cancel" onclick="window.location.href='user_page.html'">
         </form>
 
     </section>
 </main>
 
 <footer class="site-footer">
-    <div class="footer-title">contact</div>
+    <div class="footer-title">Contact</div>
     <div class="footer-content">
       <div class="contact-info">
         <a href="#" class="contact-item">
@@ -314,13 +232,11 @@
         </a>
         <a href="#" class="contact-item">
           <img src="emmail.JPG" alt=" " class="icon">
-          
           <span>pick-quick@shopping.com</span>
         </a>
       </div>
       
       <div class="social-media">
-        
         <a href="https://www.facebook.com/" class="social-icon">
           <img src="facebook.jpg" alt=" ">
         </a>
@@ -336,7 +252,7 @@
         <p>© All rights reserved.</p>
       </div>
     </div>
-  </footer>
+</footer>
 
 </body>
 </html>
