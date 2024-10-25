@@ -21,19 +21,18 @@
 }
 
 .logo-image {
-    display: flex;
-    align-items: flex-start;
+display: flex;
+ align-items: flex-end;
   max-height: 60px;
   width: auto;
-  margin-right: 20px; 
-  margin-left: -10px; 
+  margin-left: -120px; 
 }
 
 .website-name {
-    
   font-size: 20px;
   color: #333;
-  margin-right: 500px;
+  margin-right: 400px;
+  margin-left:-35px
 }
 
 .nav {
