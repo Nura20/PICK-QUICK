@@ -1,13 +1,11 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Your Cart</title>
-     <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="stylesheet.css">
     <style>
         .Gyourcart {
-          
             text-align: center;
         }
         .GcartBody {
@@ -101,7 +99,7 @@
             margin-right: 180px; /* Align with Your Cart */
         }
         .Gempty-cart:hover {
-            background-color: #d4d4d4; /* Darker green on hover */
+            background-color: #d4d4d4;
         }
         .Gcheckout {
             margin-left: 450px;
@@ -117,15 +115,13 @@
             color: black;
         }
         .Gcheckout:hover {
-            background-color: #218838; /* Darker green on hover */
+            background-color: #218838;
         }
     </style>
 </head>
+<body class="GcartBody">
 
-
-  </div>
-  
-  <header class="header">
+<header class="header">
     <div class="header-container">
         <a href="#" class="logo-link">
             <img src="logo.jpg" alt="logo" class="logo-image">
@@ -149,10 +145,11 @@
             <a href="#" class="nav-link">Cart</a>
         </nav>
     </div>
-<body>
-    <!-- Cart Content -->
+</header>
+
+<main>
     <h2 class="Gyourcart">Your Cart</h2>
-    <button class="Gempty-cart">Empty Cart</button> <!-- Moved here -->
+    <button class="Gempty-cart">Empty Cart</button>
     <div class="Gcart-container">
         <table class="Gcart-items">
             <thead>
@@ -170,18 +167,14 @@
                 <tr>
                     <td class="Gth-td">
                         <div class="Gproduct-info">
-
-
-<img class="Gimage-placeholder" src="men.JPG" alt="men t-shirt">
+                            <img class="Gimage-placeholder" src="men.JPG" alt="men t-shirt">
                         </div>
                     </td>
                     <td class="Gth-td">men t-shirt</td>
                     <td class="Gth-td">15.00SR</td>
                     <td class="Gth-td"><input type="number" value="2" min="1"></td>
                     <td class="Gth-td">30.00SR</td>
-                    <td class="Gth-td">
-                        <button class="Gdelete-btn">🗑️</button>
-                    </td>
+                    <td class="Gth-td"><button class="Gdelete-btn">🗑️</button></td>
                 </tr>
                 <!-- Product 2 -->
                 <tr>
@@ -216,38 +209,37 @@
     <div class="Gbuttons-container">
         <button class="Gcheckout" onclick="location.href='acknowledge.html'">Check Out</button>
     </div>
-<footer class="site-footer">
-  <div class="footer-title">contact</div>
-  <div class="footer-content">
-    <div class="contact-info">
-      <a href="#" class="contact-item">
-        <img src="phone.png" alt=" " class="icon">
-        <span>+966 xx xxx xxxx</span>
-      </a>
-      <a href="#" class="contact-item">
-        <img src="emmail.JPG" alt=" " class="icon">
-        
-        <span>pick-quick@shopping.com</span>
-      </a>
-    </div>
-    
-    <div class="social-media">
-      
-      <a href="https://www.facebook.com/" class="social-icon">
-        <img src="facebook.jpg" alt=" ">
-      </a>
-      <a href="https://twitter.com/?lang=en" class="social-icon">
-        <img src="x.jpg" alt=" ">
-      </a>
-      <a href="https://www.instagram.com/" class="social-icon">
-        <img src="instgram.jpg" alt=" ">
-      </a>
-    </div>
+</main>
 
-    <div class="footer-text">
-      <p>© All rights reserved.</p>
+<footer class="site-footer">
+    <div class="footer-title">Contact</div>
+    <div class="footer-content">
+        <div class="contact-info">
+            <a href="#" class="contact-item">
+                <img src="phone.png" alt=" " class="icon">
+                <span>+966 xx xxx xxxx</span>
+            </a>
+            <a href="#" class="contact-item">
+                <img src="emmail.JPG" alt=" " class="icon">
+                <span>pick-quick@shopping.com</span>
+            </a>
+        </div>
+        <div class="social-media">
+            <a href="https://www.facebook.com/" class="social-icon">
+                <img src="facebook.jpg" alt=" ">
+            </a>
+            <a href="https://twitter.com/?lang=en" class="social-icon">
+                <img src="x.jpg" alt=" ">
+            </a>
+            <a href="https://www.instagram.com/" class="social-icon">
+                <img src="instgram.jpg" alt=" ">
+            </a>
+        </div>
+        <div class="footer-text">
+            <p>© All rights reserved.</p>
+        </div>
     </div>
-  </div>
 </footer>
+
 </body>
 </html>
