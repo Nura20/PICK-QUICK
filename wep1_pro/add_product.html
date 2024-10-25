@@ -68,6 +68,10 @@
         button:hover {
             background-color: #555;
         }
+        
+        .nav-separator {
+            margin: 0 10px; /* Space around the separator */
+        }
     </style>
 </head>
 <body>
@@ -75,13 +79,24 @@
     <header class="header">
         <div class="header-container">
             <a href="#" class="logo-link">
-                <img src="logo.png" alt="Logo" class="logo-image">
-                <span class="website-name">Website Name</span>
+                <img src="logo.jpg" alt="logo" class="logo-image">
             </a>
+            <h1 class="website-name">Pick Quick</h1>
             <nav class="nav">
-                <a href="#" class="nav-link">User Page</a>
-                <a href="#" class="nav-link">Seller Page</a>
-                <a href="#" class="nav-link">Category Page</a>
+                <a href="#" class="nav-link">Home</a>
+                <span class="nav-separator">|</span>
+                <a href="#" class="nav-link">Seller page</a>
+                <span class="nav-separator">|</span>
+                <a href="#" class="nav-link">User page</a>
+                <span class="nav-separator">|</span>
+                <a href="#" class="nav-link">Women's page</a>
+                <span class="nav-separator">|</span>
+                <a href="#" class="nav-link">Men's page</a>
+                <span class="nav-separator">|</span>
+                <a href="#" class="nav-link">Kid's page</a>
+                <span class="nav-separator">|</span>
+                <a href="#" class="nav-link">Accessories's page</a>
+                <span class="nav-separator">|</span>
                 <a href="#" class="nav-link">Cart</a>
             </nav>
         </div>
@@ -120,14 +135,32 @@
     </main>
 
     <footer class="site-footer">
+        <div class="footer-title">Contact</div>
         <div class="footer-content">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <div class="social-icons">
-                <img src="facebook-icon.png" alt="Facebook" width="30">
-                <img src="twitter-icon.png" alt="Twitter" width="30">
-                <img src="instagram-icon.png" alt="Instagram" width="30">
+            <div class="contact-info">
+                <a href="#" class="contact-item">
+                    <img src="phone.png" alt="Phone" class="icon">
+                    <span>+966 xx xxx xxxx</span>
+                </a>
+                <a href="#" class="contact-item">
+                    <img src="emmail.JPG" alt="Email" class="icon">
+                    <span>pick-quick@shopping.com</span>
+                </a>
             </div>
-            <p>&copy; All rights reserved</p>
+            <div class="social-media">
+                <a href="https://www.facebook.com/" class="social-icon">
+                    <img src="facebook.jpg" alt="Facebook">
+                </a>
+                <a href="https://twitter.com/?lang=en" class="social-icon">
+                    <img src="x.jpg" alt="Twitter">
+                </a>
+                <a href="https://www.instagram.com/" class="social-icon">
+                    <img src="instgram.jpg" alt="Instagram">
+                </a>
+            </div>
+            <div class="footer-text">
+                <p>© All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
