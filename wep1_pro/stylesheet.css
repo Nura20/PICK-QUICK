@@ -1,105 +1,105 @@
 /* Header Styling */
 .header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 5%; /* Use percentage-based padding for fluid layout */
-  background-color: #f4f4f4;
-  width: 100%; /* Full-width container */
-  box-sizing: border-box; /* Ensures padding is included in element's total width */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%; /* Use percentage-based padding for fluid layout */
+    background-color: #f4f4f4;
+    width: 100%; /* Full-width container */
+    box-sizing: border-box; /* Ensures padding is included in element's total width */
 }
 
 .logo {
-  max-width: 100px; /* Limit the max width of the logo */
-  height: auto; /* Auto-adjust height based on width */
+    max-width: 100px; /* Limit the max width of the logo */
+    height: auto; /* Auto-adjust height based on width */
 }
 
 h1.website-name {
-  font-size: 2rem; /* Font size scales well across devices */
-  margin: 0;
-  flex-grow: 1; /* Allow h1 to grow and take available space */
-  text-align: center;
+    font-size: 2rem; /* Font size scales well across devices */
+    margin: 0;
+    flex-grow: 1; /* Allow h1 to grow and take available space */
+    text-align: center;
 }
 
 nav.nav {
-  display: flex;
-  flex-wrap: wrap; /* Allow navigation links to wrap on small screens */
-  justify-content: center;
+    display: flex;
+    flex-wrap: wrap; /* Allow navigation links to wrap on small screens */
+    justify-content: center;
 }
 
 nav.nav a {
-  margin: 0 10px;
-  text-decoration: none;
-  color: black;
-  font-size: 1rem; /* Font size scales based on viewport */
+    margin: 0 10px;
+    text-decoration: none;
+    color: black;
+    font-size: 1rem; /* Font size scales based on viewport */
 }
 
 @media (max-width: 600px) {
-  .header-container {
-      flex-direction: column; /* Stack logo, title, and navigation vertically on smaller screens */
-      align-items: center;
-  }
-  nav.nav a {
-      margin: 5px 0; /* Increase space between links in stacked mode */
-  }
+    .header-container {
+        flex-direction: column; /* Stack logo, title, and navigation vertically on smaller screens */
+        align-items: center;
+    }
+    nav.nav a {
+        margin: 5px 0; /* Increase space between links in stacked mode */
+    }
 }
 
 /* Footer Styling */
 footer.site-footer {
-  background-color: #f4f4f4;
-  padding: 1rem 5%; /* Flexible padding using percentages */
-  box-sizing: border-box; /* Includes padding in total width calculation */
-  border-top: 1px solid #ccc;
-  text-align: center; /* Center-align the content in footer */
+    background-color: #f4f4f4;
+    padding: 1rem 5%; /* Flexible padding using percentages */
+    box-sizing: border-box; /* Includes padding in total width calculation */
+    border-top: 1px solid #ccc;
+    text-align: center; /* Center-align the content in footer */
 }
 
 .footer-container {
-  display: flex;
-  flex-wrap: wrap; /* Flex-wrap to allow the footer elements to adapt to smaller screens */
-  justify-content: space-between; /* Evenly distribute footer elements */
-  align-items: center;
+    display: flex;
+    flex-wrap: wrap; /* Flex-wrap to allow the footer elements to adapt to smaller screens */
+    justify-content: space-between; /* Evenly distribute footer elements */
+    align-items: center;
 }
 
 .contact-info, .social-media, .footer-text {
-  flex-basis: 100%; /* On smaller screens, each section takes full width */
-  text-align: center;
-  margin-bottom: 10px;
+    flex-basis: 100%; /* On smaller screens, each section takes full width */
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 .social-media {
-  display: flex;
-  justify-content: center; /* Center-align social media icons */
+    display: flex;
+    justify-content: center; /* Center-align social media icons */
 }
 
 .social-media a {
-  margin: 0 5px;
+    margin: 0 5px;
 }
 
 .social-media img {
-  width: 30px; /* Icon size is fluid and adjusts well */
-  height: 30px;
+    width: 30px; /* Icon size is fluid and adjusts well */
+    height: 30px;
 }
 
 .contact-info .contact-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
 }
 
 .contact-info .icon {
-  width: 30px;
-  height: 30px;
-  margin-right: 10px; /* Space between the icon and contact text */
+    width: 30px;
+    height: 30px;
+    margin-right: 10px; /* Space between the icon and contact text */
 }
 
 .footer-text p {
-  margin: 0; /* Ensure no extra margin on footer text */
-  font-size: 1rem;
+    margin: 0; /* Ensure no extra margin on footer text */
+    font-size: 1rem;
 }
 
 @media (min-width: 600px) {
-  .contact-info, .social-media, .footer-text {
-      flex-basis: 30%; /* Allow three sections to align side by side on larger screens */
-  }
+    .contact-info, .social-media, .footer-text {
+        flex-basis: 30%; /* Allow three sections to align side by side on larger screens */
+    }
 }

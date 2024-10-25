@@ -6,48 +6,17 @@
     <title>Pick Quick</title>
     <link rel="stylesheet" href="stylesheet.css">
     <style>
-        /* General styling */
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-
-        /* Header styling */
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 5%; /* Flexible padding */
-            background-color: #f4f4f4;
-        }
-
         .logo {
-            width: auto;
+            width: 100px;
             height: auto;
-            max-width: 100px; /* Auto size logo based on screen */
-        }
-
-        h1 {
-            font-size: 2em;
-            margin: 0;
-            flex-grow: 1;
-            text-align: center;
-        }
-
-        nav {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
         }
 
         nav a {
             margin: 0 10px;
             text-decoration: none;
             color: black;
-            font-size: 1em;
         }
 
-        /* Main content */
         main {
             padding: 20px;
             width: 80%;
@@ -56,49 +25,112 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        /* Footer styling */
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .product-evaluation h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .order-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .dropdown select {
+            padding: 5px;
+        }
+
+        .product-review {
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            background-color: rgb(235, 228, 214);
+        }
+
+        .product {
+            display: flex;
+        }
+
+        .product img {
+            width: 200px;
+            height: 200px;
+            margin: 0.2em;
+        }
+
+        .product-details h3 {
+            font-size: 20px;
+            margin-top: 0.5em;
+        }
+
+        .stars {
+            color: gold;
+        }
+
+        .evalText {
+            height: 20px;
+            width: 500px;
+            border-style: inset;
+            margin: 2px;
+        }
+
+        .button {
+            background-color: #5fa968;
+            width: 150px;
+            height: 30px;
+            padding: 5px 50px;
+            cursor: pointer;
+            margin: 0 0 0 800px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
         footer {
             background-color: #f4f4f4;
-            padding: 10px 5%; /* Flexible padding */
+            padding: 20px;
             border-top: 1px solid #ccc;
+            text-align: center;
         }
 
         .footer-container {
             display: flex;
-            flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
         }
 
-        .contact-info, .social-media, .footer-text {
-            flex-basis: 100%;
-            text-align: center;
-            margin-bottom: 10px;
-        }
-
-        .social-media {
+        .contact-info {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            align-items: center;
         }
 
-        .social-media a {
-            margin: 0 5px;
-        }
-
-        .social-media img {
-            width: 30px;
-            height: 30px;
+        .icons {
+            display: flex;
         }
 
         .icon {
             width: 30px;
             height: 30px;
+            background-color: #eaeaea;
+            margin: 0 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        @media (min-width: 600px) {
-            .contact-info, .social-media, .footer-text {
-                flex-basis: 30%; /* Flexibility for larger screens */
-            }
+        .social-icon img {
+            width: 30px;
+            height: 30px;
         }
     </style>
 </head>
@@ -107,17 +139,24 @@
 <header class="header">
     <div class="header-container">
         <a href="#" class="logo-link">
-            <img src="logo.jpg" alt="logo" class="logo">
+            <img src="logo.jpg" alt="logo" class="logo-image">
         </a>
         <h1 class="website-name">Pick Quick</h1>
         <nav class="nav">
             <a href="#" class="nav-link">Home</a>
+            <span class="nav-separator">|</span>
             <a href="#" class="nav-link">Seller page</a>
+            <span class="nav-separator">|</span>
             <a href="#" class="nav-link">User page</a>
+            <span class="nav-separator">|</span>
             <a href="#" class="nav-link">Women's page</a>
+            <span class="nav-separator">|</span>
             <a href="#" class="nav-link">Men's page</a>
+            <span class="nav-separator">|</span>
             <a href="#" class="nav-link">Kid's page</a>
+            <span class="nav-separator">|</span>
             <a href="#" class="nav-link">Accessories page</a>
+            <span class="nav-separator">|</span>
             <a href="#" class="nav-link">Cart</a>
         </nav>
     </div>
@@ -166,6 +205,7 @@
             <input type="text" class="evalText" name="review_tablet" placeholder="Write your review" required>
             <input type="submit" class="button" value="Submit Review">
         </form>
+
     </section>
 </main>
 
