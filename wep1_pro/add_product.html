@@ -3,113 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Product Page</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #ccc;
-            padding: 10px 20px;
-        }
-
-        header .logo img {
-            display: inline-block;
-            vertical-align: middle;
-        }
-
-        nav a {
-            margin-right: 20px;
-            text-decoration: none;
-            color: #000;
-            font-size: 14px;
-        }
-
-        main {
-            width: 80%;
-            margin: 20px auto;
-            background-color: white;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        label {
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-
-        input[type="text"],
-        input[type="file"],
-        input[type="number"],
-        textarea,
-        select {
-            margin-bottom: 20px;
-            padding: 10px;
-            font-size: 16px;
-            width: 100%;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        button {
-            padding: 10px;
-            font-size: 16px;
-            background-color: #333;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #555;
-        }
-
-        footer {
-            background-color: #ccc;
-            padding: 20px;
-            text-align: center;
-        }
-
-        footer .social-icons img {
-            margin: 0 10px;
-        }
-    </style>
+    <title>Add New Product</title>
+    <link rel="stylesheet" href="stylesheet.css"> <!-- Link to the stylesheet -->
 </head>
 <body>
 
-    <header>
-        <div class="logo">
-            <img src="logo.png" alt="Logo" width="50">
+    <header class="header"> <!-- Added class for styling -->
+        <div class="header-container">
+            <a href="#" class="logo-link">
+                <img src="logo.png" alt="Logo" class="logo-image">
+            </a>
+            <div class="website-name">Your Website Name</div>
+            <nav class="nav">
+                <a href="#" class="nav-link">User Page</a>
+                <a href="#" class="nav-link">Seller Page</a>
+                <a href="#" class="nav-link">Category Page</a>
+                <a href="#" class="nav-link">Cart</a>
+            </nav>
         </div>
-        <nav>
-            <a href="#">User Page</a>
-            <a href="#">Seller Page</a>
-            <a href="#">Category Page</a>
-            <a href="#">Cart</a>
-        </nav>
     </header>
 
     <main>
@@ -141,15 +52,17 @@
         </form>
     </main>
 
-    <footer>
+    <footer class="site-footer"> <!-- Updated footer class -->
+        <div class="footer-title">Stay Connected</div>
         <div class="footer-content">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <div class="social-icons">
-                <img src="facebook-icon.png" alt="Facebook" width="30">
-                <img src="twitter-icon.png" alt="Twitter" width="30">
-                <img src="instagram-icon.png" alt="Instagram" width="30">
+            <div class="social-media">
+                <img src="facebook-icon.png" alt="Facebook" class="social-icon">
+                <img src="twitter-icon.png" alt="Twitter" class="social-icon">
+                <img src="instagram-icon.png" alt="Instagram" class="social-icon">
             </div>
-            <p>&copy; All rights reserved</p>
+            <div class="footer-text">
+                &copy; All rights reserved
+            </div>
         </div>
     </footer>
 
