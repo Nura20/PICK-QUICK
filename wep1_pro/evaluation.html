@@ -3,29 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pick Quick / Evaluation</title>
+    <title>Pick Quick/product evaluation</title>
     <link rel="stylesheet" href="stylesheet.css">
     <style>
-        /* Embedded styles specific to this page */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
+        /* Main Styles */
         main {
             padding: 20px;
             width: 80%;
             margin: 20px auto;
             background-color: white;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px; /* Add rounded corners */
         }
 
         h1 {
@@ -33,73 +20,117 @@
             margin-bottom: 20px;
         }
 
-        form {
+        .product-evaluation h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .order-info {
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
         }
 
-        label {
-            margin-bottom: 10px;
-            font-weight: bold;
+        .dropdown select {
+            padding: 5px;
         }
 
-        input[type="text"],
-        input[type="file"],
-        textarea,
-        select {
+        .product-review {
+            border: 1px solid #ccc;
             margin-bottom: 20px;
             padding: 10px;
-            font-size: 16px;
-            width: 100%;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            background-color: rgb(235, 228, 214);
         }
 
-        button {
-            padding: 10px;
-            font-size: 16px;
-            background-color: #5fa968; /* Match the evaluation page button color */
+        .product {
+            display: flex;
+        }
+
+        .product img {
+            width: 200px;
+            height: 200px;
+            margin: 0.2em;
+        }
+
+        .product-details h3 {
+            font-size: 20px;
+            margin-top: 0.5em;
+        }
+
+        .stars {
+            color: gold;
+        }
+
+        .evalText {
+            height: 20px;
+            width: 400px;
+            border-style: inset;
+            margin: 2px 0;
+        }
+
+        .button {
+            background-color: #5fa968;
+            margin-top: 10px;
             color: white;
             border: none;
             border-radius: 5px;
+            width: 150px; /* Same width as submit button */
+            height: 30px; /* Same height as submit button */
             cursor: pointer;
         }
 
-        button:hover {
-            background-color: #555; /* Optional: Change hover color */
+        /* Cancel Button Style */
+        .cancel-button {
+            margin-top: 10px;
+            background-color: #f44336; /* Red color for the cancel button */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            width: 150px; /* Same width as submit button */
+            height: 30px; /* Same height as submit button */
+            cursor: pointer;
         }
 
-        .nav-separator {
-            margin: 0 10px; /* Space around the separator */
+        /* Product Categories */
+        .product-categories {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 40px 20px;
+            background-color: #fff;
+        }
+
+        /* Reviews Section */
+        .user-reviews {
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         /* Footer Styles */
         .site-footer {
-            background-color: #fff3e0; /* Match the evaluation page footer background */
-            color: black; /* Change to black for better readability */
-            padding: 20px; /* Add some padding */
+            background-color: #fff3e0;
+            color: white;
+            padding: 2px;
         }
 
-        .footer-title {
-            font-weight: bold; /* Make title bold */
-            font-size: 18px; /* Increase font size */
-        }
-
-        .footer-content {
+        .footer-container {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
             flex-wrap: wrap;
+            padding: 20px;
         }
 
         .contact-info {
             display: flex;
             flex-direction: column;
-        }
-
-        .social-media {
-            display: flex;
-            gap: 10px; /* Add space between social icons */
+            align-items: flex-start;
         }
 
         .footer-text {
@@ -125,13 +156,13 @@
             <span class="nav-separator">|</span>
             <a href="#" class="nav-link">User page</a>
             <span class="nav-separator">|</span>
-            <a href="#" class="nav-link">Women's fashion</a>
+            <a href="#" class="nav-link">Women's page</a>
             <span class="nav-separator">|</span>
-            <a href="#" class="nav-link">Men's fashion</a>
+            <a href="#" class="nav-link">Men's page</a>
             <span class="nav-separator">|</span>
-            <a href="#" class="nav-link">Kid's fashion</a>
+            <a href="#" class="nav-link">Kid's page</a>
             <span class="nav-separator">|</span>
-            <a href="#" class="nav-link">Accessories</a>
+            <a href="#" class="nav-link">Accessories page</a>
             <span class="nav-separator">|</span>
             <a href="#" class="nav-link">Cart</a>
         </nav>
@@ -139,25 +170,50 @@
 </header>
 
 <main>
-    <h1>Evaluation</h1>
-    <form action="" method="post">
-        <label for="product-name">Product Name:</label>
-        <input type="text" id="product-name" name="product_name" required>
+    <section class="product-evaluation">
+        <h2>Product Evaluation</h2>
+        <div class="order-info">
+            <p>Order #1234</p>
+            <p>Price: 45.23$</p>
+            <div class="dropdown">
+                <select>
+                    <option>Select order</option>
+                    <option>#1234</option>
+                    <option>#5678</option>
+                </select>
+            </div>
+        </div>
 
-        <label for="product-review">Review:</label>
-        <textarea id="product-review" name="product_review" rows="5" required></textarea>
+        <!-- First Product Review -->
+        <form action="thank_you.html" method="get" class="product-review">
+            <div class="product">
+                <img src="kids.JPG" alt="kids-clothes">
+                <div class="product-details">
+                    <h3>kids pijama</h3>
+                    <p>EELHOE Lightweight Sunscreen Lotion - Hydrating and Refreshing Sun Protection 
+                    <br>for Moisturized and Nourished Skin</p>
+                    <div class="stars">★★★★★</div>
+                </div>
+            </div>
+            <input type="text" class="evalText" name="review_suncream" placeholder="Write your review" required>
+            <input type="submit" class="button" value="Submit Review">
+        </form>
 
-        <label for="product-rating">Rating:</label>
-        <select id="product-rating" name="product_rating" required>
-            <option value="1">1 Star</option>
-            <option value="2">2 Stars</option>
-            <option value="3">3 Stars</option>
-            <option value="4">4 Stars</option>
-            <option value="5">5 Stars</option>
-        </select>
+        <!-- Second Product Review -->
+        <form action="" method="get" class="product-review">
+            <div class="product">
+                <img src="acc.JPG" alt="glasses">
+                <div class="product-details">
+                    <h3>glasses</h3>
+                    <p>HUION H610 PRO V2 USB Pad Art Digital Handwriting Drawing Kit</p>
+                    <div class="stars">★★★★★</div>
+                </div>
+            </div>
+            <input type="text" class="evalText" name="review_tablet" placeholder="Write your review" required>
+            <input type="submit" class="button" value="Submit Review">
+        </form>
 
-        <button type="submit">Submit Evaluation</button>
-    </form>
+    </section>
 </main>
 
 <footer class="site-footer">
@@ -169,7 +225,7 @@
                 <span>+966 xx xxx xxxx</span>
             </a>
             <a href="#" class="contact-item">
-                <img src="email.JPG" alt=" " class="icon">
+                <img src="emmail.JPG" alt=" " class="icon">
                 <span>pick-quick@shopping.com</span>
             </a>
         </div>
@@ -182,7 +238,7 @@
                 <img src="x.jpg" alt=" ">
             </a>
             <a href="https://www.instagram.com/" class="social-icon">
-                <img src="instagram.jpg" alt=" ">
+                <img src="instgram.jpg" alt=" ">
             </a>
         </div>
 
