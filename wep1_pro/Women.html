@@ -4,7 +4,7 @@
   <title>Pick Quick</title>
   <link rel="stylesheet" href="stylesheet.css">
   <style>
-    .content {
+   .content {
    display: grid;
    grid-template-columns: repeat(3, 1fr);
    grid-gap: 20px;
@@ -53,47 +53,55 @@
       <div class="sort-by">
         Sort By:
         <select>
-          <option value="price-low-high">Price Low to High</option>
-          <option value="price-high-low">Price High to Low</option>
-          <option value="name-a-z">Name A-Z</option>
-          <option value="name-z-a">Name Z-A</option>
+            <optgroup label="Price">
+                <option value="price-low-high">Price Low to High</option>
+                <option value="price-high-low">Price High to Low</option>
+            </optgroup>
+            <optgroup label="Name">
+                <option value="name-a-z">Name A-Z</option>
+                <option value="name-z-a">Name Z-A</option>
+            </optgroup>
+            <optgroup label="Rating">
+                <option value="rating-high-low">Rating High to Low</option>
+                <option value="rating-low-high">Rating Low to High</option>
+            </optgroup>
         </select>
       </div>
     
-      <div class="content">
+       <div class="content">
         <div class="product">
-          <img src="BlazerW.jpg" alt="Blazer" height="150" >
-          <h3>Blazer</h3>
+          <img src="BlazerM.jpg" alt="Blazer" height="150" >
+          <h3>Blazer</h3> <div class="rating">⭐⭐⭐⭐⭐</div>
           <p>$19.99</p>
           <button>Add to Cart</button>
         </div>
         <div class="product">
-            <img src="PantsW.jpg" alt="Pants" height="150">
-            <h3>Pants</h3>
+            <img src="PantsM.jpg" alt="Pants" height="150">
+            <h3>Pants</h3> <div class="rating">⭐⭐⭐⭐</div>
             <p>$24.99</p>
             <button>Add to Cart</button>
           </div>
           <div class="product">
-            <img src="ShirtW.jpg" alt="Shirt" height="150">
-            <h3>Shirt</h3>
+            <img src="men.JPG" alt="TShirt" height="150">
+            <h3>TShirt</h3>
             <p>$14.99</p>
             <button>Add to Cart</button>
           </div>
           <div class="product">
-            <img src="Bag.jpg" alt="Bag"height="150">
-            <h3>Bag</h3>
+            <img src="SuitM.jpg" alt="Suit"height="150">
+            <h3>Suit</h3> <div class="rating">⭐⭐⭐⭐</div>
             <p>$29.99</p>
             <button>Add to Cart</button>
           </div>
           <div class="product">
-            <img src="Abaya.jpg" alt="Abaya"height="150">
-            <h3>Abaya</h3>
+            <img src="HoodieM.jpg" alt="Hoodie"height="150">
+            <h3>Hoodie</h3><div class="rating">⭐⭐⭐</div>
             <p>$9.99</p>
             <button>Add to Cart</button>
           </div>
           <div class="product">
-            <img src="Dress.jpg" alt="Dress" height="150">
-            <h3>Dress</h3>
+            <img src="ShirtM.jpg" alt="Shirt" height="150">
+            <h3>Shirt</h3> <div class="rating">⭐⭐⭐⭐⭐</div>
             <p>$34.99</p>
             <button>Add to Cart</button>
           </div>

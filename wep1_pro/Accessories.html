@@ -4,7 +4,7 @@
   <title>Pick Quick</title>
   <link rel="stylesheet" href="stylesheet.css">
   <style>
-    .content {
+   .content {
    display: grid;
    grid-template-columns: repeat(3, 1fr);
    grid-gap: 20px;
@@ -54,47 +54,55 @@
       <div class="sort-by">
         Sort By:
         <select>
-          <option value="price-low-high">Price Low to High</option>
-          <option value="price-high-low">Price High to Low</option>
-          <option value="name-a-z">Name A-Z</option>
-          <option value="name-z-a">Name Z-A</option>
+          <optgroup label="Price">
+            <option value="price-low-high">Price Low to High</option>
+            <option value="price-high-low">Price High to Low</option>
+        </optgroup>
+        <optgroup label="Name">
+            <option value="name-a-z">Name A-Z</option>
+            <option value="name-z-a">Name Z-A</option>
+        </optgroup>
+        <optgroup label="Rating">
+            <option value="rating-high-low">Rating High to Low</option>
+            <option value="rating-low-high">Rating Low to High</option>
+        </optgroup>
         </select>
       </div>
     
       <div class="content">
         <div class="product">
           <img src="Necklace.jpg" alt="Necklace" height="150" >
-          <h3>Necklace</h3>
+          <h3>Necklace</h3> <div class="rating">⭐⭐⭐⭐</div>
           <p>$19.99</p>
           <button>Add to Cart</button>
         </div>
         <div class="product">
             <img src="Wwatch.jpg" alt="watch" height="150">
-            <h3>Women watch</h3>
+            <h3>Women watch</h3> <div class="rating">⭐⭐⭐⭐⭐</div>
             <p>$24.99</p>
             <button>Add to Cart</button>
           </div>
           <div class="product">
             <img src="Mwatch.jpg" alt="watch" height="150">
-            <h3>Men watch</h3>
+            <h3>Men watch</h3> <div class="rating">⭐⭐⭐⭐</div>
             <p>$14.99</p>
             <button>Add to Cart</button>
           </div>
           <div class="product">
             <img src="Rings set.jpg" alt="Set"height="150">
-            <h3>Rings Set</h3>
+            <h3>Rings Set</h3> <div class="rating">⭐⭐⭐</div>
             <p>$29.99</p>
             <button>Add to Cart</button>
           </div>
           <div class="product">
             <img src="Swim.jpg" alt="swim"height="150">
-            <h3>swimming tools</h3>
+            <h3>swimming tools</h3> <div class="rating">⭐⭐⭐</div>
             <p>$9.99</p>
             <button>Add to Cart</button>
           </div>
           <div class="product">
             <img src="earings.jpg" alt="earings" height="150">
-            <h3>earings</h3>
+            <h3>earings</h3> <div class="rating">⭐⭐⭐⭐⭐</div>
             <p>$34.99</p>
             <button>Add to Cart</button>
           </div>
