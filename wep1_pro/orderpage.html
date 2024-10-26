@@ -6,64 +6,82 @@
     <title>My Orders</title>
     <link rel="stylesheet" href="stylesheet.css">
     <style>
-        
-        h1{
-             text-align: center;
+        h1 {
+            text-align: center;
         }
-.GallIT{
-    padding-left:180px;
-    text-align:left;
-    margin-top: 80px;
-    margin-bottom: 80px;
-}
-.GHorder{
-      text-align:left;
-       margin-left: 200px;
-    margin-bottom: 30px;
-}
-.Gorder {
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 20px;
-    margin-bottom: 20px; 
-}
-
-.Gorder-details {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 20px; 
-    margin-bottom: 10px;
-} 
-.Gorder-images {
-    display: flex;
-    gap: 10px;
-}
-
-.Gimage-placeholder {
-    width: 60px;
-    height: 60px;
-background-color: white;
-}
-
-#first{
-    margin-top: 50px;
-}
-.Gorder-text {
-    margin-top: 20px;
-    font-size: 20px;
-    margin-bottom: 0px;
-    margin-left: 10px;
-   
-}
-.Gorder-text0{
-     margin-top: 10px;
-    font-size: 15px;
-    margin-bottom: 10px;
-    margin-left: 500px;
-   
     
-}
-</style>
+        .GallIT {
+            padding: 0; /* Remove left padding to center the table */
+            text-align: center; /* Center content within GallIT */
+            margin-top: 80px;
+            margin-bottom: 80px;
+        }
+    
+        table {
+            width: 100%; /* Make the table take the full width */
+            border-collapse: collapse; /* Merge table borders */
+            margin: 20px 0; /* Add margin above and below the table */
+        }
+    
+        th, td {
+            padding: 10px; /* Add padding to cells */
+            border: 1px solid #ccc; /* Add border to cells */
+            text-align: center; /* Center text horizontally */
+            vertical-align: middle; /* Center text vertically */
+        }
+    
+        th {
+            background-color: #f4f4f4; /* Light grey background for headers */
+        }
+    
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9; /* Zebra striping for rows */
+        }
+    
+        .Gorder {
+            border-bottom: 1px solid #ccc; /* This can be removed as it's handled in the table */
+            padding-bottom: 20px; /* This can be removed as it's handled in the table */
+            margin-bottom: 20px; /* This can be removed as it's handled in the table */
+        }
+    
+        .Gorder-details {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Center content in order details */
+            gap: 20px;
+            margin-bottom: 10px;
+        }
+    
+        .Gorder-images {
+            display: flex;
+            gap: 10px;
+        }
+    
+        .Gimage-placeholder {
+            width: 60px;
+            height: 60px;
+            background-color: white;
+        }
+    
+        #first {
+            margin-top: 50px;
+        }
+    
+        .Gorder-text {
+            margin-top: 20px;
+            font-size: 20px;
+            margin-bottom: 0px;
+            margin-left: 10px;
+        }
+    
+        .Gorder-text0 {
+            margin-top: 10px;
+            font-size: 15px;
+            margin-bottom: 10px;
+            /* Removed margin-left to center the content in the table */
+        }
+    </style>
+    
 </head>
 
 <body class="GcartBody">
