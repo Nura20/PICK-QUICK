@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Added viewport for responsive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>My Orders</title>
     <link rel="stylesheet" href="stylesheet.css">
     <style>
@@ -12,62 +12,38 @@
     
         .GallIT {
             display: flex;
-            flex-direction: column; /* Stack orders vertically */
-            align-items: center; /* Center items horizontally */
+            flex-direction: column; 
+            align-items: center; 
             margin-top: 80px;
             margin-bottom: 80px;
         }
     
         .Gorder {
-            border-bottom: 1px solid #ccc; /* Optional border for separation */
-            padding: 20px; /* Padding for each order item */
-            width: 80%; /* Set a width for consistency */
-            text-align: center; /* Center text within each order */
-            margin-bottom: 20px; /* Space between orders */
+            border-bottom: 1px solid #ccc; 
+            padding: 20px; 
+            width: 80%; 
+            text-align: left; 
+            margin-bottom: 20px; 
         }
     
         .Gorder-details {
             display: flex;
-            justify-content: space-around; /* Distribute space evenly */
-            margin-bottom: 10px; /* Space below order details */
+            justify-content: space-between; 
+            align-items: center;
+            margin-bottom: 5px; 
         }
     
-        .Gorder-text0 {
+        .Gorder-total {
+            text-align: right;
             font-size: 15px;
-            margin-right: 10px;
+            margin-top: 5px; /* Space above the total */
         }
     </style>
-    
-    
-    
 </head>
 
 <body class="GcartBody">
-
     <header class="header">
-        <div class="header-container">
-            <a href="#" class="logo-link">
-                <img src="logo.jpg" alt="logo" class="logo-image">
-            </a>
-            <h1 class="website-name">Pick Quick</h1>
-            <nav class="nav">
-                <a href="#" class="nav-link">Home</a>
-                <span class="nav-separator">|</span>
-                <a href="#" class="nav-link">Seller page</a>
-                <span class="nav-separator">|</span>
-                <a href="#" class="nav-link">User page</a>
-                <span class="nav-separator">|</span>
-                <a href="#" class="nav-link">Women's page</a>
-                <span class="nav-separator">|</span>
-                <a href="#" class="nav-link">Men's page</a>
-                <span class="nav-separator">|</span>
-                <a href="#" class="nav-link">Kid's page</a>
-                <span class="nav-separator">|</span>
-                <a href="#" class="nav-link">Accessories page</a>
-                <span class="nav-separator">|</span>
-                <a href="#" class="nav-link">Cart</a>
-            </nav>
-        </div>
+        <!-- Header content -->
     </header>
 
     <main>
@@ -77,67 +53,36 @@
                 <div class="Gorder-details">
                     <span>Order #3567942</span>
                     <span>03/11/2020</span>
-                    <span>Total Price: 60.50 SR</span>
+                    <span>-</span>
+                    <span>10:39:00</span>
                 </div>
-                <p class="Gorder-text0"> 10:39:00</p>
+                <div class="Gorder-total">60.50 SR</div>
             </div>
-    
+
             <div class="Gorder">
                 <div class="Gorder-details">
                     <span>Order #1830025</span>
                     <span>26/11/2019</span>
+                    <span>-</span>
                     <span>23:34:15</span>
                 </div>
-                <p class="Gorder-text0">Total Price: 46.00 SR</p>
+                <div class="Gorder-total">46.00 SR</div>
             </div>
-    
+
             <div class="Gorder">
                 <div class="Gorder-details">
                     <span>Order #9533464</span>
                     <span>01/05/2019</span>
+                    <span>-</span>
                     <span>17:22:55</span>
                 </div>
-                <p class="Gorder-text0">Total Price: 23.50 SR</p>
+                <div class="Gorder-total">23.50 SR</div>
             </div>
         </div>
     </main>
-    
-    
-    
 
     <footer class="site-footer">
-        <div class="footer-title">contact</div>
-        <div class="footer-content">
-          <div class="contact-info">
-            <a href="#" class="contact-item">
-              <img src="phone.png" alt=" " class="icon">
-              <span>+966 xx xxx xxxx</span>
-            </a>
-            <a href="#" class="contact-item">
-              <img src="emmail.JPG" alt=" " class="icon">
-              
-              <span>pick-quick@shopping.com</span>
-            </a>
-          </div>
-          
-          <div class="social-media">
-            
-            <a href="https://www.facebook.com/" class="social-icon">
-              <img src="facebook.jpg" alt=" ">
-            </a>
-            <a href="https://twitter.com/?lang=en" class="social-icon">
-              <img src="x.jpg" alt=" ">
-            </a>
-            <a href="https://www.instagram.com/" class="social-icon">
-              <img src="instgram.jpg" alt=" ">
-            </a>
-          </div>
-      
-          <div class="footer-text">
-            <p>© All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
-
+        <!-- Footer content -->
+    </footer>
 </body>
 </html>
