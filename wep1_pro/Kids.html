@@ -5,13 +5,12 @@
   <link rel="stylesheet" href="stylesheet.css">
 
   <style>
-     .content {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
-    padding: 20px;
-  }
-  
+    .content {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   grid-gap: 20px;
+   padding: 20px;
+ }
   .product {
     border: 1px solid #ccc;
     padding: 10px;
@@ -55,47 +54,55 @@
       <div class="sort-by">
         Sort By:
         <select>
-          <option value="price-low-high">Price Low to High</option>
-          <option value="price-high-low">Price High to Low</option>
-          <option value="name-a-z">Name A-Z</option>
-          <option value="name-z-a">Name Z-A</option>
+          <optgroup label="Price">
+                <option value="price-low-high">Price Low to High</option>
+                <option value="price-high-low">Price High to Low</option>
+            </optgroup>
+            <optgroup label="Name">
+                <option value="name-a-z">Name A-Z</option>
+                <option value="name-z-a">Name Z-A</option>
+            </optgroup>
+            <optgroup label="Rating">
+                <option value="rating-high-low">Rating High to Low</option>
+                <option value="rating-low-high">Rating Low to High</option>
+            </optgroup>
         </select>
       </div>
     
       <div class="content">
         <div class="product">
           <img src="Cardigan.jpg" alt="cardigan" height="150" >
-          <h3>Cardigan</h3>
+          <h3>Cardigan</h3> <div class="rating">⭐⭐⭐⭐</div>
           <p>$19.99</p>
           <button>Add to Cart</button>
         </div>
         <div class="product">
             <img src="DressK.JPG" alt="dress" height="150">
-            <h3>dress</h3>
+            <h3>dress</h3> <div class="rating">⭐⭐⭐⭐⭐</div>
             <p>$24.99</p>
             <button>Add to Cart</button>
           </div>
           <div class="product">
             <img src="GShirtK.jpg" alt="Shirt" height="150">
-            <h3>Girl Shirt</h3>
+            <h3>Girl Shirt</h3> <div class="rating">⭐⭐⭐</div>
             <p>$14.99</p>
             <button>Add to Cart</button>
           </div>
           <div class="product">
             <img src="BSetK.jpg" alt="Set"height="150">
-            <h3>Boy Set</h3>
+            <h3>Boy Set</h3> <div class="rating">⭐⭐⭐⭐⭐</div>
             <p>$29.99</p>
             <button>Add to Cart</button>
           </div>
           <div class="product">
             <img src="Jumpsuit.jpg" alt="jumpsuit"height="150">
-            <h3>jumpsuit</h3>
+            <h3>jumpsuit</h3> <div class="rating">⭐⭐⭐⭐</div>
             <p>$9.99</p>
             <button>Add to Cart</button>
           </div>
           <div class="product">
             <img src="BShirtK.jpg" alt="Shirt" height="150">
-            <h3>Boy Shirt</h3>
+            <h3>Boy Shirt</h3> <div class="rating">⭐⭐⭐⭐⭐</div>
             <p>$34.99</p>
             <button>Add to Cart</button>
           </div>
