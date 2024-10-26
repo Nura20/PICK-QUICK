@@ -5,215 +5,135 @@
   <link rel="stylesheet" href="stylesheet.css">
   <style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
 
-    /* Container Styles */
-    .container {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      align-items: flex-start;
-      padding: 20px;
-    }
+/* Container Styles */
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 20px;
+ 
+}
+a[href="CARTpage.html"]:visited,
+a[href="orderpage.html"]:visited,
+a[href="evaluation.html"]:visited {
+  color: black; /* ensures the color remains black after visiting */
+}
 
-    /* Header Styles */
-    .header-container {
-      text-align: center;
-      padding: 20px;
-      background-color: #f3f3f3;
-    }
-    .header-container a.logo-link img {
-      width: 50px;
-      height: 50px;
-    }
-    .header-container h1 {
-      font-size: 24px;
-      color: black;
-      margin: 0;
-    }
+/* Page Section Styles */
+.page-section {
+  flex-basis: 30%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  position: relative;
+  padding: 10px;
+}
 
-    /* Navigation Styles */
-    .nav {
-      margin-top: 10px;
-    }
-    .nav-link, .nav-separator {
-      font-size: 14px;
-      color: black;
-      text-decoration: none;
-    }
-    .nav-separator {
-      padding: 0 5px;
-      color: #555;
-    }
 
-    /* Set links for Orders, Cart, and Evaluation to black */
-    a[href="CARTpage.html"],
-    a[href="orderpage.html"],
-    a[href="evaluation.html"] {
-      color: black;
-      text-decoration: none;
-    }
-    a[href="CARTpage.html"]:visited,
-    a[href="orderpage.html"]:visited,
-    a[href="evaluation.html"]:visited {
-      color: black;
-    }
 
-    /* Page Section Styles */
-    .page-section {
-      flex-basis: 30%;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      text-align: center;
-      padding: 10px;
-    }
-    .page-section .ICON img {
-      width: 100px;
-      height: 100px;
-    }
-    .page-section h2 {
-      font-size: 18px;
-      color: #333;
-      margin: 10px 0;
-    }
-    .page-section p {
-      font-size: 14px;
-      color: #666;
-    }
+.ICON img {
+  width: 300px;
+  height: 300px;
+}
 
-    /* Footer Styles */
-    .site-footer {
-      background-color: #f3f3f3;
-      text-align: center;
-      padding: 20px;
-      margin-top: 20px;
-    }
-    .footer-title {
-      font-size: 18px;
-      color: #333;
-      margin-bottom: 10px;
-    }
-    .footer-content {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      align-items: center;
-    }
-    .contact-info, .social-media {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .contact-item {
-      color: #333;
-      text-decoration: none;
-      font-size: 14px;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      margin: 5px 0;
-    }
-    .contact-item img {
-      width: 15px;
-      height: 15px;
-    }
-    .social-icon img {
-      width: 25px;
-      height: 25px;
-      margin: 5px;
-    }
-    .footer-text p {
-      font-size: 14px;
-      color: #999;
-    }
+.page-section h2 {
+  margin-top: 0;
+}
+
+.page-section p {
+  margin-bottom: 0;
+}
+
   </style>
 </head>
 <body>
-
   <header class="header">
     <div class="header-container">
       <a href="#" class="logo-link">
-        <img src="logo.jpg" alt="logo">
+        <img src="logo.jpg" alt="logo" class="logo-image">
       </a>
       <h1 class="website-name">Pick Quick</h1>
       <nav class="nav">
-        <a href="homepage.html" class="nav-link">Home</a>
+        <a href="homepage.html" class="nav-link" >Home
+        </a>
         <span class="nav-separator">|</span>
-        <a href="dashboardseller.html" class="nav-link">Seller page</a>
+        <a href="dashboardsaller.html" class="nav-link">Seller page</a>
         <span class="nav-separator">|</span>
-        <a href="Userpage.html" class="nav-link">User page</a>
+        <a href="Userpage.html" class="nav-link" >User page</a>
         <span class="nav-separator">|</span>
         <a href="Women.html" class="nav-link">Women's page</a>
         <span class="nav-separator">|</span>
         <a href="Men.html" class="nav-link">Men's page</a>
         <span class="nav-separator">|</span>
-        <a href="Kids.html" class="nav-link">Kids' page</a>
+        <a href="Kids.html" class="nav-link">kid's page</a>
         <span class="nav-separator">|</span>
-        <a href="Accessories.html" class="nav-link">Accessories page</a>
+        <a href="Accessories.html" class="nav-link">Accessories's page</a>
         <span class="nav-separator">|</span>
         <a href="CARTpage.html" class="nav-link">Cart</a>
+       
       </nav>
     </div>
   </header>
+    
+    <div class="container">
+     <a href ="CARTpage.html"><div class="page-section">
+        <div class="ICON"><img src="1.png" alt="Cart"  > </div>
+        <h2>Your cart</h2>
+        <p>View,edit,and checkout for cart!</p>
+      </div></a>
 
-  <div class="container">
-    <a href="CARTpage.html">
-      <div class="page-section">
-        <div class="ICON"><img src="1.png" alt="Cart"></div>
-        <h2>Your Cart</h2>
-        <p>View, edit, and checkout for cart!</p>
-      </div>
-    </a>
-
-    <a href="orderpage.html">
-      <div class="page-section">
+      <a href ="orderpage.html"><div class="page-section">
         <div class="ICON"><img src="2.png" alt="Orders"></div>
         <h2>Orders</h2>
-        <p>Check order history and progress!</p>
-      </div>
-    </a>
-
-    <a href="evaluation.html">
+        <p>Check order history and <br> progress!</p>
+      </div></a>
+      <a href="evaluation.html">
       <div class="page-section">
-        <div class="ICON"><img src="3.png" alt="Evaluation"></div>
-        <h2>Product Evaluation</h2>
-        <p>Share your experience and rate the product!</p>
-      </div>
-    </a>
-  </div>
-
-  <footer class="site-footer">
-    <div class="footer-title">Contact</div>
-    <div class="footer-content">
-      <div class="contact-info">
-        <a href="#" class="contact-item">
-          <img src="phone.png" alt="phone icon">
-          <span>+966 xx xxx xxxx</span>
-        </a>
-        <a href="#" class="contact-item">
-          <img src="emmail.JPG" alt="email icon">
-          <span>pick-quick@shopping.com</span>
-        </a>
-      </div>
-      <div class="social-media">
-        <a href="https://www.facebook.com/" class="social-icon">
-          <img src="facebook.jpg" alt="Facebook">
-        </a>
-        <a href="https://twitter.com/?lang=en" class="social-icon">
-          <img src="x.jpg" alt="Twitter">
-        </a>
-        <a href="https://www.instagram.com/" class="social-icon">
-          <img src="instgram.jpg" alt="Instagram">
-        </a>
-      </div>
+        <div class="ICON"><img src="3.png" alt="evaluation"></div>
+        <h2>Product evaluation</h2>
+        <p>Share your experience and rate the product !</p>
+      </div></a>
     </div>
-    <div class="footer-text">
-      <p>© All rights reserved.</p>
-    </div>
-  </footer>
-
-</body>
-</html>
+    
+ 
+    <footer class="site-footer">
+      <div class="footer-title">contact</div>
+      <div class="footer-content">
+        <div class="contact-info">
+          <a href="#" class="contact-item">
+            <img src="phone.png" alt=" " class="icon">
+            <span>+966 xx xxx xxxx</span>
+          </a>
+          <a href="#" class="contact-item">
+            <img src="emmail.JPG" alt=" " class="icon">
+            
+            <span>pick-quick@shopping.com</span>
+          </a>
+        </div>
+        
+        <div class="social-media">
+          
+          <a href="https://www.facebook.com/" class="social-icon">
+            <img src="facebook.jpg" alt=" ">
+          </a>
+          <a href="https://twitter.com/?lang=en" class="social-icon">
+            <img src="x.jpg" alt=" ">
+          </a>
+          <a href="https://www.instagram.com/" class="social-icon">
+            <img src="instgram.jpg" alt=" ">
+          </a>
+        </div>
+    
+        <div class="footer-text">
+          <p>© All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+  </html>
