@@ -1,25 +1,108 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Pick Quick</title>
+  <meta charset="UTF-8">
+  <title>Pick Quick - Kids' Page</title>
   <link rel="stylesheet" href="stylesheet.css">
-
   <style>
+    /* Style adjustments */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header-container {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+    }
+
+    .logo-link img {
+      width: 50px;
+      height: 50px;
+    }
+
+    .website-name {
+      font-size: 24px;
+      color: black;
+      margin-left: 10px;
+    }
+
+    .nav {
+      margin-left: auto;
+    }
+
+    .nav-link, .nav-separator {
+      font-size: 14px;
+      color: black;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+
+    .sort-by {
+      margin: 20px;
+    }
+
     .content {
-   display: grid;
-   grid-template-columns: repeat(3, 1fr);
-   grid-gap: 20px;
-   padding: 20px;
- }
-  .product {
-    border: 1px solid #ccc;
-    padding: 10px;
-  }
-  
-  /* Sort by styles */
-  .sort-by {
-    margin-bottom: 20px;
-  }
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .product {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .product img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .rating {
+      font-size: 18px;
+      color: #FFD700;
+    }
+
+    .site-footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+    .footer-title {
+      font-size: 18px;
+      color: #333;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .contact-item {
+      color: #333;
+      text-decoration: none;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .contact-item img, .social-icon img {
+      width: 25px;
+      height: 25px;
+    }
+
+    .footer-text {
+      font-size: 14px;
+      color: #999;
+    }
   </style>
 </head>
 <body>
@@ -30,117 +113,116 @@
       </a>
       <h1 class="website-name">Pick Quick</h1>
       <nav class="nav">
-        <a href="homepage.html" class="nav-link" >Home
-        </a>
+        <a href="homepage.html" class="nav-link">Home</a>
         <span class="nav-separator">|</span>
         <a href="dashboardsaller.html" class="nav-link">Seller page</a>
         <span class="nav-separator">|</span>
-        <a href="Userpage.html" class="nav-link" >User page</a>
+        <a href="Userpage.html" class="nav-link">User page</a>
         <span class="nav-separator">|</span>
         <a href="Women.html" class="nav-link">Women's page</a>
         <span class="nav-separator">|</span>
         <a href="Men.html" class="nav-link">Men's page</a>
         <span class="nav-separator">|</span>
-        <a href="Kids.html" class="nav-link">kid's page</a>
+        <a href="Kids.html" class="nav-link">Kid's page</a>
         <span class="nav-separator">|</span>
         <a href="Accessories.html" class="nav-link">Accessories's page</a>
         <span class="nav-separator">|</span>
         <a href="CARTpage.html" class="nav-link">Cart</a>
-       
       </nav>
     </div>
   </header>
-    
-      <div class="sort-by">
-        Sort By:
-        <select>
-          <optgroup label="Price">
-                <option value="price-low-high">Price Low to High</option>
-                <option value="price-high-low">Price High to Low</option>
-            </optgroup>
-            <optgroup label="Name">
-                <option value="name-a-z">Name A-Z</option>
-                <option value="name-z-a">Name Z-A</option>
-            </optgroup>
-            <optgroup label="Rating">
-                <option value="rating-high-low">Rating High to Low</option>
-                <option value="rating-low-high">Rating Low to High</option>
-            </optgroup>
-        </select>
-      </div>
-    
-      <div class="content">
-        <div class="product">
-          <img src="Cardigan.jpg" alt="cardigan" height="150" >
-          <h3>Cardigan</h3> <div class="rating">⭐⭐⭐⭐</div>
-          <p>$19.99</p>
-          <button>Add to Cart</button>
-        </div>
-        <div class="product">
-            <img src="DressK.JPG" alt="dress" height="150">
-            <h3>dress</h3> <div class="rating">⭐⭐⭐⭐⭐</div>
-            <p>$24.99</p>
-            <button>Add to Cart</button>
-          </div>
-          <div class="product">
-            <img src="GShirtK.jpg" alt="Shirt" height="150">
-            <h3>Girl Shirt</h3> <div class="rating">⭐⭐⭐</div>
-            <p>$14.99</p>
-            <button>Add to Cart</button>
-          </div>
-          <div class="product">
-            <img src="BSetK.jpg" alt="Set"height="150">
-            <h3>Boy Set</h3> <div class="rating">⭐⭐⭐⭐⭐</div>
-            <p>$29.99</p>
-            <button>Add to Cart</button>
-          </div>
-          <div class="product">
-            <img src="Jumpsuit.jpg" alt="jumpsuit"height="150">
-            <h3>jumpsuit</h3> <div class="rating">⭐⭐⭐⭐</div>
-            <p>$9.99</p>
-            <button>Add to Cart</button>
-          </div>
-          <div class="product">
-            <img src="BShirtK.jpg" alt="Shirt" height="150">
-            <h3>Boy Shirt</h3> <div class="rating">⭐⭐⭐⭐⭐</div>
-            <p>$34.99</p>
-            <button>Add to Cart</button>
-          </div>
-      </div>
-      <footer class="site-footer">
-        <div class="footer-title">contact</div>
-        <div class="footer-content">
-          <div class="contact-info">
-            <a href="#" class="contact-item">
-              <img src="phone.png" alt=" " class="icon">
-              <span>+966 xx xxx xxxx</span>
-            </a>
-            <a href="#" class="contact-item">
-              <img src="emmail.JPG" alt=" " class="icon">
-              
-              <span>pick-quick@shopping.com</span>
-            </a>
-          </div>
-          
-          <div class="social-media">
-            
-            <a href="https://www.facebook.com/" class="social-icon">
-              <img src="facebook.jpg" alt=" ">
-            </a>
-            <a href="https://twitter.com/?lang=en" class="social-icon">
-              <img src="x.jpg" alt=" ">
-            </a>
-            <a href="https://www.instagram.com/" class="social-icon">
-              <img src="instgram.jpg" alt=" ">
-            </a>
-          </div>
-      
-          <div class="footer-text">
-            <p>© All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
-    </body>
-    </html>
-
   
+  <div class="sort-by">
+    Sort By:
+    <select>
+      <optgroup label="Price">
+        <option value="price-low-high">Price Low to High</option>
+        <option value="price-high-low">Price High to Low</option>
+      </optgroup>
+      <optgroup label="Name">
+        <option value="name-a-z">Name A-Z</option>
+        <option value="name-z-a">Name Z-A</option>
+      </optgroup>
+      <optgroup label="Rating">
+        <option value="rating-high-low">Rating High to Low</option>
+        <option value="rating-low-high">Rating Low to High</option>
+      </optgroup>
+    </select>
+  </div>
+
+  <div class="content">
+    <div class="product">
+      <img src="Cardigan.jpg" alt="Cardigan" height="150">
+      <h3>Cardigan</h3> 
+      <div class="rating">⭐⭐⭐⭐</div>
+      <p>$19.99</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="DressK.JPG" alt="Dress" height="150">
+      <h3>Dress</h3> 
+      <div class="rating">⭐⭐⭐⭐⭐</div>
+      <p>$24.99</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="GShirtK.jpg" alt="Shirt" height="150">
+      <h3>Girl Shirt</h3> 
+      <div class="rating">⭐⭐⭐</div>
+      <p>$14.99</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="BSetK.jpg" alt="Set" height="150">
+      <h3>Boy Set</h3> 
+      <div class="rating">⭐⭐⭐⭐⭐</div>
+      <p>$29.99</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="Jumpsuit.jpg" alt="Jumpsuit" height="150">
+      <h3>Jumpsuit</h3> 
+      <div class="rating">⭐⭐⭐⭐</div>
+      <p>$9.99</p>
+      <button>Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="BShirtK.jpg" alt="Shirt" height="150">
+      <h3>Boy Shirt</h3> 
+      <div class="rating">⭐⭐⭐⭐⭐</div>
+      <p>$34.99</p>
+      <button>Add to Cart</button>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-title">Contact</div>
+    <div class="footer-content">
+      <div class="contact-info">
+        <a href="#" class="contact-item">
+          <img src="phone.png" alt="Phone" class="icon">
+          <span>+966 xx xxx xxxx</span>
+        </a>
+        <a href="#" class="contact-item">
+          <img src="emmail.JPG" alt="Email" class="icon">
+          <span>pick-quick@shopping.com</span>
+        </a>
+      </div>
+      <div class="social-media">
+        <a href="https://www.facebook.com/" class="social-icon">
+          <img src="facebook.jpg" alt="Facebook">
+        </a>
+        <a href="https://twitter.com/?lang=en" class="social-icon">
+          <img src="x.jpg" alt="Twitter">
+        </a>
+        <a href="https://www.instagram.com/" class="social-icon">
+          <img src="instgram.jpg" alt="Instagram">
+        </a>
+      </div>
+      <div class="footer-text">
+        <p>© All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
