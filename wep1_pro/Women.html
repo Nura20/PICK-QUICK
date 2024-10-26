@@ -2,215 +2,73 @@
 <html>
 <head>
   <title>Pick Quick</title>
-  <link rel="stylesheet" href="stylesheet.css">
+  <link rel="Stylesheet" href="Category.css">
   <style>
-    /* Global styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #333;
-  }
-  
-  /* Header styles */
-  .header {
-    background-color: #fff3e0;
-    padding: 2px 0;
-    border-bottom: 1px solid #ddd;
-    
-  }
-  
-  
-  .header-container {
-    display: flex;
-    align-items:flex-end;
-    
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-  
-  .logo-link {
-    text-decoration: none;
-    align-items: center;
-  }
-  
-  .logo-image {
-      display: flex;
-      align-items: flex-start;
-    max-height: 60px;
-    width: auto;
-    margin-right: 20px; 
-    margin-left: 20px; 
-  }
-  
-  .website-name {
-      
-    font-size: 20px;
-    color: #333;
-    margin-right: 500px;
-  }
-  
-  .nav {
-    display: flex;
-    gap: 20px;
-  
-  }
-  
-  .nav-link {
-    color: #333;
-    text-decoration: none;
-    font-size: 12px;
-    margin-left: -1px;
-  }
-  
-  .nav-link:hover {
-    color: #b9aaaa;
-  }
-  
-  /* Content styles */
-  .content {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
-    padding: 20px;
-  }
-  
-  .product {
-    border: 1px solid #ccc;
-    padding: 10px;
-  }
-  
-  /* Pagination styles */
-  .pagination {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-  }
-  
-  .pagination a {
-    color: #333;
-    text-decoration: none;
-    padding: 5px 10px;
-    margin: 0 5px;
-  }
-  
-  .pagination a.active {
-    background-color: #333;
-    color: #fff;
-  }
-  
-  /* Sort by styles */
-  .sort-by {
-    margin-bottom: 20px;
-  }
-  
-  .site-footer {
-    background-color: #fff3e0;
-    color: white;
-    padding: 2px;
-  }
-  .footer-title {
-    text-align: center; /* Center the title */
-    font-size: 18px; /* Adjust the font size as needed */
-    color: rgb(0, 0, 0); /* Title color */
-    margin-bottom: 15px; /* Space between title and content */
-}
-  
-  .footer-content {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    
-  }
-  
-  .contact-info {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-right: 20px;
-   
-  }
-  
-  .contact-item {
-    display: flex;
-    align-items: center;
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-    margin-bottom: 10px;
-  }
-  
-  .contact-item .icon {
-    width: 16px; /* Smaller size for contact icons */
-    height: auto;
-    margin-right: 8px;
-}
-
-  
+    .content {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   grid-gap: 20px;
+   padding: 20px;
+ }
  
-  .social-media {
-    display: flex;
-    justify-content: center;
-    flex: 1;
-    margin: 0 20px;
-  }
-  .media-title {
-    text-align: center; /* Center the title */
-    font-size: 28px; /* Title size */
-    margin-bottom: 30px; /* Space below the title */
-    color: #000000;
-  }
-  
-  .social-icon {
-    display: block;
-    width: 30px;
-    height: auto;
-    margin: 0 10px;
-  }
-  
-  .social-icon img {
-    width: 24px; /* Smaller size for social media icons */
-    height: 24px; /* Maintain aspect ratio */
-    margin: 0 10px;
-    align-items: center;
-}
-
-
-  .footer-text {
-    text-align: right;
-    color: #000000;
-    font-size: 14px;
-    margin-top: auto; /* Pushes copyright to the bottom */
-  }
-  </style>
+ .product {
+   border: 1px solid #ccc;
+   padding: 10px;
+ }
+ 
+ /* Pagination styles */
+ .pagination {
+   display: flex;
+   justify-content: center;
+   margin-top: 20px;
+ }
+ 
+ .pagination a {
+   color: #333;
+   text-decoration: none;
+   padding: 5px 10px;
+   margin: 0 5px;
+ }
+ 
+ .pagination a.active {
+   background-color: #333;
+   color: #fff;
+ }
+ 
+ /* Sort by styles */
+ .sort-by {
+   margin-bottom: 20px;
+ }
+ </style>
 </head>
 <body>
-  <header class="header">
-    <div class="header-container">
-        <a href="#" class="logo-link">
-            <img src="logo.jpg" alt="logo" class="logo-image">
-        </a>
-        <h1 class="website-name">Pick Quick</h1>
-        <nav class="nav">
-            <a href="#" class="nav-link">Home</a>
+    <header class="header">
+        <div class="header-container">
+          <a href="#" class="logo-link">
+            <img src="pick-quick-logo.png" alt="logo" class="logo-image">
+          </a>
+          <h1 class="website-name">Pick Quick</h1>
+          <nav class="nav">
+            <a href="#" class="nav-link">Home
+            </a>
             <span class="nav-separator">|</span>
             <a href="#" class="nav-link">Seller page</a>
             <span class="nav-separator">|</span>
             <a href="#" class="nav-link">User page</a>
             <span class="nav-separator">|</span>
-            <a href="#" class="nav-link">Women's page</a>
+            <a href="#" class="nav-link">Women's Fashion</a>
             <span class="nav-separator">|</span>
-            <a href="#" class="nav-link">Men's page</a>
+            <a href="#" class="nav-link">Men's Fashion</a>
             <span class="nav-separator">|</span>
-            <a href="#" class="nav-link">Kid's page</a>
+            <a href="#" class="nav-link">Kid's Fashion</a>
             <span class="nav-separator">|</span>
-            <a href="#" class="nav-link">Accessories page</a>
+            <a href="#" class="nav-link">Accessories</a>
             <span class="nav-separator">|</span>
             <a href="#" class="nav-link">Cart</a>
-        </nav>
-    </div>
-</header>
+           
+          </nav>
+        </div>
+      </header>
     
       <div class="sort-by">
         Sort By:
