@@ -325,7 +325,106 @@ display: flex;
   }
 
 
-  
+  /* Light Theme */
+.theme-light {
+  background-color: #ffffff;
+  color: #333333;
+}
+
+.theme-light .header {
+  background-color: #fff3e0;
+  color: #333333
+}
+
+.theme-light .site-footer {
+  background-color: #fff3e0;
+  color: #333333
+}
+
+.theme-light .vision-title,
+.theme-light .offers-title,
+.theme-light .footer-title {
+  color: #e59e33;
+}
+
+.theme-light .nav-link {
+  color: #333333;
+}
+
+.theme-light .nav-link:hover {
+  color: #b9aaaa;
+}
+
+/* Dark Theme */
+.theme-dark {
+  background-color: #7c5353; /* Dark background for the body */
+  color: #e0e0e0; /* Light text for contrast */
+}
+
+.theme-dark .header {
+  background-color: #571e1e; /* Darker header */
+  color: #e0e0e0;
+}
+
+.theme-dark .site-footer {
+  background-color: #571e1e;
+  color: #cccccc;
+}
+
+.theme-dark .vision-title,
+.theme-dark .offers-title,
+.theme-dark .footer-title {
+  color: #150b0b; /* Highlighted text color */
+}
+
+.theme-dark .nav-link {
+  color: #fff7f7;
+}
+
+.theme-dark .nav-link:hover {
+  color: #e5e3e2;
+}
+
+.theme-dark .offer-item {
+  background-color: #6e3d3d; /* Darker offer background */
+}
+
+.theme-dark .offer-image {
+  border: 1px solid #2b1616;
+}
+
+.theme-dark .review {
+  background-color: #1e1e1e; /* Darker review cards */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Slightly stronger shadow */
+}
+
+.theme-dark .contact-item {
+  color: #f1ebeb;
+}
+
+.theme-dark .social-icon img {
+  filter: invert(100%); /* Invert icons for better visibility */
+}
+
+.theme-dark .footer-text {
+  color: #cccccc;
+}
+
+
+/* Theme Toggle Button Below Header */
+#theme-toggle-btn {
+  padding: 1px 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #565d64;
+  color: #a5b8cb;
+  font-size: 16px;
+  margin: 10px auto; /* Add spacing below the header */
+  display: block; /* Center the button */
+  text-align: center;
+}
+
  
 
 
