@@ -178,42 +178,6 @@
       <h2 class="heof">OFFERS</h2>
       <ul class="offers-list" id="offersList">
         <!-- Dynamic offers will be populated here -->
-        <li>
-          <div class="offer-item">
-            <div class="offer-image">
-              <img src="offer1.jpg" alt="Huge discount">
-            </div>
-            <label class="offer-label" for="offer1">Huge discount on the women's clothes 70% for just a week!</label>
-            <input type="checkbox" class="checkbox" id="offer1" data-id="1">
-          </div>
-        </li>
-        <li>
-          <div class="offer-item">
-            <div class="offer-image">
-              <img src="offer2.jpg" alt="30% sales for 2days!">
-            </div>
-            <label class="offer-label" for="offer2">Buy one and get one free for both women's and men's Clothes</label>
-            <input type="checkbox" class="checkbox" id="offer2" data-id="2">
-          </div>
-        </li>
-        <li>
-          <div class="offer-item">
-            <div class="offer-image">
-              <img src="offer3.jpg" alt="">
-            </div>
-            <label class="offer-label" for="offer3">30% discount just for 2 days for all the category!</label>
-            <input type="checkbox" class="checkbox" id="offer3" data-id="3">
-          </div>
-        </li>
-        <li>
-          <div class="offer-item">
-            <div class="offer-image">
-              <img src="kids1.jpg" alt="30% sales for kids">
-            </div>
-            <label class="offer-label" for="offer4">Buy one and get one free for both women's and men's Clothes</label>
-            <input type="checkbox" class="checkbox" id="offer4" data-id="4">
-          </div>
-        </li>
       </ul>
       <button class="delete-button" type="button" onclick="deleteSelectedOffers()">DELETE</button>
     </div>
@@ -232,7 +196,7 @@
         <div class="form-group">
           <label for="offerPhoto">Offer Photo</label>
           <div class="input-group">
-            <input type="file" id="offerPhoto" class="browse-input" accept="image/*">
+            <input type="file" id="offerPhoto" class="browse-input" accept="image/*" required>
           </div>
           <div class="image-preview-box">
             <img id="imagePreview" src="" alt="Image Preview" style="display: none;">
@@ -246,7 +210,7 @@
   </div>
 
   <script>
-    const offers = [
+    let offers = [
       { id: 1, name: "Huge discount on the women's clothes 70% for just a week!", description: "Huge discount on the women's clothes for a limited time", image: "offer1.jpg" },
       { id: 2, name: "Buy one and get one free for both women's and men's Clothes", description: "Buy one and get one free offer for women's and men's clothes", image: "offer2.jpg" },
       { id: 3, name: "30% discount just for 2 days for all the category!", description: "Huge discount on all categories for 2 days", image: "offer3.jpg" },
@@ -289,7 +253,7 @@
       if (confirmDelete) {
         // Filter out the deleted offers
         offers = offers.filter(offer => !selectedOffers.includes(offer.id));
-        displayOffers();
+        displayOffers(); // Re-display offers after deletion
       }
     }
 
@@ -298,7 +262,15 @@
       
       const offerName = document.getElementById("offerName").value;
       const offerDescription = document.getElementById("offerDescription").value;
+      const offerPhoto = document.getElementById("offerPhoto").files[0];
       
+      // Check if the image is selected
+      if (!offerPhoto) {
+        alert("Please upload an image for the offer.");
+        return;
+      }
+
+      // Check if all required fields are filled
       if (!offerName || !offerDescription) {
         alert("Please fill in all the fields.");
         return;
@@ -308,7 +280,7 @@
         id: offers.length + 1,
         name: offerName,
         description: offerDescription,
-        image: document.getElementById("offerPhoto").files[0]?.name || "default.jpg"
+        image: offerPhoto.name
       };
 
       offers.push(newOffer);
@@ -318,6 +290,7 @@
 
     displayOffers();
   </script>
+
 
   <footer class="site-footer">
     <div class="footer-title">contact</div>
