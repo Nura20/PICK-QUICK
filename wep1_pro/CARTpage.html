@@ -5,7 +5,7 @@
     <title>Your Cart</title>
     <link rel="stylesheet" href="stylesheet.css">
     <style>
-        .Gyourcart {
+       .Gyourcart {
             text-align: center;
         }
         .GcartBody {
@@ -45,10 +45,11 @@
             width: 100%;
             border-collapse: collapse;
             margin-bottom: 20px;
+            text-align: center;
         }
         .Gth-td {
-            padding: 15px;
-            text-align: left;
+            padding: 10px;
+            text-align: center;
             border-bottom: 1px solid #ddd;
         }
         .Gproduct-info {
@@ -86,11 +87,12 @@
             margin-top: 20px; /* Optional: Add margin if needed */
         }
         .Gempty-cart, .Gcheckout {
-            padding: 10px 20px; /* Adjust padding for the buttons */
+            padding: 12px 25px; /* Adjust padding for the buttons */
             border-radius: 8px;
             border: none;
             font-size: 16px;
             margin-bottom: 60px;
+            
         }
         .Gempty-cart {
             background-color: #e0e0e0;
@@ -102,7 +104,7 @@
             background-color: #d4d4d4;
         }
         .Gcheckout {
-            margin-left: 450px;
+            margin-left: 550px;
             background-color: #28a745;
             color: white;
             padding-right: 30px;
@@ -119,6 +121,9 @@
         }
     </style>
 </head>
+
+
+
 <header class="header">
     <div class="header-container">
       <a href="#" class="logo-link">
@@ -149,72 +154,161 @@
     
 
 <body class="GcartBody">
+    <main>
+        <h2 class="Gyourcart">Your Cart</h2>
+        <button class="Gempty-cart">Empty Cart</button>
+        <div class="Gcart-container">
+            <table class="Gcart-items">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Item Name</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total Price</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="cart-items">
+                    <!-- Product 1 -->
+                    <tr data-product-id="1">
+                        <td class="Gth-td">
+                            <div class="Gproduct-info">
+                                <img class="Gimage-placeholder" src="men.JPG" alt="men t-shirt">
+                            </div>
+                        </td>
+                        <td class="Gth-td">men t-shirt</td>
+                        <td class="Gth-td">15.00SR</td>
+                        <td class="Gth-td">
+                            <input type="number" value="2" min="1" class="quantity-input">
+                        </td>
+                        <td class="Gth-td total-price">30.00SR</td>
+                        <td class="Gth-td">
+                            <button class="Gdelete-btn">🗑️</button>
+                        </td>
+                    </tr>
+                    <!-- Product 2 -->
+                    <tr data-product-id="2">
+                        <td class="Gth-td">
+                            <div class="Gproduct-info">
+                                <img class="Gimage-placeholder" src="women.JPG" alt="dress">
+                            </div>
+                        </td>
+                        <td class="Gth-td">dress</td>
+                        <td class="Gth-td">200.00SR</td>
+                        <td class="Gth-td">
+                            <input type="number" value="1" min="1" class="quantity-input">
+                        </td>
+                        <td class="Gth-td total-price">200.00SR</td>
+                        <td class="Gth-td">
+                            <button class="Gdelete-btn">🗑️</button>
+                        </td>
+                    </tr>
+                    <!-- Product 3 -->
+                    <tr data-product-id="3">
+                        <td class="Gth-td">
+                            <div class="Gproduct-info">
+                                <img class="Gimage-placeholder" src="acc1.jpg" alt="sunglass">
+                            </div>
+                        </td>
+                        <td class="Gth-td">sunglass</td>
+                        <td class="Gth-td">22.00SR</td>
+                        <td class="Gth-td">
+                            <input type="number" value="3" min="1" class="quantity-input">
+                        </td>
+                        <td class="Gth-td total-price">66.00SR</td>
+                        <td class="Gth-td">
+                            <button class="Gdelete-btn">🗑️</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-   
+        <div class="Gbuttons-container">
+            <button class="Gcheckout">Check Out</button>
+        </div>
+    </main>
 
-<main>
-    <h2 class="Gyourcart">Your Cart</h2>
-    <button class="Gempty-cart">Empty Cart</button>
-    <div class="Gcart-container">
-        <table class="Gcart-items">
-            <thead>
-                <tr>
-                    <th>Item</th>
-                    <th>Item Name</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Total Price</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Product 1 -->
-                <tr>
-                    <td class="Gth-td">
-                        <div class="Gproduct-info">
-                            <img class="Gimage-placeholder" src="men.JPG" alt="men t-shirt">
-                        </div>
-                    </td>
-                    <td class="Gth-td">men t-shirt</td>
-                    <td class="Gth-td">15.00SR</td>
-                    <td class="Gth-td"><input type="number" value="2" min="1"></td>
-                    <td class="Gth-td">30.00SR</td>
-                    <td class="Gth-td"><button class="Gdelete-btn">🗑️</button></td>
-                </tr>
-                <!-- Product 2 -->
-                <tr>
-                    <td class="Gth-td">
-                        <div class="Gproduct-info">
-                            <img class="Gimage-placeholder" src="women.JPG" alt="dress">
-                        </div>
-                    </td>
-                    <td class="Gth-td">dress</td>
-                    <td class="Gth-td">200.0SR</td>
-                    <td class="Gth-td"><input type="number" value="1" min="1"></td>
-                    <td class="Gth-td">200.0SR</td>
-                    <td class="Gth-td"><button class="Gdelete-btn">🗑️</button></td>
-                </tr>
-                <!-- Product 3 -->
-                <tr>
-                    <td class="Gth-td">
-                        <div class="Gproduct-info">
-                            <img class="Gimage-placeholder" src="acc1.jpg" alt="sunglass">
-                        </div>
-                    </td>
-                    <td class="Gth-td">sunglass</td>
-                    <td class="Gth-td">22.00SR</td>
-                    <td class="Gth-td"><input type="number" value="3" min="1"></td>
-                    <td class="Gth-td">66.00SR</td>
-                    <td class="Gth-td"><button class="Gdelete-btn">🗑️</button></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+    <script>
+        // Get necessary elements
+        const cartItemsContainer = document.getElementById('cart-items');
+        const emptyCartBtn = document.querySelector('.Gempty-cart');
+        const checkoutBtn = document.querySelector('.Gcheckout');
 
-    <div class="Gbuttons-container">
-        <button class="Gcheckout" onclick="location.href='acknowledge.html'">Check Out</button>
-    </div>
-</main>
+        // Function to update the total price for a product
+        function updateTotalPrice(row) {
+            const priceElement = row.querySelector('td:nth-child(3)');
+            const quantityInput = row.querySelector('.quantity-input');
+            const totalPriceElement = row.querySelector('.total-price');
+
+            const price = parseFloat(priceElement.textContent.replace('SR', '').trim());
+            const quantity = parseInt(quantityInput.value, 10);
+            const totalPrice = price * quantity;
+
+            totalPriceElement.textContent = `${totalPrice.toFixed(2)}SR`;
+        }
+
+        // Update the total price whenever the quantity changes
+        cartItemsContainer.addEventListener('input', (e) => {
+            if (e.target.classList.contains('quantity-input')) {
+                const row = e.target.closest('tr');
+                updateTotalPrice(row);
+                updateCartSummary(); // Update cart total when quantity changes
+            }
+        });
+
+        // Delete product
+        cartItemsContainer.addEventListener('click', (e) => {
+            if (e.target.classList.contains('Gdelete-btn')) {
+                const row = e.target.closest('tr');
+                row.remove();
+                updateCartSummary(); // Update cart total when item is removed
+            }
+        });
+
+        // Empty the cart
+        emptyCartBtn.addEventListener('click', () => {
+            const rows = cartItemsContainer.querySelectorAll('tr');
+            rows.forEach(row => row.remove());
+            updateCartSummary(); // Update cart total when cart is emptied
+        });
+
+        // Function to update the cart summary (total cost)
+        function updateCartSummary() {
+            const rows = cartItemsContainer.querySelectorAll('tr');
+            let totalCost = 0;
+
+            rows.forEach(row => {
+                const totalPriceElement = row.querySelector('.total-price');
+                const totalPrice = parseFloat(totalPriceElement.textContent.replace('SR', '').trim());
+                totalCost += totalPrice;
+            });
+
+            if (rows.length === 0) {
+                totalCost = 0;
+            }
+
+            // Store total cost in localStorage
+            localStorage.setItem('totalCost', totalCost.toFixed(2));
+        }
+
+        // Handle checkout
+        checkoutBtn.addEventListener('click', () => {
+            updateCartSummary();  // Ensure the total is updated before checkout
+            const totalCost = localStorage.getItem('totalCost');
+            alert(`Thank you for your purchase! Total Cost: ${totalCost} SR`);
+
+            // Redirect to the evaluation page
+            window.location.href = 'evaluation.html';
+        });
+
+        // Initially update the total prices in the cart
+        const allRows = cartItemsContainer.querySelectorAll('tr');
+        allRows.forEach(row => {
+            updateTotalPrice(row);
+        });
+    </script>
 
 <footer class="site-footer">
     <div class="footer-title">Contact</div>
