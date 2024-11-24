@@ -34,9 +34,10 @@
       </nav>
     </div>
   </header>
+   <!-- Theme toggle button -->
+   <button id="theme-toggle-btn">Switch to Dark Theme</button>
 
-  <!-- Theme toggle button -->
-  <button id="theme-toggle-btn">Switch to Dark Theme</button>
+  <p id="current-week-date"></p>
 
   <!-- Main content -->
   <main>
@@ -48,79 +49,97 @@
 
     <section class="offers">
       <h2 class="offers-title">Special Offers</h2>
-      <div class="offers-container">
-        <!-- Offer items -->
+      <div class="offers-container" id="offers-container">
+        <!-- Initially visible offers -->
         <div class="offer-item">
-          <a href="offer1.html">
+          <a href="Women.html">
             <img src="offer1.JPG" alt="Offer 1" class="offer-image">
           </a>
           <h3 class="offer-title">Huge discount on the women's clothes, 70% for just a week!</h3>
         </div>
         <div class="offer-item">
-          <a href="offer2.html">
+          <a href="homepage.html">
             <img src="offer3.jpg" alt="Offer 2" class="offer-image">
           </a>
-          <h3 class="offer-title">30% discount just for 2 days for all the category!</h3>
+          <h3 class="offer-title">30% discount just for 2 days for all the categories!</h3>
         </div>
         <div class="offer-item">
-          <a href="offer3.html">
+          <a href="Women.html">
             <img src="offer2.JPG" alt="Offer 3" class="offer-image">
           </a>
-          <h3 class="offer-title">Buy one and get one free for both women's and men's Clothes</h3>
+          <h3 class="offer-title">Buy one and get one free for women's Clothes</h3>
         </div>
+    
+        <!-- Hidden offers -->
+        <div class="offer-item hidden">
+          <a href="Women.html">
+            <img src="offer4.JPG" alt="Offer 4" class="offer-image">
+          </a>
+          <h3 class="offer-title">Up to 30% off on womens clothing this weekend only!</h3>
+        </div>
+        <div class="offer-item hidden">
+          <a href="Kids.html">
+            <img src="offer5.AVIF" alt="Offer 5" class="offer-image">
+            
 
-        <div class="offer-item">
-          <a href="offer4.html">
-            <img src="offer5.AVIF" alt="Offer 4" class="offer-image">
           </a>
-          <h3 class="offer-title">New sales for kids clothing in all ages!</h3>
+          <h3 class="offer-title">Exclusive: 20% off on kids clothes for the next 3 days!</h3>
+
         </div>
-        <div class="offer-item">
-          <a href="offer5.html">
-            <img src="kids1.jpg" alt="Offer 5" class="offer-image">
-          </a>
-          <h3 class="offer-title">30% sales for the kids clothes limited edition</h3>
-        </div>
-        <div class="offer-item">
-          <a href="offer6.html">
-            <img src="acc.jpg" alt="Offer 6" class="offer-image">
-          </a>
-          <h3 class="offer-title">30% off for the women's limited edition clothes for one week!</h3>
-        </div>
-      
         
+        <div class="offer-item hidden">
+          <a href="Men.html">
+            <img src="offer1.JPG" alt="Offer 6" class="offer-image">
+          </a>
+          <h3 class="offer-title">Up to 50% off in mens clothing this weekend only!</h3>
+        </div>
+      </div>
+    
+      <!-- More button -->
+      <button id="more-offers-btn">Show More Offers</button>
+    </section>
+    
+
+    <section class="categories">
+    
+      <div class="categories-container">
+        <!-- Men's Category -->
+        <div class="category-item">
+          <a href="Men.html">
+            <img src="men.jpg" alt="Men's Category" class="category-image">
+            <h3 class="category-title">Mens</h3>
+          </a>
+        </div>
+        <!-- Women's Category -->
+        <div class="category-item">
+          <a href="Women.html">
+            <img src="women.jpg" alt="Women's Category" class="category-image">
+            <h3 class="category-title">Womens</h3>
+          </a>
+        </div>
+        <!-- Kid's Category -->
+        <div class="category-item">
+          <a href="Kids.html">
+            <img src="kids.jpg" alt="Kids' Category" class="category-image">
+            <h3 class="category-title">Kids</h3>
+          </a>
+        </div>
+        <!-- Accessories Category -->
+        <div class="category-item">
+          <a href="Accessories.html">
+            <img src="acc.jpg" alt="Accessories Category" class="category-image">
+            <h3 class="category-title">Accessories</h3>
+          </a>
+        </div>
       </div>
     </section>
-
-    <div class="category-icons">
-      <div class="category-icon">
-        <a href="mens-clothes.html">
-          <img src="men.JPG" alt="Men's Clothes">
-        </a>
-        <span>Men's</span>
-      </div>
-      <div class="category-icon">
-        <a href="womens-clothes.html">
-          <img src="women.JPG" alt="Women's Clothes">
-        </a>
-        <span>Women's</span>
-      </div>
-      <div class="category-icon">
-        <a href="kids-clothes.html">
-          <img src="kids.JPG" alt="Kids Clothes">
-        </a>
-        <span>Kids</span>
-      </div>
-      <div class="category-icon">
-        <a href="Accessories.html">
-          <img src="acc.JPG" alt="Accessories">
-        </a>
-        <span>Accessories</span>
-      </div>
-    </div>
-
+    
+    
+    
     <section class="user-reviews">
       <h2 class="reviews-title">Customer Reviews</h2>
+    
+      <!-- Review 1 -->
       <div class="review">
         <div class="review-content">
           <div class="review-header">
@@ -132,7 +151,14 @@
         <div class="review-image">
           <img src="kids.JPG" alt="Review Image">
         </div>
+        
+        <!-- Hidden details that show on hover -->
+        <div class="review-details" style="display: none;">
+          <p class="review-detail-text">Alice Johnson bought a jacket from the Women's section and was thrilled with the fit and quality!</p>
+        </div>
       </div>
+    
+      <!-- Review 2 -->
       <div class="review">
         <div class="review-content">
           <div class="review-header">
@@ -144,7 +170,14 @@
         <div class="review-image">
           <img src="men.jpg" alt="Review Image">
         </div>
+    
+        <!-- Hidden details that show on hover -->
+        <div class="review-details" style="display: none;">
+          <p class="review-detail-text">Michael Smith bought a pair of sneakers and was pleased with the quick delivery and quality!</p>
+        </div>
       </div>
+    
+      <!-- Review 3 -->
       <div class="review">
         <div class="review-content">
           <div class="review-header">
@@ -156,74 +189,51 @@
         <div class="review-image">
           <img src="women.jpg" alt="Review Image">
         </div>
+    
+        <!-- Hidden details that show on hover -->
+        <div class="review-details" style="display: none;">
+          <p class="review-detail-text">Ali Johnson bought a dress from the Women's collection and was amazed by the stylish design!</p>
+        </div>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
   <footer class="site-footer">
-    <div class="footer-title">Contact</div>
+    <div class="footer-title">contact</div>
     <div class="footer-content">
       <div class="contact-info">
         <a href="#" class="contact-item">
-          <img src="phone.png" alt="" class="icon">
+          <img src="phone.png" alt=" " class="icon">
           <span>+966 xx xxx xxxx</span>
         </a>
         <a href="#" class="contact-item">
-          <img src="emmail.JPG" alt="" class="icon">
+          <img src="emmail.JPG" alt=" " class="icon">
+          
           <span>pick-quick@shopping.com</span>
         </a>
       </div>
-
+      
       <div class="social-media">
+        
         <a href="https://www.facebook.com/" class="social-icon">
-          <img src="facebook.jpg" alt="">
+          <img src="facebook.jpg" alt=" ">
         </a>
         <a href="https://twitter.com/?lang=en" class="social-icon">
-          <img src="x.jpg" alt="">
+          <img src="x.jpg" alt=" ">
         </a>
         <a href="https://www.instagram.com/" class="social-icon">
-          <img src="instgram.jpg" alt="">
+          <img src="instgram.jpg" alt=" ">
         </a>
       </div>
-
-      <footer class="site-footer">
-        <div class="footer-title">contact</div>
-        <div class="footer-content">
-          <div class="contact-info">
-            <a href="#" class="contact-item">
-              <img src="phone.png" alt=" " class="icon">
-              <span>+966 xx xxx xxxx</span>
-            </a>
-            <a href="#" class="contact-item">
-              <img src="emmail.JPG" alt=" " class="icon">
-              
-              <span>pick-quick@shopping.com</span>
-            </a>
-          </div>
-          
-          <div class="social-media">
-            
-            <a href="https://www.facebook.com/" class="social-icon">
-              <img src="facebook.jpg" alt=" ">
-            </a>
-            <a href="https://twitter.com/?lang=en" class="social-icon">
-              <img src="x.jpg" alt=" ">
-            </a>
-            <a href="https://www.instagram.com/" class="social-icon">
-              <img src="instgram.jpg" alt=" ">
-            </a>
-          </div>
-      
-          <div class="footer-text">
-            <p>© All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
-
-  <!-- Include the JavaScript file for theme switching -->
+  
+      <div class="footer-text">
+        <p>© All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
   <script src="mode.js"></script>
-
+  <script src="home.js"></script>
+  <script src="newFile.1.js"></script>
+  <script src="offers.js"></script>
 </body>
 </html>
-
