@@ -20,11 +20,6 @@
             margin-bottom: 20px;
         }
 
-        .product-evaluation h2 {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-
         .order-info {
             display: flex;
             justify-content: space-between;
@@ -36,225 +31,95 @@
             padding: 5px;
         }
 
-        .product-review {
-            border: 1px solid #ccc;
-            margin-bottom: 20px;
-            padding: 10px;
-            display: flex;
-            flex-direction: column;
-            background-color: rgb(235, 228, 214);
-        }
-
-        .product {
-            display: flex;
-        }
-
-        .product img {
-            width: 200px;
-            height: 200px;
-            margin: 0.2em;
-        }
-
-        .product-details h3 {
-            font-size: 20px;
-            margin-top: 0.5em;
-        }
-
-        .stars {
-            color: gold;
-        }
-
-        .evalText {
-            height: 20px;
-            width: 400px;
-            border-style: inset;
-            margin: 2px 0;
-        }
-
         .button {
             background-color: #5fa968;
             margin-top: 10px;
             color: white;
             border: none;
             border-radius: 5px;
-            width: 150px; /* Same width as submit button */
-            height: 30px; /* Same height as submit button */
+            width: 150px;
+            height: 30px;
             cursor: pointer;
-        }
-
-        /* Cancel Button Style */
-        .cancel-button {
-            margin-top: 10px;
-            background-color: #f44336; /* Red color for the cancel button */
-            color: white;
-            border: none;
-            border-radius: 5px;
-            width: 150px; /* Same width as submit button */
-            height: 30px; /* Same height as submit button */
-            cursor: pointer;
-        }
-
-        /* Product Categories */
-        .product-categories {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            padding: 40px 20px;
-            background-color: #fff;
-        }
-
-        /* Reviews Section */
-        .user-reviews {
-            padding: 20px;
-            background-color: #f0f0f0;
-            border-radius: 8px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        /* Footer Styles */
-        .site-footer {
-            background-color: #fff3e0;
-            color: black; /* Changed to black for better readability */
-            padding: 20px;
-        }
-
-        .footer-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            padding: 20px;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .footer-text {
-            text-align: right;
-            color: #000000;
-            font-size: 14px;
-            margin-top: auto;
         }
     </style>
 </head>
+<body>
 <header class="header">
     <div class="header-container">
-      <a href="#" class="logo-link">
-        <img src="logo.jpg" alt="logo" class="logo-image">
-      </a>
-      <h1 class="website-name">Pick Quick</h1>
-      <nav class="nav">
-        <a href="homepage.html" class="nav-link" >Home
+        <a href="#" class="logo-link">
+            <img src="logo.jpg" alt="logo" class="logo-image">
         </a>
-        <span class="nav-separator">|</span>
-        <a href="dashboardsaller.html" class="nav-link">Seller page</a>
-        <span class="nav-separator">|</span>
-        <a href="Userpage.html" class="nav-link" >User page</a>
-        <span class="nav-separator">|</span>
-        <a href="Women.html" class="nav-link">Women's page</a>
-        <span class="nav-separator">|</span>
-        <a href="Men.html" class="nav-link">Men's page</a>
-        <span class="nav-separator">|</span>
-        <a href="Kids.html" class="nav-link">kid's page</a>
-        <span class="nav-separator">|</span>
-        <a href="Accessories.html" class="nav-link">Accessories's page</a>
-        <span class="nav-separator">|</span>
-        <a href="CARTpage.html" class="nav-link">Cart</a>
-       
-      </nav>
+        <h1 class="website-name">Pick Quick</h1>
+        <nav class="nav">
+            <a href="homepage.html" class="nav-link">Home</a>
+            <span class="nav-separator">|</span>
+            <a href="dashboardseller.html" class="nav-link">Seller page</a>
+        </nav>
     </div>
-  </header>
-
-<body>
-
-
-
+</header>
 <main>
     <section class="product-evaluation">
         <h2>Product Evaluation</h2>
         <div class="order-info">
             <p>Order #1234</p>
-            <p>Price: 45.23$</p>
+            <p>Price: $45.23</p>
             <div class="dropdown">
-                <select>
-                    <option>Select order</option>
-                    <option>#1234</option>
-                    <option>#5678</option>
+                <label for="order-select">Select Order:</label>
+                <select id="order-select">
+                    <option value="">Select an order</option>
+                    <option value="#1234">#1234</option>
+                    <option value="#5678">#5678</option>
                 </select>
             </div>
         </div>
-
-        <!-- First Product Review -->
-        <form action="" method="get" class="product-review">
-            <div class="product">
-                <img src="kids.JPG" alt="kids-clothes">
-                <div class="product-details">
-                    <h3>Kids Pajama</h3>
-                    <p>EELHOE Lightweight Sunscreen Lotion - Hydrating and Refreshing Sun Protection 
-                    <br>for Moisturized and Nourished Skin</p>
-                    <div class="stars">★★★★★</div>
-                </div>
-            </div>
-            <input type="text" class="evalText" name="review_suncream" placeholder="Write your review" required>
-            <input type="submit" class="button" value="Submit Review">
-        </form>
-
-        <!-- Second Product Review -->
-        <form action="" method="get" class="product-review">
-            <div class="product">
-                <img src="acc.JPG" alt="glasses">
-                <div class="product-details">
-                    <h3>Glasses</h3>
-                    <p>HUION H610 PRO V2 USB Pad Art Digital Handwriting Drawing Kit</p>
-                    <div class="stars">★★★★★</div>
-                </div>
-            </div>
-            <input type="text" class="evalText" name="review_tablet" placeholder="Write your review" required>
-            <input type="submit" class="button" value="Submit Review">
-        </form>
-
+        <div class="rating">
+            <label for="rating-select">Rate the product:</label>
+            <select id="rating-select">
+                <option value="">Select a rating</option>
+                <option value="1">1 Star</option>
+                <option value="2">2 Stars</option>
+                <option value="3">3 Stars</option>
+                <option value="4">4 Stars</option>
+                <option value="5">5 Stars</option>
+            </select>
+        </div>
+        <button class="button" id="submit-btn">Submit</button>
     </section>
 </main>
-
 <footer class="site-footer">
-    <div class="footer-title">contact</div>
+    <div class="footer-title">Contact</div>
     <div class="footer-content">
-      <div class="contact-info">
-        <a href="#" class="contact-item">
-          <img src="phone.png" alt=" " class="icon">
-          <span>+966 xx xxx xxxx</span>
-        </a>
-        <a href="#" class="contact-item">
-          <img src="emmail.JPG" alt=" " class="icon">
-          
-          <span>pick-quick@shopping.com</span>
-        </a>
-      </div>
-      
-      <div class="social-media">
-        
-        <a href="https://www.facebook.com/" class="social-icon">
-          <img src="facebook.jpg" alt=" ">
-        </a>
-        <a href="https://twitter.com/?lang=en" class="social-icon">
-          <img src="x.jpg" alt=" ">
-        </a>
-        <a href="https://www.instagram.com/" class="social-icon">
-          <img src="instgram.jpg" alt=" ">
-        </a>
-      </div>
-  
-      <div class="footer-text">
-        <p>© All rights reserved.</p>
-      </div>
+        <div class="contact-info">
+            <p>+966 xx xxx xxxx</p>
+            <p>pick-quick@shopping.com</p>
+        </div>
+        <div class="footer-text">
+            <p>© All rights reserved.</p>
+        </div>
     </div>
-  </footer>
-    <script src="mode.js"></script>
+</footer>
+<script>
+    document.getElementById('submit-btn').addEventListener('click', function () {
+        // Get values from the dropdowns
+        const orderSelect = document.getElementById('order-select').value;
+        const ratingSelect = document.getElementById('rating-select').value;
 
+        // Validation for dropdowns
+        if (!orderSelect) {
+            alert("Please select an order!");
+            return;
+        }
+        if (!ratingSelect) {
+            alert("Please select a rating!");
+            return;
+        }
+
+        // Display thank-you message
+        alert(`Thank you for your feedback!\nYour rating for product ${orderSelect} is ${ratingSelect} Stars.`);
+
+        // Redirect to the home page
+        window.location.href = "homepage.html";
+    });
+</script>
 </body>
-
 </html>
