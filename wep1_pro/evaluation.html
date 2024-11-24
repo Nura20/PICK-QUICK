@@ -62,6 +62,7 @@
 
         .stars {
             color: gold;
+            font-size: 24px;
         }
 
         .evalText {
@@ -133,7 +134,7 @@
                     <h3>Kids Pajama</h3>
                     <p>EELHOE Lightweight Sunscreen Lotion - Hydrating and Refreshing Sun Protection 
                     <br>for Moisturized and Nourished Skin</p>
-                    <div class="stars">★★★★★</div>
+                    <div class="stars" id="stars1">★★★★★</div>
                 </div>
             </div>
             <label for="rating1">Rate this product:</label>
@@ -155,7 +156,7 @@
                 <div class="product-details">
                     <h3>Glasses</h3>
                     <p>HUION H610 PRO V2 USB Pad Art Digital Handwriting Drawing Kit</p>
-                    <div class="stars">★★★★★</div>
+                    <div class="stars" id="stars2">★★★★★</div>
                 </div>
             </div>
             <label for="rating2">Rate this product:</label>
@@ -206,7 +207,27 @@
 </footer>
 
 <script>
-    // Update the <p> with the order number when the user selects an order
+    // Function to update stars dynamically based on rating selected
+    function updateStars(rating, starsElementId) {
+        let stars = "";
+        for (let i = 0; i < 5; i++) {
+            stars += i < rating ? "★" : "☆";
+        }
+        document.getElementById(starsElementId).textContent = stars;
+    }
+
+    // Add event listeners to rating selects
+    document.getElementById('rating1').addEventListener('change', function() {
+        const rating = this.value;
+        updateStars(rating, 'stars1');
+    });
+
+    document.getElementById('rating2').addEventListener('change', function() {
+        const rating = this.value;
+        updateStars(rating, 'stars2');
+    });
+
+    // Update the order number dynamically when the user selects an order
     document.getElementById('order-select').addEventListener('change', function() {
         const selectedOrder = this.value;
         const orderInfo = document.getElementById('order-info');
@@ -214,28 +235,22 @@
         if (selectedOrder) {
             orderInfo.textContent = `Order ${selectedOrder}`;
         } else {
-            orderInfo.textContent = 'Order #1234'; // Default value if nothing is selected
+            orderInfo.textContent = 'Order #1234';
         }
     });
 
-    // Submit button event listener
-    document.getElementById('submit-btn').addEventListener('click', function () {
-        const orderSelect = document.getElementById('order-select').value;
-        const ratings = document.querySelectorAll('.rating-select');
-        const ratingValues = Array.from(ratings).map(rating => rating.value);
-
-        if (!orderSelect) {
-            alert("Please select an order!");
-            return;
+    // Submit button action
+    document.getElementById('submit-btn').addEventListener('click', function() {
+        const rating1 = document.getElementById('rating1').value;
+        const rating2 = document.getElementById('rating2').value;
+        const order = document.getElementById('order-info').textContent;
+        
+        if (rating1 && rating2) {
+            alert(`Thank you for your feedback!\nYour rating for product #1234 is ${rating1} stars\nYour rating for product #5678 is ${rating2} stars`);
+            window.location.href = "homepage.html"; // Redirect to Home page
+        } else {
+            alert("Please select ratings for all products before submitting.");
         }
-        if (ratingValues.includes("")) {
-            alert("Please rate all products!");
-            return;
-        }
-        alert(`Thank you for your feedback!
-Order: ${orderSelect}
-Ratings: ${ratingValues.join(", ")} Stars.`);
-        window.location.href = "homepage.html";
     });
 </script>
 
