@@ -233,15 +233,12 @@
     document.getElementById('order-select').addEventListener('change', function() {
         const selectedOrder = this.value;
         const orderInfo = document.getElementById('order-info');
-        
         if (selectedOrder) {
             orderInfo.textContent = `Order ${selectedOrder}`;
-        } else {
-            orderInfo.textContent = 'Order #1234';
         }
     });
 
-    // Submit button action
+    // Submit button behavior
     document.getElementById('submit-btn').addEventListener('click', function() {
         const rating1 = document.getElementById('rating1').value;
         const rating2 = document.getElementById('rating2').value;
@@ -254,6 +251,5 @@
         }
     });
 </script>
-
 </body>
 </html>
