@@ -11,27 +11,27 @@
 </head>
 <header class="header">
     <div class="header-container">
-      <a href="#" class="logo-link">
-        <img src="logo.jpg" alt="logo" class="logo-image">
-      </a>
-      <h1 class="website-name">Pick Quick</h1>
-      <nav class="nav">
-        <a href="homepage.html" class="nav-link">Home</a>
-        <span class="nav-separator">|</span>
-        <a href="dashboardsaller.html" class="nav-link">Seller page</a>
-        <span class="nav-separator">|</span>
-        <a href="Userpage.html" class="nav-link">User page</a>
-        <span class="nav-separator">|</span>
-        <a href="Women.html" class="nav-link">Women's page</a>
-        <span class="nav-separator">|</span>
-        <a href="Men.html" class="nav-link">Men's page</a>
-        <span class="nav-separator">|</span>
-        <a href="Kids.html" class="nav-link">Kid's page</a>
-        <span class="nav-separator">|</span>
-        <a href="Accessories.html" class="nav-link">Accessories's page</a>
-        <span class="nav-separator">|</span>
-        <a href="CARTpage.html" class="nav-link">Cart</a>
-      </nav>
+        <a href="#" class="logo-link">
+            <img src="logo.jpg" alt="logo" class="logo-image">
+        </a>
+        <h1 class="website-name">Pick Quick</h1>
+        <nav class="nav">
+            <a href="homepage.html" class="nav-link">Home</a>
+            <span class="nav-separator">|</span>
+            <a href="dashboardsaller.html" class="nav-link">Seller page</a>
+            <span class="nav-separator">|</span>
+            <a href="Userpage.html" class="nav-link">User page</a>
+            <span class="nav-separator">|</span>
+            <a href="Women.html" class="nav-link">Women's page</a>
+            <span class="nav-separator">|</span>
+            <a href="Men.html" class="nav-link">Men's page</a>
+            <span class="nav-separator">|</span>
+            <a href="Kids.html" class="nav-link">Kid's page</a>
+            <span class="nav-separator">|</span>
+            <a href="Accessories.html" class="nav-link">Accessories's page</a>
+            <span class="nav-separator">|</span>
+            <a href="CARTpage.html" class="nav-link">Cart</a>
+        </nav>
     </div>
 </header>
 
@@ -52,7 +52,7 @@
         </div>
 
         <!-- First Product Review -->
-        <form action="" method="get" class="product-review">
+        <form class="product-review">
             <div class="product">
                 <img src="kids.JPG" alt="kids-clothes">
                 <div class="product-details">
@@ -71,11 +71,11 @@
                 <option value="4">4 Stars</option>
                 <option value="5">5 Stars</option>
             </select>
-            <input type="submit" class="button" value="Submit Review">
+            <input type="text" class="evalText" name="review_suncream" placeholder="Write your review" required>
         </form>
 
         <!-- Second Product Review -->
-        <form action="" method="get" class="product-review">
+        <form class="product-review">
             <div class="product">
                 <img src="acc.JPG" alt="glasses">
                 <div class="product-details">
@@ -93,10 +93,10 @@
                 <option value="4">4 Stars</option>
                 <option value="5">5 Stars</option>
             </select>
-            <input type="submit" class="button" value="Submit Review">
+            <input type="text" class="evalText" name="review_tablet" placeholder="Write your review" required>
         </form>
 
-        <!-- Submit Button for the Entire Evaluation -->
+        <!-- Submit Button -->
         <button class="button" id="submit-btn">Submit All Reviews</button>
     </section>
 </main>
@@ -134,25 +134,29 @@
 <!-- JavaScript -->
 <script>
     document.getElementById('submit-btn').addEventListener('click', function () {
-        // Get the selected order and ratings
+        // Get selected order
         const orderSelect = document.getElementById('order-select').value;
+
+        // Get all ratings
         const ratings = document.querySelectorAll('.rating-select');
         const ratingValues = Array.from(ratings).map(rating => rating.value);
 
-        // Check if the order is selected
+        // Validate order selection
         if (!orderSelect) {
             alert("Please select an order!");
             return;
         }
 
-        // Validate that all products have ratings
+        // Validate that all ratings are filled
         if (ratingValues.includes("")) {
             alert("Please rate all products!");
             return;
         }
 
-        // Show a thank-you message with order number and product ratings
-        alert(`Thank you for your feedback!\nOrder: ${orderSelect}\nRatings: ${ratingValues.join(", ")} Stars.`);
+        // Thank-you message
+        alert(`Thank you for your feedback!
+Order: ${orderSelect}
+Ratings: ${ratingValues.join(", ")} Stars.`);
 
         // Redirect to homepage
         window.location.href = "homepage.html";
