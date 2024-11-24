@@ -112,40 +112,34 @@
 </head>
 <header class="header">
     <div class="header-container">
-      <a href="#" class="logo-link">
-        <img src="logo.jpg" alt="logo" class="logo-image">
-      </a>
-      <h1 class="website-name">Pick Quick</h1>
-      <nav class="nav">
-        <a href="homepage.html" class="nav-link" >Home
+        <a href="#" class="logo-link">
+            <img src="logo.jpg" alt="logo" class="logo-image">
         </a>
-        <span class="nav-separator">|</span>
-        <a href="dashboardsaller.html" class="nav-link">Seller page</a>
-        <span class="nav-separator">|</span>
-        <a href="Userpage.html" class="nav-link" >User page</a>
-        <span class="nav-separator">|</span>
-        <a href="Women.html" class="nav-link">Women's page</a>
-        <span class="nav-separator">|</span>
-        <a href="Men.html" class="nav-link">Men's page</a>
-        <span class="nav-separator">|</span>
-        <a href="Kids.html" class="nav-link">kid's page</a>
-        <span class="nav-separator">|</span>
-        <a href="Accessories.html" class="nav-link">Accessories's page</a>
-        <span class="nav-separator">|</span>
-        <a href="CARTpage.html" class="nav-link">Cart</a>
-       
-      </nav>
+        <h1 class="website-name">Pick Quick</h1>
+        <nav class="nav">
+            <a href="homepage.html" class="nav-link">Home</a>
+            <span class="nav-separator">|</span>
+            <a href="dashboardsaller.html" class="nav-link">Seller page</a>
+            <span class="nav-separator">|</span>
+            <a href="Userpage.html" class="nav-link">User page</a>
+            <span class="nav-separator">|</span>
+            <a href="Women.html" class="nav-link">Women's page</a>
+            <span class="nav-separator">|</span>
+            <a href="Men.html" class="nav-link">Men's page</a>
+            <span class="nav-separator">|</span>
+            <a href="Kids.html" class="nav-link">Kid's page</a>
+            <span class="nav-separator">|</span>
+            <a href="Accessories.html" class="nav-link">Accessories's page</a>
+            <span class="nav-separator">|</span>
+            <a href="CARTpage.html" class="nav-link">Cart</a>
+        </nav>
     </div>
-  </header>
-    
+</header>
 
 <body>
-
-  
-
 <main>
     <h1>Add New Product</h1>
-    <form action="" method="post">
+    <form>
         <label for="product-name">Product Name:</label>
         <input type="text" id="product-name" name="product_name" required>
 
@@ -164,7 +158,7 @@
         </select>
 
         <label for="product-quantity">Quantity:</label>
-        <input type="number"  id="product-quantity" name="product_quantity" required>
+        <input type="number" id="product-quantity" name="product_quantity" required>
 
         <label for="product-description">Description:</label>
         <textarea id="product-description" name="product_description" rows="5" required></textarea>
@@ -174,40 +168,94 @@
 </main>
 
 <footer class="site-footer">
-    <div class="footer-title">contact</div>
+    <div class="footer-title">Contact</div>
     <div class="footer-content">
-      <div class="contact-info">
-        <a href="#" class="contact-item">
-          <img src="phone.png" alt=" " class="icon">
-          <span>+966 xx xxx xxxx</span>
-        </a>
-        <a href="#" class="contact-item">
-          <img src="emmail.JPG" alt=" " class="icon">
-          
-          <span>pick-quick@shopping.com</span>
-        </a>
-      </div>
-      
-      <div class="social-media">
-        
-        <a href="https://www.facebook.com/" class="social-icon">
-          <img src="facebook.jpg" alt=" ">
-        </a>
-        <a href="https://twitter.com/?lang=en" class="social-icon">
-          <img src="x.jpg" alt=" ">
-        </a>
-        <a href="https://www.instagram.com/" class="social-icon">
-          <img src="instgram.jpg" alt=" ">
-        </a>
-      </div>
-  
-      <div class="footer-text">
-        <p>© All rights reserved.</p>
-      </div>
+        <div class="contact-info">
+            <a href="#" class="contact-item">
+                <img src="phone.png" alt=" " class="icon">
+                <span>+966 xx xxx xxxx</span>
+            </a>
+            <a href="#" class="contact-item">
+                <img src="emmail.JPG" alt=" " class="icon">
+                <span>pick-quick@shopping.com</span>
+            </a>
+        </div>
+
+        <div class="social-media">
+            <a href="https://www.facebook.com/" class="social-icon">
+                <img src="facebook.jpg" alt=" ">
+            </a>
+            <a href="https://twitter.com/?lang=en" class="social-icon">
+                <img src="x.jpg" alt=" ">
+            </a>
+            <a href="https://www.instagram.com/" class="social-icon">
+                <img src="instgram.jpg" alt=" ">
+            </a>
+        </div>
+
+        <div class="footer-text">
+            <p>© All rights reserved.</p>
+        </div>
     </div>
-  </footer>
-    <script src="mode.js"></script>
+</footer>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const form = document.querySelector("form");
+        const productNameInput = document.getElementById("product-name");
+        const productPhotoInput = document.getElementById("product-photo");
+        const productPriceInput = document.getElementById("product-price");
+        const productCategoryInput = document.getElementById("product-category");
+        const productQuantityInput = document.getElementById("product-quantity");
+        const productDescriptionInput = document.getElementById("product-description");
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const productName = productNameInput.value.trim();
+            const productPhoto = productPhotoInput.value.trim();
+            const productPrice = productPriceInput.value.trim();
+            const productCategory = productCategoryInput.value;
+            const productQuantity = productQuantityInput.value.trim();
+            const productDescription = productDescriptionInput.value.trim();
+
+            if (!productName || !productPhoto || !productPrice || !productCategory || !productQuantity || !productDescription) {
+                alert("Please fill in all required fields.");
+                return;
+            }
+
+            if (/^\d/.test(productName)) {
+                alert("The product name cannot start with a number.");
+                return;
+            }
+
+            if (isNaN(productPrice) || productPrice <= 0) {
+                alert("Please enter a valid price.");
+                return;
+            }
+
+            if (isNaN(productQuantity) || productQuantity <= 0) {
+                alert("Please enter a valid quantity.");
+                return;
+            }
+
+            const newProduct = {
+                name: productName,
+                photo: productPhoto,
+                price: parseFloat(productPrice),
+                category: productCategory,
+                quantity: parseInt(productQuantity, 10),
+                description: productDescription,
+            };
+
+            let products = JSON.parse(localStorage.getItem("products")) || [];
+            products.push(newProduct);
+            localStorage.setItem("products", JSON.stringify(products));
+
+            alert(`Product "${productName}" added successfully!`);
+            form.reset();
+        });
+    });
+</script>
 </body>
-
 </html>
