@@ -6,7 +6,81 @@
     <title>Pick Quick / Product Evaluation</title>
     <link rel="stylesheet" href="stylesheet.css">
     <style>
-        /* Your existing CSS styles remain unchanged */
+        /* Main Styles (Unchanged) */
+        main {
+            padding: 20px;
+            width: 80%;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .product-evaluation h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .order-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .dropdown select {
+            padding: 5px;
+        }
+
+        .product-review {
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            background-color: rgb(235, 228, 214); /* Original color preserved */
+        }
+
+        .product {
+            display: flex;
+        }
+
+        .product img {
+            width: 200px;
+            height: 200px;
+            margin: 0.2em;
+        }
+
+        .product-details h3 {
+            font-size: 20px;
+            margin-top: 0.5em;
+        }
+
+        .stars {
+            color: gold;
+        }
+
+        .evalText {
+            height: 20px;
+            width: 400px;
+            border-style: inset;
+            margin: 2px 0;
+        }
+
+        .button {
+            background-color: #5fa968;
+            margin-top: 10px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            width: 150px;
+            height: 30px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <header class="header">
@@ -131,34 +205,23 @@
     </div>
 </footer>
 
-<!-- JavaScript -->
 <script>
     document.getElementById('submit-btn').addEventListener('click', function () {
-        // Get selected order
         const orderSelect = document.getElementById('order-select').value;
-
-        // Get all ratings
         const ratings = document.querySelectorAll('.rating-select');
         const ratingValues = Array.from(ratings).map(rating => rating.value);
 
-        // Validate order selection
         if (!orderSelect) {
             alert("Please select an order!");
             return;
         }
-
-        // Validate that all ratings are filled
         if (ratingValues.includes("")) {
             alert("Please rate all products!");
             return;
         }
-
-        // Thank-you message
         alert(`Thank you for your feedback!
 Order: ${orderSelect}
 Ratings: ${ratingValues.join(", ")} Stars.`);
-
-        // Redirect to homepage
         window.location.href = "homepage.html";
     });
 </script>
