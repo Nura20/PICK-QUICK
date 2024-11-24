@@ -1,33 +1,39 @@
+// 1. Display the current week's starting date
 const currentDate = new Date();
 const currentWeekStart = new Date(currentDate.setDate(currentDate.getDate() - currentDate.getDay()));
 const formattedDate = currentWeekStart.toLocaleDateString();
 document.getElementById("current-week-date").innerText = `This week starts on: ${formattedDate}`;
+
 // 2. Show more offers
 const moreOffersButton = document.getElementById("more-offers-btn");
-const offerContainer = document.getElementById("offer-container");
+const offerContainer = document.getElementById("offers-container"); // Corrected ID name
+
 moreOffersButton.addEventListener("click", () => {
-  // Append additional offers when the button is clicked
+  // HTML content for new offers
   const additionalOffers = `
     <div class="offer-item">
-      <a href="offer4.html">
-        <img src="offer5.AVIF" alt="Offer 4" class="offer-image">
+      <a href="Women.html">
+        <img src="offer4.jpg" alt="Offer 4" class="offer-image">
       </a>
-      <h3 class="offer-title">New sales for kids clothing in all ages!</h3>
+      <h3 class="offer-title">Up to 30% off on womens clothing this weekend only!</h3>
     </div>
     <div class="offer-item">
-      <a href="offer5.html">
-        <img src="kids1.jpg" alt="Offer 5" class="offer-image">
+      <a href="Kids.html">
+        <img src="offer5.AVIF" alt="Offer 5" class="offer-image">
       </a>
       <h3 class="offer-title">30% sales for the kids clothes limited edition</h3>
     </div>
     <div class="offer-item">
-      <a href="offer6.html">
-        <img src="acc.jpg" alt="Offer 6" class="offer-image">
+      <a href="Men.html">
+        <img src="offer1.jpg" alt="Offer 6" class="offer-image">
       </a>
-      <h3 class="offer-title">30% off for the women's limited edition clothes for one week!</h3>
+      <h3 class="offer-title">30% off for the mens clothes for one week!</h3>
     </div>
   `;
+  
+  // Append new offers to the existing container
   offerContainer.innerHTML += additionalOffers;
+  
+  // Optional: Hide the "Show More Offers" button after adding more offers
+  moreOffersButton.style.display = "none";
 });
-
-
