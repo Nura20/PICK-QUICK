@@ -127,7 +127,7 @@
         </div>
 
         <!-- First Product Review -->
-        <form class="product-review" data-product-id="1">
+        <form class="product-review">
             <div class="product">
                 <img src="kids.JPG" alt="kids-clothes">
                 <div class="product-details">
@@ -151,7 +151,7 @@
         </form>
 
         <!-- Second Product Review -->
-        <form class="product-review" data-product-id="2">
+        <form class="product-review">
             <div class="product">
                 <img src="acc.JPG" alt="glasses">
                 <div class="product-details">
@@ -254,12 +254,18 @@
         const rating2 = document.getElementById('rating2').value;
 
         if (rating1 && rating2) {
-            alert(`Thank you for your feedback!\nYour rating for product #1234 is ${rating1} stars\nYour rating for product #5678 is ${rating2} stars`);
+            // Get product numbers dynamically
+            const product1Number = 1;  // First product is always Product 1
+            const product2Number = 2;  // Second product is always Product 2
+
+            // Construct the feedback message with product numbers
+            alert(`Thank you for your feedback!\nYour rating for Product ${product1Number} is ${rating1} stars\nYour rating for Product ${product2Number} is ${rating2} stars`);
             window.location.href = "homepage.html"; // Redirect to Home page
         } else {
             alert("Please select ratings for both products before submitting.");
         }
     });
 </script>
+
 </body>
 </html>
