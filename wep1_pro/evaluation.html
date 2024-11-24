@@ -6,7 +6,7 @@
     <title>Pick Quick / Product Evaluation</title>
     <link rel="stylesheet" href="stylesheet.css">
     <style>
-        /* Main Styles (Unchanged) */
+        /* Main Styles */
         main {
             padding: 20px;
             width: 80%;
@@ -42,7 +42,7 @@
             padding: 10px;
             display: flex;
             flex-direction: column;
-            background-color: rgb(235, 228, 214); /* Original color preserved */
+            background-color: rgb(235, 228, 214);
         }
 
         .product {
@@ -62,7 +62,6 @@
 
         .stars {
             color: gold;
-            font-size: 24px;
         }
 
         .evalText {
@@ -84,172 +83,80 @@
         }
     </style>
 </head>
-<header class="header">
-    <div class="header-container">
-        <a href="#" class="logo-link">
-            <img src="logo.jpg" alt="logo" class="logo-image">
-        </a>
-        <h1 class="website-name">Pick Quick</h1>
-        <nav class="nav">
-            <a href="homepage.html" class="nav-link">Home</a>
-            <span class="nav-separator">|</span>
-            <a href="dashboardsaller.html" class="nav-link">Seller page</a>
-            <span class="nav-separator">|</span>
-            <a href="Userpage.html" class="nav-link">User page</a>
-            <span class="nav-separator">|</span>
-            <a href="Women.html" class="nav-link">Women's page</a>
-            <span class="nav-separator">|</span>
-            <a href="Men.html" class="nav-link">Men's page</a>
-            <span class="nav-separator">|</span>
-            <a href="Kids.html" class="nav-link">Kid's page</a>
-            <span class="nav-separator">|</span>
-            <a href="Accessories.html" class="nav-link">Accessories's page</a>
-            <span class="nav-separator">|</span>
-            <a href="CARTpage.html" class="nav-link">Cart</a>
-        </nav>
-    </div>
-</header>
-
 <body>
+
 <main>
     <section class="product-evaluation">
         <h2>Product Evaluation</h2>
         <div class="order-info">
-            <p id="order-info">Order #1234</p>
+            <p id="order-number">Order #1234</p>
             <p>Price: 45.23$</p>
             <div class="dropdown">
-                <select id="order-select">
+                <select id="orderSelect">
                     <option value="">Select order</option>
-                    <option value="#1234">#1234</option>
-                    <option value="#5678">#5678</option>
+                    <option value="1234">#1234</option>
+                    <option value="5678">#5678</option>
                 </select>
             </div>
         </div>
 
         <!-- First Product Review -->
-        <form class="product-review">
+        <form id="productReview1" class="product-review">
             <div class="product">
                 <img src="kids.JPG" alt="kids-clothes">
                 <div class="product-details">
                     <h3>Kids Pajama</h3>
-                    <p>EELHOE Lightweight Sunscreen Lotion - Hydrating and Refreshing Sun Protection 
-                    <br>for Moisturized and Nourished Skin</p>
-                    <!-- Empty Stars Initially -->
-                    <div class="stars" id="stars1">☆☆☆☆☆</div>
+                    <p>Lightweight Sunscreen Lotion - Hydrating and Refreshing Sun Protection</p>
+                    <div id="stars1" class="stars">★★★★★</div>
                 </div>
             </div>
-            <label for="rating1">Rate this product:</label>
-            <select id="rating1" class="rating-select">
-                <option value="">Select a rating</option>
-                <option value="1">1 Star</option>
-                <option value="2">2 Stars</option>
-                <option value="3">3 Stars</option>
-                <option value="4">4 Stars</option>
-                <option value="5">5 Stars</option>
-            </select>
-            <input type="text" class="evalText" name="review_suncream" placeholder="Write your review" required>
+            <input type="number" id="rating1" min="1" max="5" placeholder="Rate from 1 to 5 stars" required>
         </form>
 
         <!-- Second Product Review -->
-        <form class="product-review">
+        <form id="productReview2" class="product-review">
             <div class="product">
                 <img src="acc.JPG" alt="glasses">
                 <div class="product-details">
                     <h3>Glasses</h3>
                     <p>HUION H610 PRO V2 USB Pad Art Digital Handwriting Drawing Kit</p>
-                    <!-- Empty Stars Initially -->
-                    <div class="stars" id="stars2">☆☆☆☆☆</div>
+                    <div id="stars2" class="stars">★★★★★</div>
                 </div>
             </div>
-            <label for="rating2">Rate this product:</label>
-            <select id="rating2" class="rating-select">
-                <option value="">Select a rating</option>
-                <option value="1">1 Star</option>
-                <option value="2">2 Stars</option>
-                <option value="3">3 Stars</option>
-                <option value="4">4 Stars</option>
-                <option value="5">5 Stars</option>
-            </select>
-            <input type="text" class="evalText" name="review_tablet" placeholder="Write your review" required>
+            <input type="number" id="rating2" min="1" max="5" placeholder="Rate from 1 to 5 stars" required>
         </form>
 
-        <!-- Submit Button -->
-        <button class="button" id="submit-btn">Submit All Reviews</button>
+        <button id="submitReview" class="button">Submit Review</button>
     </section>
 </main>
 
-<footer class="site-footer">
-    <div class="footer-title">Contact</div>
-    <div class="footer-content">
-        <div class="contact-info">
-            <a href="#" class="contact-item">
-                <img src="phone.png" alt=" " class="icon">
-                <span>+966 xx xxx xxxx</span>
-            </a>
-            <a href="#" class="contact-item">
-                <img src="emmail.JPG" alt=" " class="icon">
-                <span>pick-quick@shopping.com</span>
-            </a>
-        </div>
-        <div class="social-media">
-            <a href="https://www.facebook.com/" class="social-icon">
-                <img src="facebook.jpg" alt=" ">
-            </a>
-            <a href="https://twitter.com/?lang=en" class="social-icon">
-                <img src="x.jpg" alt=" ">
-            </a>
-            <a href="https://www.instagram.com/" class="social-icon">
-                <img src="instgram.jpg" alt=" ">
-            </a>
-        </div>
-        <div class="footer-text">
-            <p>© All rights reserved.</p>
-        </div>
-    </div>
-</footer>
-
 <script>
-    // Function to update stars dynamically based on rating selected
-    function updateStars(rating, starsElementId) {
-        let stars = "";
-        for (let i = 0; i < 5; i++) {
-            stars += i < rating ? "★" : "☆"; // Fill stars based on rating
-        }
-        document.getElementById(starsElementId).textContent = stars;
+document.getElementById('submitReview').addEventListener('click', function(e) {
+    e.preventDefault(); // Prevent form submission
+    
+    // Get selected order number and ratings
+    const orderNumber = document.getElementById('orderSelect').value;
+    const rating1 = document.getElementById('rating1').value;
+    const rating2 = document.getElementById('rating2').value;
+
+    // Check if order is selected and both ratings are provided
+    if (!orderNumber) {
+        alert('Please select an order.');
+        return;
+    }
+    
+    if (!rating1 || !rating2) {
+        alert('Please provide ratings for both products.');
+        return;
     }
 
-    // Add event listeners to rating selects
-    document.getElementById('rating1').addEventListener('change', function() {
-        const rating = this.value;
-        updateStars(rating, 'stars1');
-    });
+    // Display thank you message with ratings and product number
+    alert(`Thank you for your feedback! \nYour rating for product #${orderNumber} is ${rating1} stars\nYour rating for product #${orderNumber === '1234' ? '5678' : '1234'} is ${rating2} stars`);
 
-    document.getElementById('rating2').addEventListener('change', function() {
-        const rating = this.value;
-        updateStars(rating, 'stars2');
-    });
-
-    // Update the order number dynamically when the user selects an order
-    document.getElementById('order-select').addEventListener('change', function() {
-        const selectedOrder = this.value;
-        const orderInfo = document.getElementById('order-info');
-        if (selectedOrder) {
-            orderInfo.textContent = `Order ${selectedOrder}`;
-        }
-    });
-
-    // Submit button behavior
-    document.getElementById('submit-btn').addEventListener('click', function() {
-        const rating1 = document.getElementById('rating1').value;
-        const rating2 = document.getElementById('rating2').value;
-
-        if (rating1 && rating2) {
-            alert(`Thank you for your feedback!\nYour rating for product #1234 is ${rating1} stars\nYour rating for product #5678 is ${rating2} stars`);
-            window.location.href = "homepage.html"; // Redirect to Home page
-        } else {
-            alert("Please select ratings for both products before submitting.");
-        }
-    });
+    // Redirect to home page after submission
+    window.location.href = "homepage.html"; 
+});
 </script>
+
 </body>
 </html>
