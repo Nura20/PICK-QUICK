@@ -114,7 +114,7 @@
     <section class="product-evaluation">
         <h2>Product Evaluation</h2>
         <div class="order-info">
-            <p>Order #1234</p>
+            <p id="order-info">Order #1234</p>
             <p>Price: 45.23$</p>
             <div class="dropdown">
                 <select id="order-select">
@@ -206,6 +206,19 @@
 </footer>
 
 <script>
+    // Update the <p> with the order number when the user selects an order
+    document.getElementById('order-select').addEventListener('change', function() {
+        const selectedOrder = this.value;
+        const orderInfo = document.getElementById('order-info');
+        
+        if (selectedOrder) {
+            orderInfo.textContent = `Order ${selectedOrder}`;
+        } else {
+            orderInfo.textContent = 'Order #1234'; // Default value if nothing is selected
+        }
+    });
+
+    // Submit button event listener
     document.getElementById('submit-btn').addEventListener('click', function () {
         const orderSelect = document.getElementById('order-select').value;
         const ratings = document.querySelectorAll('.rating-select');
