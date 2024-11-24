@@ -252,17 +252,17 @@
     document.getElementById('submit-btn').addEventListener('click', function() {
         const rating1 = document.getElementById('rating1').value;
         const rating2 = document.getElementById('rating2').value;
+        const orderSelected = document.getElementById('order-select').value;
 
-        if (rating1 && rating2) {
-            // Get product numbers dynamically
+        // Check if both ratings are selected and order is chosen
+        if (rating1 && rating2 && orderSelected) {
             const product1Number = 1;  // First product is always Product 1
             const product2Number = 2;  // Second product is always Product 2
 
-            // Construct the feedback message with product numbers
             alert(`Thank you for your feedback!\nYour rating for Product ${product1Number} is ${rating1} stars\nYour rating for Product ${product2Number} is ${rating2} stars`);
             window.location.href = "homepage.html"; // Redirect to Home page
         } else {
-            alert("Please select ratings for both products before submitting.");
+            alert("Please select ratings for both products and choose an order before submitting.");
         }
     });
 </script>
