@@ -134,7 +134,8 @@
                     <h3>Kids Pajama</h3>
                     <p>EELHOE Lightweight Sunscreen Lotion - Hydrating and Refreshing Sun Protection 
                     <br>for Moisturized and Nourished Skin</p>
-                    <div class="stars" id="stars1">★★★★★</div>
+                    <!-- Empty Stars Initially -->
+                    <div class="stars" id="stars1">☆☆☆☆☆</div>
                 </div>
             </div>
             <label for="rating1">Rate this product:</label>
@@ -156,7 +157,8 @@
                 <div class="product-details">
                     <h3>Glasses</h3>
                     <p>HUION H610 PRO V2 USB Pad Art Digital Handwriting Drawing Kit</p>
-                    <div class="stars" id="stars2">★★★★★</div>
+                    <!-- Empty Stars Initially -->
+                    <div class="stars" id="stars2">☆☆☆☆☆</div>
                 </div>
             </div>
             <label for="rating2">Rate this product:</label>
@@ -211,7 +213,7 @@
     function updateStars(rating, starsElementId) {
         let stars = "";
         for (let i = 0; i < 5; i++) {
-            stars += i < rating ? "★" : "☆";
+            stars += i < rating ? "★" : "☆"; // Fill stars based on rating
         }
         document.getElementById(starsElementId).textContent = stars;
     }
@@ -243,13 +245,12 @@
     document.getElementById('submit-btn').addEventListener('click', function() {
         const rating1 = document.getElementById('rating1').value;
         const rating2 = document.getElementById('rating2').value;
-        const order = document.getElementById('order-info').textContent;
-        
+
         if (rating1 && rating2) {
             alert(`Thank you for your feedback!\nYour rating for product #1234 is ${rating1} stars\nYour rating for product #5678 is ${rating2} stars`);
             window.location.href = "homepage.html"; // Redirect to Home page
         } else {
-            alert("Please select ratings for all products before submitting.");
+            alert("Please select ratings for both products before submitting.");
         }
     });
 </script>
