@@ -115,76 +115,53 @@ display: flex;
   }
 
 
-  /* Product Categories Styles */
-  .product-categories {
-    display: flex;
-    align-items: center; /* Center items vertically */
-    gap: 20px; /* Space between category items */
-    padding: 40px 20px;
-    background-color: #fff;
-  }
-  
-  .category-item {
-    background-color: #f5f5f5;
+  .categories {
+    text-align: center;
     padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    background-color: #f9f9f9;
+    margin: 30px 0;
   }
   
-  .category-scroller {
-    width: 2px; /* Width of the scroller */
-    height: 80px; /* Height of the scroller */
-    background-color: #000000; /* Color of the scroller */
+  .categories-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #333;
   }
   
-  .arrow {
-    background-color: transparent; /* Transparent background */
-    border: none; /* No border */
-    font-size: 24px; /* Arrow size */
-    cursor: pointer; /* Pointer cursor on hover */
-    color: #000000; /* Arrow color */
-  }
-  
-  .arrow:hover {
-    color: #000000; /* Change color on hover */
-  }  
-  
-  .category-title {
-    color:rgb(67, 68, 70);
-    font: size 16px;
-    font-family: 'Arial', sans-serif;
-    text-align: center;
-  }
-  
-  
-  .category-icons {
+  .categories-container {
     display: flex;
     justify-content: center;
-    gap: 80px;
-    margin-top: 20px;
+    gap: 20px;
+    flex-wrap: wrap;
   }
   
-  .category-icon {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  .category-item a {
+    text-decoration: none; /* Remove underline from links */
+    color: inherit; /* Keep the color consistent */
   }
   
-  .category-icon img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-  
-  .category-icon span {
-    margin-top: 8px;
-    font-size: 14px;
+  .category-title {
+    font-size: 0.9rem;
+    color: #555;
     font-weight: bold;
   }
-
+  
+  .category-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ccc;
+    margin-bottom: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .category-image:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  
   
   
   .user-reviews {
@@ -325,7 +302,7 @@ display: flex;
   }
 
 
-  /* Light Theme */
+/* Light Theme */
 .theme-light {
   background-color: #ffffff;
   color: #333333;
@@ -425,8 +402,35 @@ display: flex;
   text-align: center;
 }
 
- 
 
+/* Hide additional offers by default */
+.more-offers {
+  display: none;
+}
+
+/* Show more offers when checkbox is checked */
+.show-more-checkbox:checked + .show-more-label + .more-offers {
+  display: block;
+}
+
+/* Style for the "More Offers" button */
+.show-more-label {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #007BFF;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.hidden {
+  display: none;
+}
 
 
   
+
+  
+ 
