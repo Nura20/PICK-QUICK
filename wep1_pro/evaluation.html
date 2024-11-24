@@ -127,7 +127,7 @@
         </div>
 
         <!-- First Product Review -->
-        <form class="product-review">
+        <form class="product-review" data-product-id="1">
             <div class="product">
                 <img src="kids.JPG" alt="kids-clothes">
                 <div class="product-details">
@@ -151,7 +151,7 @@
         </form>
 
         <!-- Second Product Review -->
-        <form class="product-review">
+        <form class="product-review" data-product-id="2">
             <div class="product">
                 <img src="acc.JPG" alt="glasses">
                 <div class="product-details">
@@ -235,6 +235,16 @@
         const orderInfo = document.getElementById('order-info');
         if (selectedOrder) {
             orderInfo.textContent = `Order ${selectedOrder}`;
+        }
+    });
+
+    // Add product numbers dynamically
+    const productForms = document.querySelectorAll('.product-review');
+    productForms.forEach((form, index) => {
+        const productNumber = index + 1; // Start numbering from 1
+        const productTitle = form.querySelector('.product-details h3');
+        if (productTitle) {
+            productTitle.innerHTML = `Product ${productNumber}: ${productTitle.textContent}`;
         }
     });
 
