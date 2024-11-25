@@ -2,342 +2,104 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seller Dashboard</title>
-    <link rel="stylesheet" href="stylesheet.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="newcss.css">
+    <title>Seller  Dashboard</title>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 10px;
-            padding: 0;
-        }
-        .dashboard {
-            background-color: #edd5ad;
-            text-align: center;
-            padding: 10px;
-            margin-top: 2px;
-        }
-        h1 {
-            text-align: center;
-            font-size: 24px;
-            font-weight: bold;
-            color: rgb(12, 1, 1);
-            margin: 0;
-        }
-        .dashboard button {
-            margin: 10px;
-            padding: 8px 16px;
-            font-size: 14px;
-            cursor: pointer;
-            border: 1px solid black;
-            background-color: white;
-        }
-        .category {
-            margin: 20px 0;
-            overflow-x: auto; /* Enables horizontal scrollbar */
-            display: flex;
-        }
-        .category-title {
-            font-weight: bold;
-            font-size: 24px;
-            text-align: center;
-            color: #333;
-            margin: 20px 0;
-        }
-        .product {
-            flex: 0 0 auto;
-            width: 200px;
-            margin-right: 20px;
-            border: 1px solid #ccc;
-            padding: 10px;
-            text-align: center;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .name {
-            font-weight: bold;
-        }
-        .product img {
-            width: 100%;
-            height: auto;
-        }
-        .pagination-container {
-            text-align: center;
-            margin: 10px 0;
-        }
-        .pagination .dot {
-            height: 10px;
-            width: 10px;
-            margin: 0 5px;
-            border-radius: 50%;
-            display: inline-block;
-            border: 2px solid #000;
-        }
-        .pagination .dot.active {
-            background-color: #000;
-        }
-        .pagination .dot:not(.active) {
-            background-color: transparent;
-        }
-    </style>
 </head>
-<header class="header">
-    <div class="header-container">
-      <a href="#" class="logo-link">
-        <img src="logo.jpg" alt="logo" class="logo-image">
-      </a>
-      <h1 class="website-name">Pick Quick</h1>
-      <nav class="nav">
-        <a href="homepage.html" class="nav-link" >Home
-        </a>
-        <span class="nav-separator">|</span>
-        <a href="dashboardsaller.html" class="nav-link">Seller page</a>
-        <span class="nav-separator">|</span>
-        <a href="Userpage.html" class="nav-link" >User page</a>
-        <span class="nav-separator">|</span>
-        <a href="Women.html" class="nav-link">Women's page</a>
-        <span class="nav-separator">|</span>
-        <a href="Men.html" class="nav-link">Men's page</a>
-        <span class="nav-separator">|</span>
-        <a href="Kids.html" class="nav-link">kid's page</a>
-        <span class="nav-separator">|</span>
-        <a href="Accessories.html" class="nav-link">Accessories's page</a>
-        <span class="nav-separator">|</span>
-        <a href="CARTpage.html" class="nav-link">Cart</a>
-       
-      </nav>
-    </div>
-  </header>
-
 <body>
- 
-  
-    <div class="dashboard">
-        <h1>Seller Dashboard</h1>
-        <a href="add_product.html"> <button>Add new product</button></a>
-        <a href="offers.html" ><button>Manage offers</button></a>
+     <header>
+           
+  <nav>
+    <div class="nav-container">
+      <div class="logo">
+        <img src="images/logo.png" alt="Logo"> 
+        <span>LTZY</span> 
+      </div>
+      <ul class="nav-links">
+  <li><a href="SellerDashboard.html">Seller Dashboard</a></li>
+        <li><a href="userPage.html">User Page</a></li>
+        <li><a href="Groceries.html">Groceries</a></li>
+         <li><a href="Health.html">Health</a></li>
+          <li><a href="Electronics.html">Electronic</a></li>
+        <li><a href="cart.html">Cart</a></li>
+47 minutes ago
+
+final
+        <li><a href="index.html">Home Page</a></li>
+1 hour ago
+
+final
+      </ul>
+    </div>
+  </nav> 
+    </header> 
+    
+    
+    
+   <div class="dashboard">
+        <div class="navigate_buttonsSD">
+            <h1 class="Heading1SD">Seller Dashboard</h1>
+            <a href="addProduct.html" class="btnSD">Add Product</a>
+           <a href="offers.html" class="btnSD">Mange Offer</a>
+        </div>
+        
+        
+
+        <div class="categorySD">
+            <h2 class="Heading2SD">Groceries</h2>
+            <div class="product-listSD" id="groceries-products"></div>
+        </div>
+
+        <div class="categorySD">
+            <h2 class="Heading2SD">Health</h2>
+            <div class="product-listSD" id="health-products"></div>
+        </div>
+
+        <div class="categorySD">
+            <h2 class="Heading2SD">Electronics</h2>
+            <div class="product-listSD" id="electronics-products"></div>
+        </div>
+       
+       
+       
+       
+<footer>
+    <div class="footer-top">
+        <div class="footer-top-content">
+            <img src="images/logo.png" alt="Large Image" class="large-image"> <!-- Larger image -->
+            <div class="email-container">
+                <a href="mailto:LTZY@hotmail.com" class="email">LTZY@hotmail.com</a>
+            </div>
+            <div class="footer-images">
+                <div class="image-container">
+                    <img src="images/f1.png" alt="instgram">
+                    <span class="image-caption">@LTZY</span>
+                </div>
+                <div class="image-container">
+                    <img src="images/f2.png" alt="snapchat">
+                    <span class="image-caption">LTZY  </span>
+                </div>
+                <div class="image-container">
+                    <img src="images/f3.png" alt="x">
+                    <span class="image-caption">@LTZY</span>
+                </div>
+                <div class="image-container">
+                    <img src="images/f4.png" alt="Tiktok">
+                    <span class="image-caption">@LTZY</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy;2024 Ltzy
+    </div>
+</footer>
     </div>
 
-    <!-- Women’s Fashion -->
-    <div class="category-title">Women’s Fashion</div>
-    <div class="category">
-        <div class="product">
-            <img src="picture1.jpg" alt="Beige women’s jacket Image">
-            <p class="name">Name: Beige  jacket </p>
-           <p>Beige women’s jacket </p>
-        </div>
-        <div class="product">
-            <img src="picture2.jpg" alt="women’s bag Image">
-            <p class="name">Name: Beige Tote bag </p>
-           <p>Beige women’s Tote bag  </p>
-        </div>
-        <div class="product">
-            <img src="picture3.jpg" alt="women’s heel Image">
-            <p class="name">Name: Silver heel </p>
-            <p> Silver women’s heel  </p>
-        </div>
-        <div class="product">
-            <img src="picture4.jpg" alt="Grey women’s jacket Image ">
-            <p class="name">Name: Grey  jacket  4</p>
-           <p> Grey women’s jacket </p>
-        </div>
-        <div class="product">
-            <img src="picture5.jpg" alt="Black women’s Sunglasses Image">
-            <p class="name">Name: Black Sunglasses</p>
-        <p>Black women’s Sunglasses </p>
-    
-        </div>
-        <div class="product">
-            <img src="picture6.jpg" alt="Red women’s jacket Image">
-            <p class="name">Name: Red jacket </p>
-             <p> Red women’s jacket  </p>
-        </div>
-        <div class="product">
-            <img src="picture7.jpg" alt="Three women’s bags Image">
-            <p class="name">Name: Three bag's </p>
-            <p>Three women’s bag's  </p>
-        </div>
-    </div>
-    <div class="pagination-container">
-        <div class="pagination">
-            <span class="dot active"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-        </div>
-    </div>
-    
-    <!-- Men’s Fashion -->
-    <div class="category-title">Men’s Fashion</div>
-    <div class="category">
-        <div class="product">
-            <img src="picture8.jpg" alt="Burgundy men’s jacket Image">
-            <p class="name">Name: Burgundy man’s jacket</p>
-             <p>Burgundy men’s jacket</p>
-        </div>
-        <div class="product">
-            <img src="picture9.jpg" alt="green men’s jacket Image">
-            <p class="name">Name:  Green man’s jacket </p>
-          <p>Green men’s jacket </p>
-        </div>
-        <div class="product">
-            <img src="picture10.jpg" alt=" men’s eyeglass Image">
-            <p class="name"> Name:men’s eyeglass </p>
-          <p> Men’s eyeglass with diffrent frame </p>
-        </div>
-        <div class="product">
-            <img src="picture11.jpg" alt=" men’s shoes Image">
-            <p class="name">Name:Black shoes </p>
-            <p>Black men’s shoes</p>
-        </div>
-        <div class="product">
-            <img src="picture12.jpg" alt="Brown men’s bag Image">
-            <p class="name">Name: Brown bag </p>
-            <p>Brown men’s bag with strap</p>
-        </div>
-        <div class="product">
-            <img src="picture13.jpg" alt="BLack men’s bag Image">
-            <p class="name">Name: Black men’s bag</p>
-            <p> Back men’s bag with strap</p>
-        </div>
-        <div class="product">
-            <img src="picture14.jpg" alt="men’s shoes Image">
-            <p class="name">Name: Black shoes</p>
-           <p>Black elegant  men’s shoes </p>
-        </div>
-    </div>
-    <div class="pagination-container">
-        <div class="pagination">
-            <span class="dot active"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-        </div>
-    </div>
-
-    <!-- Kids’ Fashion -->
-    <div class="category-title">Kids’ Fashion</div>
-    <div class="category">
-        <div class="product">
-            <img src="picture15.jpg" alt=" Children clothes image ">
-            <p class="name"> Name: Children clothes</p>
-            <p>Children clothes , Girls and Boys</p>
-        </div>
-        <div class="product">
-            <img src="picture16.jpg" alt=" Boys shoes Image">
-            <p class="name">Name: Boys shoes </p>
-         <p> Boys red shoes with white tip</p>
-        </div>
-        <div class="product">
-            <img src="picture17.jpg" alt="Girls shoes image">
-            <p class="name">Name: Girls shoes</p>
-           <p> Girls bink shoes with roeses</p>
-        </div>
-        <div class="product">
-            <img src="picture18.jpg" alt=" Girls bag image">
-            <p class="name">Name:  Girls bag </p> 
-         <p>Girls black bag </p>
-        </div>
-        <div class="product">
-            <img src="picture19.jpg" alt=" Boys bag Image">
-            <p class="name">Name: Boys bag </p>
-            <p>Boys blue bag </p>
-        </div>
-        <div class="product">
-            <img src="picture20.jpg" alt="Boys T-shirt Image">
-            <p class="name">Name:Boys T-shirt </p>
-            <p> Boys turquoise T-shirt</p>
-        </div>
-        <div class="product">
-            <img src="picture21.jpg" alt="Girls T-shirt Image">
-            <p class="name">Name: Girls T-shirt </p>
-            <p>Girls white T-shirt </p>
-        </div>
-    </div>
-    <div class="pagination-container">
-        <div class="pagination">
-            <span class="dot active"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-        </div>
-    </div>
-    
-    
-    <!-- Accessories -->
-    <div class="category-title">Accessories</div>
-    <div class="category">
-        <div class="product">
-            <img src="picture22.jpg" alt=" men’s Brown Image">
-            <p class="name">Name: Brown watch</p>
-            <p> Brown men’s watch</p>
-        </div>
-        <div class="product">
-            <img src="picture23.jpg" alt=" women’s gold watch Image">
-            <p class="name">Name:  Gold watch</p>
-           <p> Gold men’s watch</p>
-        </div>
-        <div class="product">
-            <img src="picture24.jpg" alt=" women’s silver ring Image">
-            <p class="name">Name: Silver ring</p>
-             <p> Women’s silver ring with crystals</p>
-        </div>
-        <div class="product">
-            <img src="picture25.jpg" alt=" men’s ring Image">
-            <p class="name">Name: men’s ring  </p>
-            <p> Three men’s rings in different colors</p>
-        </div>
-        <div class="product">
-            <img src="picture26.jpg" alt=" men’s wallet Image">
-            <p class="name">Name: Brown  wallet </p>
-           <p>Brown men’s wallet with two pockets</p>
-        </div>
-        <div class="product">
-            <img src="picture27.jpg" alt="Gold necklace Image">
-            <p class="name"> Name: Gold necklace</p>
-            <p> Shiny Crystal circle necklace</p>
-        </div>
-        <div class="product">
-            <img src="picture28.jpg" alt="earrings Image">
-            <p class="name">Name: silver earrings </p>
-           <p>Shiny Silver necklace</p>
-        </div>
-    </div>
-    <footer class="site-footer">
-        <div class="footer-title">contact</div>
-        <div class="footer-content">
-          <div class="contact-info">
-            <a href="#" class="contact-item">
-              <img src="phone.png" alt=" " class="icon">
-              <span>+966 xx xxx xxxx</span>
-            </a>
-            <a href="#" class="contact-item">
-              <img src="emmail.JPG" alt=" " class="icon">
-              
-              <span>pick-quick@shopping.com</span>
-            </a>
-          </div>
-          
-          <div class="social-media">
-            
-            <a href="https://www.facebook.com/" class="social-icon">
-              <img src="facebook.jpg" alt=" ">
-            </a>
-            <a href="https://twitter.com/?lang=en" class="social-icon">
-              <img src="x.jpg" alt=" ">
-            </a>
-            <a href="https://www.instagram.com/" class="social-icon">
-              <img src="instgram.jpg" alt=" ">
-            </a>
-          </div>
-      
-          <div class="footer-text">
-            <p>© All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
-        <script src="mode.js"></script>
-
+    <script src="script.js"></script>
 </body>
+26 minutes ago
 
+Rename HTML5Application/public_html/SellerDashboard.html to HTML5Appl…
 </html>
