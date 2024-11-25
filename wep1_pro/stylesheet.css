@@ -41,7 +41,7 @@ display: flex;
 }
 
 .nav-link {
-  color: #333;
+  color: #000000;
   text-decoration: none;
   font-size: 12px;
   margin-left: 1px;
@@ -64,7 +64,7 @@ display: flex;
   
   .vision-text {
     font-size: 20px;
-    color: #666;
+    color: #000000;
   }
   
   
@@ -110,7 +110,7 @@ display: flex;
   .offer-title {
     margin-top: 10px; /* Space above the title */
     font-size: 14px; /* Title size */
-    color: #333; /* Title color */
+    color: #000000; /* Title color */
     font-style: normal;
   }
 
@@ -125,7 +125,7 @@ display: flex;
   .categories-title {
     font-size: 1.8rem;
     margin-bottom: 20px;
-    color: #333;
+    color: #000000;
   }
   
   .categories-container {
@@ -142,7 +142,7 @@ display: flex;
   
   .category-title {
     font-size: 0.9rem;
-    color: #555;
+    color: #000000;
     font-weight: bold;
   }
   
@@ -173,6 +173,7 @@ display: flex;
   .reviews-title {
     text-align: center;
     margin-bottom: 20px;
+    color: #000000;
   }
   
   .review {
@@ -305,17 +306,17 @@ display: flex;
 /* Light Theme */
 .theme-light {
   background-color: #ffffff;
-  color: #333333;
+  color: #000000;
 }
 
 .theme-light .header {
   background-color: #fff3e0;
-  color: #333333
+  color: #000000;
 }
 
 .theme-light .site-footer {
   background-color: #fff3e0;
-  color: #333333
+  color: #000000;
 }
 
 .theme-light .vision-title,
@@ -325,7 +326,7 @@ display: flex;
 }
 
 .theme-light .nav-link {
-  color: #333333;
+  color: #000000;
 }
 
 .theme-light .nav-link:hover {
@@ -351,7 +352,7 @@ display: flex;
 .theme-dark .vision-title,
 .theme-dark .offers-title,
 .theme-dark .footer-title {
-  color: #150b0b; /* Highlighted text color */
+  color: #000000; /* Highlighted text color */
 }
 
 .theme-dark .nav-link {
@@ -371,7 +372,7 @@ display: flex;
 }
 
 .theme-dark .review {
-  background-color: #1e1e1e; /* Darker review cards */
+  background-color: #000000; /* Darker review cards */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Slightly stronger shadow */
 }
 
@@ -428,9 +429,3 @@ display: flex;
 .hidden {
   display: none;
 }
-
-
-  
-
-  
- 
