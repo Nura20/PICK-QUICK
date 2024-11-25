@@ -157,42 +157,84 @@
       <h3>Necklace</h3> 
       <div class="rating">⭐⭐⭐⭐</div>
       <p>$19.99</p>
-      <button>Add to Cart</button>
+       <div class="quantity-controls">
+            <button class="minus-btn">-</button>
+            <span class="quantity">1</span>
+            <button class="plus-btn">+</button>
+          </div>
+          <div class="add-to-cart-container">
+            <input type="checkbox" class="add-to-cart-checkbox"> Add to Cart
+          </div>
     </div>
     <div class="product">
       <img src="Wwatch.jpg" alt="Women Watch">
       <h3>Women Watch</h3> 
       <div class="rating">⭐⭐⭐⭐⭐</div>
       <p>$24.99</p>
-      <button>Add to Cart</button>
+       <div class="quantity-controls">
+            <button class="minus-btn">-</button>
+            <span class="quantity">1</span>
+            <button class="plus-btn">+</button>
+          </div>
+          <div class="add-to-cart-container">
+            <input type="checkbox" class="add-to-cart-checkbox"> Add to Cart
+          </div>
     </div>
     <div class="product">
       <img src="Mwatch.jpg" alt="Men Watch">
       <h3>Men Watch</h3> 
       <div class="rating">⭐⭐⭐⭐</div>
       <p>$14.99</p>
-      <button>Add to Cart</button>
+       <div class="quantity-controls">
+            <button class="minus-btn">-</button>
+            <span class="quantity">1</span>
+            <button class="plus-btn">+</button>
+          </div>
+          <div class="add-to-cart-container">
+            <input type="checkbox" class="add-to-cart-checkbox"> Add to Cart
+          </div>
     </div>
     <div class="product">
       <img src="Rings set.jpg" alt="Rings Set">
       <h3>Rings Set</h3> 
       <div class="rating">⭐⭐⭐</div>
       <p>$29.99</p>
-      <button>Add to Cart</button>
+       <div class="quantity-controls">
+            <button class="minus-btn">-</button>
+            <span class="quantity">1</span>
+            <button class="plus-btn">+</button>
+          </div>
+          <div class="add-to-cart-container">
+            <input type="checkbox" class="add-to-cart-checkbox"> Add to Cart
+          </div>
     </div>
     <div class="product">
       <img src="Swim.jpg" alt="Swimming Tools">
       <h3>Swimming Tools</h3> 
       <div class="rating">⭐⭐⭐</div>
       <p>$9.99</p>
-      <button>Add to Cart</button>
+    <div class="quantity-controls">
+            <button class="minus-btn">-</button>
+            <span class="quantity">1</span>
+            <button class="plus-btn">+</button>
+          </div>
+          <div class="add-to-cart-container">
+            <input type="checkbox" class="add-to-cart-checkbox"> Add to Cart
+          </div>
     </div>
     <div class="product">
       <img src="earings.jpg" alt="Earrings">
       <h3>Earrings</h3> 
       <div class="rating">⭐⭐⭐⭐⭐</div>
       <p>$34.99</p>
-      <button>Add to Cart</button>
+ <div class="quantity-controls">
+            <button class="minus-btn">-</button>
+            <span class="quantity">1</span>
+            <button class="plus-btn">+</button>
+          </div>
+          <div class="add-to-cart-container">
+            <input type="checkbox" class="add-to-cart-checkbox"> Add to Cart
+          </div>
     </div>
   </div>
 
@@ -226,7 +268,73 @@
     </div>
   </footer>
    <script src="mode.js"></script>
-</body>
- 
+ <script>
+      const cart = [];
+  
+      // Sorting Function
+      document.getElementById('sortOptions').addEventListener('change', function() {
+        const sortValue = this.value;
+        const products = Array.from(document.querySelectorAll('.product'));
+  
+        products.sort((a, b) => {
+          const priceA = parseFloat(a.querySelector('p').innerText.replace('$', ''));
+          const priceB = parseFloat(b.querySelector('p').innerText.replace('$', ''));
+          const nameA = a.querySelector('h3').innerText;
+          const nameB = b.querySelector('h3').innerText;
+  
+          switch (sortValue) {
+            case 'price-low-high': return priceA - priceB;
+            case 'price-high-low': return priceB - priceA;
+            case 'name-a-z': return nameA.localeCompare(nameB);
+            case 'name-z-a': return nameB.localeCompare(nameA);
+          }
+        });
+  
+        const content = document.querySelector('.content');
+        content.innerHTML = '';
+        products.forEach(product => content.appendChild(product));
+      });
+  
+      // Quantity and Add to Cart Functionality
+      document.querySelectorAll('.product').forEach(product => {
+        let quantity = 1;
+        const quantityDisplay = product.querySelector('.quantity');
+  
+        product.querySelector('.plus-btn').addEventListener('click', () => {
+          quantity++;
+          quantityDisplay.innerText = quantity;
+        });
+  
+        product.querySelector('.minus-btn').addEventListener('click', () => {
+          if (quantity > 1) {
+            quantity--;
+            quantityDisplay.innerText = quantity;
+          }
+        });
+  
+        const addToCartCheckbox = product.querySelector('.add-to-cart-checkbox');
+        addToCartCheckbox.addEventListener('change', () => {
+          const productName = product.querySelector('h3').innerText;
+          const productPrice = parseFloat(product.querySelector('p').innerText.replace('$', ''));
+  
+          if (addToCartCheckbox.checked) {
+            cart.push({ name: productName, price: productPrice, quantity });
+          } else {
+            const index = cart.findIndex(item => item.name === productName);
+            if (index !== -1) cart.splice(index, 1);
+          }
+  
+          localStorage.setItem('cart', JSON.stringify(cart));
+        });
+      });
+  
+      // My Cart Button
+      document.getElementById('myCartButton').addEventListener('click', () => {
+        localStorage.setItem('cart', JSON.stringify(cart));
+        window.location.href = 'CARTpage.html';
+      });
+    </script>
+  </body>
+    </html>
 
-</html>
+  
