@@ -200,62 +200,43 @@
 </footer>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const form = document.querySelector("form");
-        const productNameInput = document.getElementById("product-name");
-        const productPhotoInput = document.getElementById("product-photo");
-        const productPriceInput = document.getElementById("product-price");
-        const productCategoryInput = document.getElementById("product-category");
-        const productQuantityInput = document.getElementById("product-quantity");
-        const productDescriptionInput = document.getElementById("product-description");
+   
+  document.addEventListener("DOMContentLoaded", () => {
+    const addProductForm = document.querySelector("#add-product-form");
 
-        form.addEventListener("submit", function (event) {
-            event.preventDefault();
+    addProductForm.addEventListener("submit", (event) => {
+        event.preventDefault();
 
-            const productName = productNameInput.value.trim();
-            const productPhoto = productPhotoInput.value.trim();
-            const productPrice = productPriceInput.value.trim();
-            const productCategory = productCategoryInput.value;
-            const productQuantity = productQuantityInput.value.trim();
-            const productDescription = productDescriptionInput.value.trim();
+        // Retrieve product details from form fields
+        const name = document.querySelector("#product-name").value;
+        const category = document.querySelector("#product-category").value;
+        const description = document.querySelector("#product-description").value;
+        const image = document.querySelector("#product-image").value;
 
-            if (!productName || !productPhoto || !productPrice || !productCategory || !productQuantity || !productDescription) {
-                alert("Please fill in all required fields.");
-                return;
-            }
+        // Create a product object
+        const newProduct = { name, category, description, image };
 
-            if (/^\d/.test(productName)) {
-                alert("The product name cannot start with a number.");
-                return;
-            }
+        // Retrieve existing products from localStorage
+        const products = JSON.parse(localStorage.getItem("sellerProducts")) || {};
 
-            if (isNaN(productPrice) || productPrice <= 0) {
-                alert("Please enter a valid price.");
-                return;
-            }
+        // Add the new product to the relevant category
+        if (!products[category]) {
+            products[category] = [];
+        }
+        products[category].push(newProduct);
 
-            if (isNaN(productQuantity) || productQuantity <= 0) {
-                alert("Please enter a valid quantity.");
-                return;
-            }
+        // Save updated products to localStorage
+        localStorage.setItem("sellerProducts", JSON.stringify(products));
 
-            const newProduct = {
-                name: productName,
-                photo: productPhoto,
-                price: parseFloat(productPrice),
-                category: productCategory,
-                quantity: parseInt(productQuantity, 10),
-                description: productDescription,
-            };
+        // Clear the form
+        addProductForm.reset();
 
-            let products = JSON.parse(localStorage.getItem("products")) || [];
-            products.push(newProduct);
-            localStorage.setItem("products", JSON.stringify(products));
-
-            alert(`Product "${productName}" added successfully!`);
-            form.reset();
-        });
+        // Redirect to the dashboard or notify user
+        alert("Product added successfully!");
+        window.location.href = "dashboardsaller.html"; // Redirect to dashboard
     });
+});
+
 </script>
 </body>
 </html>
