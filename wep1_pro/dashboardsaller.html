@@ -2,108 +2,175 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="stylesheet.css">
-        <title>Seller  Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Dashboard - Pick Quick</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <style>
+        /* Embedded styles for the Seller Dashboard */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .header {
+            background-color: #5fa968;
+            color: white;
+            padding: 10px 0;
+        }
+
+        .header h1 {
+            text-align: center;
+        }
+
+        .header a {
+            color: white;
+            text-decoration: none;
+            padding: 0 10px;
+        }
+
+        .header a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 20px;
+            width: 80%;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px; /* Add rounded corners */
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .add-product-button {
+            padding: 10px;
+            background-color: #5fa968;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+        }
+
+        .add-product-button:hover {
+            background-color: #4b8c53;
+        }
+
+        .product-list {
+            margin-top: 20px;
+        }
+
+        .product-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .product-item img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .product-item .details {
+            flex: 1;
+            padding-left: 15px;
+        }
+
+        .product-item .details p {
+            margin: 5px 0;
+        }
+
+        .footer {
+            background-color: #5fa968;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+    </style>
 </head>
 <body>
-     <header>
-           
-  <nav>
-    <div class="nav-container">
-      <div class="logo">
-        <img src="images/logo.png" alt="Logo"> 
-        <span>LTZY</span> 
-      </div>
-      <ul class="nav-links">
-  <li><a href="SellerDashboard.html">Seller Dashboard</a></li>
-        <li><a href="userPage.html">User Page</a></li>
-        <li><a href="Groceries.html">Groceries</a></li>
-         <li><a href="Health.html">Health</a></li>
-          <li><a href="Electronics.html">Electronic</a></li>
-        <li><a href="cart.html">Cart</a></li>
-47 minutes ago
+<header class="header">
+    <h1>Seller Dashboard</h1>
+</header>
 
-final
-        <li><a href="index.html">Home Page</a></li>
-1 hour ago
+<main>
+    <h1>Manage Your Products</h1>
 
-final
-      </ul>
+    <button class="add-product-button" onclick="window.location.href = 'addProduct.html';">Add New Product</button>
+
+    <div class="product-list" id="product-list">
+        <h3>Your Products:</h3>
+        <!-- Products will be displayed here -->
     </div>
-  </nav> 
-    </header> 
-    
-    
-    
-   <div class="dashboard">
-        <div class="navigate_buttonsSD">
-            <h1 class="Heading1SD">Seller Dashboard</h1>
-            <a href="addProduct.html" class="btnSD">Add Product</a>
-           <a href="offers.html" class="btnSD">Mange Offer</a>
-        </div>
-        
-        
+</main>
 
-        <div class="categorySD">
-            <h2 class="Heading2SD">Groceries</h2>
-            <div class="product-listSD" id="groceries-products"></div>
-        </div>
-
-        <div class="categorySD">
-            <h2 class="Heading2SD">Health</h2>
-            <div class="product-listSD" id="health-products"></div>
-        </div>
-
-        <div class="categorySD">
-            <h2 class="Heading2SD">Electronics</h2>
-            <div class="product-listSD" id="electronics-products"></div>
-        </div>
-       
-       
-       
-       
-<footer>
-    <div class="footer-top">
-        <div class="footer-top-content">
-            <img src="images/logo.png" alt="Large Image" class="large-image"> <!-- Larger image -->
-            <div class="email-container">
-                <a href="mailto:LTZY@hotmail.com" class="email">LTZY@hotmail.com</a>
-            </div>
-            <div class="footer-images">
-                <div class="image-container">
-                    <img src="images/f1.png" alt="instgram">
-                    <span class="image-caption">@LTZY</span>
-                </div>
-                <div class="image-container">
-                    <img src="images/f2.png" alt="snapchat">
-                    <span class="image-caption">LTZY  </span>
-                </div>
-                <div class="image-container">
-                    <img src="images/f3.png" alt="x">
-                    <span class="image-caption">@LTZY</span>
-                </div>
-                <div class="image-container">
-                    <img src="images/f4.png" alt="Tiktok">
-                    <span class="image-caption">@LTZY</span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        &copy;2024 Ltzy
-    </div>
+<footer class="footer">
+    <p>© 2024 Pick Quick | All rights reserved</p>
 </footer>
-    </div>
 
-    <script src="script.js"></script>
-    <script src="mode.js"></script>
-    <script src="home.js"></script>
-    <script src="newFile.1.js"></script>
-    <script src="homeoffers.js"></script>
+<script>
+    // Load products from localStorage and display them
+    document.addEventListener("DOMContentLoaded", function () {
+        const productList = document.getElementById("product-list");
+
+        // Get the products stored in localStorage (or empty array if none exist)
+        let products = JSON.parse(localStorage.getItem("products")) || [];
+
+        if (products.length === 0) {
+            productList.innerHTML = "<p>You haven't added any products yet. Click 'Add New Product' to add one!</p>";
+        } else {
+            products.forEach(function(product) {
+                const productItem = document.createElement("div");
+                productItem.classList.add("product-item");
+
+                productItem.innerHTML = `
+                    <img src="${product.photo}" alt="${product.name}">
+                    <div class="details">
+                        <p><strong>${product.name}</strong></p>
+                        <p>Category: ${product.category}</p>
+                        <p>Price: $${product.price}</p>
+                        <p>Quantity: ${product.quantity}</p>
+                        <p>${product.description}</p>
+                    </div>
+                    <button onclick="deleteProduct('${product.name}')">Delete</button>
+                `;
+
+                productList.appendChild(productItem);
+            });
+        }
+    });
+
+    // Delete a product from localStorage and the page
+    function deleteProduct(productName) {
+        let products = JSON.parse(localStorage.getItem("products")) || [];
+        products = products.filter(product => product.name !== productName);
+
+        localStorage.setItem("products", JSON.stringify(products));
+
+        // Reload the product list after deletion
+        location.reload();
+    }
+</script>
+
 </body>
-26 minutes ago
-
-Rename HTML5Application/public_html/SellerDashboard.html to HTML5Appl…
 </html>
