@@ -1,6 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const dashboardContainer = document.querySelector(".category");
-    const categoryTitles = document.querySelectorAll(".category-title");
     const categories = ["Women’s Fashion", "Men’s Fashion", "Kids’ Fashion", "Accessories"];
 
     // Function to create a product card
@@ -17,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return productDiv;
     };
 
-    // Retrieve products from local storage
+    // Retrieve products from localStorage
     const products = JSON.parse(localStorage.getItem("sellerProducts")) || {};
 
     // Display products by category
@@ -26,6 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const categoryContainer = document.querySelectorAll(".category")[index];
 
         if (categoryProducts.length > 0) {
+            categoryContainer.innerHTML = ""; // Clear any placeholder text
             categoryProducts.forEach((product) => {
                 const productCard = createProductCard(product);
                 categoryContainer.appendChild(productCard);
@@ -36,4 +35,5 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
 
