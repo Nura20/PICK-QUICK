@@ -1,40 +1,49 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // Define the categories in the dashboard
-    const categories = {
-        "Women’s Fashion": document.querySelector(".category:nth-of-type(1)"),
-        "Men’s Fashion": document.querySelector(".category:nth-of-type(2)"),
-        "Kids’ Fashion": document.querySelector(".category:nth-of-type(3)"),
-        "Accessories": document.querySelector(".category:nth-of-type(4)")
-    };
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("evalForm");
+    const orderSelect = document.getElementById("order");
+    const logisticRatings = document.getElementsByName("rating");
+    const product1Ratings = document.getElementsByName("rating1");
+    const product2Ratings = document.getElementsByName("rating2");
 
-    // Retrieve products from localStorage
-    const storedProducts = JSON.parse(localStorage.getItem("sellerProducts")) || [];
+    form.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent form submission
 
-    // Helper function to create and append product cards
-    const addProductToCategory = (category, product) => {
-        const productDiv = document.createElement("div");
-        productDiv.className = "product";
-        productDiv.innerHTML = `
-            <img src="${product.image}" alt="${product.alt}">
-            <p class="name">Name: ${product.name}</p>
-            <p>${product.description}</p>
-        `;
-        categories[category].appendChild(productDiv);
-    };
+        // Validate order selection
+        const selectedOrder = orderSelect.value;
+        if (!selectedOrder) {
+            alert("Please choose an order.");
+            return;
+        }
 
-    // Populate products on the dashboard
-    if (storedProducts.length > 0) {
-        storedProducts.forEach(product => {
-            if (categories[product.category]) {
-                addProductToCategory(product.category, product);
-            }
-        });
-    } else {
-        // If no products, show a message
-        Object.values(categories).forEach(category => {
-            const noProductMessage = document.createElement("p");
-            noProductMessage.textContent = "No products available in this category.";
-            category.appendChild(noProductMessage);
-        });
-    }
+        // Validate logistic service rating
+        const logisticRating = Array.from(logisticRatings).find(radio => radio.checked)?.value;
+        if (!logisticRating) {
+            alert("Make sure to choose at least one star for logistic services.");
+            return;
+        }
+
+        // Validate Product #1 rating
+        const product1Rating = Array.from(product1Ratings).find(radio => radio.checked)?.value;
+        if (!product1Rating) {
+            alert("Make sure to choose at least one star for Product #1 (iPad).");
+            return;
+        }
+
+        // Validate Product #2 rating
+        const product2Rating = Array.from(product2Ratings).find(radio => radio.checked)?.value;
+        if (!product2Rating) {
+            alert("Make sure to choose at least one star for Product #2 (Apple Pencil).");
+            return;
+        }
+
+        // Display alert with detailed feedback
+        alert(`Thank you for your feedback!
+Your rating for Order #${selectedOrder}:
+- Logistic Service: ${logisticRating}
+- Product #1 (iPad): ${product1Rating}
+- Product #2 (Apple Pencil): ${product2Rating}`);
+
+        // Redirect to Home page
+        window.location.href = "HomePage.html";
+    });
 });
