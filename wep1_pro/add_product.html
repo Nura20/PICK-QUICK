@@ -195,41 +195,25 @@
 
 <script>
    
-  document.addEventListener("DOMContentLoaded", () => {
-    const addProductForm = document.querySelector("#add-product-form");
+const addProduct = () => {
+    const name = document.querySelector("#productName").value;
+    const description = document.querySelector("#productDescription").value;
+    const image = document.querySelector("#productImage").value;
+    const category = document.querySelector("#productCategory").value;
 
-    addProductForm.addEventListener("submit", (event) => {
-        event.preventDefault();
+    const product = { name, description, image };
 
-        // Retrieve product details from form fields
-        const name = document.querySelector("#product-name").value;
-        const category = document.querySelector("#product-category").value;
-        const description = document.querySelector("#product-description").value;
-        const image = document.querySelector("#product-image").value;
+    const products = JSON.parse(localStorage.getItem("sellerProducts")) || {};
+    if (!products[category]) {
+        products[category] = [];
+    }
+    products[category].push(product);
 
-        // Create a product object
-        const newProduct = { name, category, description, image };
+    localStorage.setItem("sellerProducts", JSON.stringify(products));
+    alert("Product added successfully!");
+};
 
-        // Retrieve existing products from localStorage
-        const products = JSON.parse(localStorage.getItem("sellerProducts")) || {};
-
-        // Add the new product to the relevant category
-        if (!products[category]) {
-            products[category] = [];
-        }
-        products[category].push(newProduct);
-
-        // Save updated products to localStorage
-        localStorage.setItem("sellerProducts", JSON.stringify(products));
-
-        // Clear the form
-        addProductForm.reset();
-
-        // Redirect to the dashboard or notify user
-        alert("Product added successfully!");
-        window.location.href = "dashboardsaller.html"; // Redirect to dashboard
-    });
-});
+document.querySelector("#addProductButton").addEventListener("click", addProduct);
 
 </script>
 </body>
