@@ -3,341 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seller Dashboard</title>
+    <title>Pick Quick / Seller Dashboard</title>
     <link rel="stylesheet" href="stylesheet.css">
-
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 10px;
-            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
         }
-        .dashboard {
-            background-color: #edd5ad;
-            text-align: center;
-            padding: 10px;
-            margin-top: 2px;
+
+        main {
+            padding: 20px;
+            width: 80%;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
         }
+
         h1 {
             text-align: center;
-            font-size: 24px;
-            font-weight: bold;
-            color: rgb(12, 1, 1);
-            margin: 0;
+            margin-bottom: 20px;
         }
-        .dashboard button {
-            margin: 10px;
-            padding: 8px 16px;
-            font-size: 14px;
-            cursor: pointer;
-            border: 1px solid black;
-            background-color: white;
-        }
-        .category {
-            margin: 20px 0;
-            overflow-x: auto; /* Enables horizontal scrollbar */
+
+        .product-list {
             display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
         }
-        .category-title {
-            font-weight: bold;
-            font-size: 24px;
-            text-align: center;
-            color: #333;
-            margin: 20px 0;
-        }
-        .product {
-            flex: 0 0 auto;
-            width: 200px;
-            margin-right: 20px;
+
+        .product-item {
+            background-color: #fff;
             border: 1px solid #ccc;
-            padding: 10px;
-            text-align: center;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            width: 30%;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-        .name {
+
+        .product-item img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .product-name {
             font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 10px;
         }
-        .product img {
-            width: 100%;
-            height: auto;
+
+        .product-price, .product-quantity, .product-category {
+            font-size: 14px;
+            margin-bottom: 5px;
         }
-        .pagination-container {
+
+        .no-products {
             text-align: center;
-            margin: 10px 0;
-        }
-        .pagination .dot {
-            height: 10px;
-            width: 10px;
-            margin: 0 5px;
-            border-radius: 50%;
-            display: inline-block;
-            border: 2px solid #000;
-        }
-        .pagination .dot.active {
-            background-color: #000;
-        }
-        .pagination .dot:not(.active) {
-            background-color: transparent;
+            font-size: 18px;
+            color: #555;
         }
     </style>
 </head>
-<header class="header">
-    <div class="header-container">
-      <a href="#" class="logo-link">
-        <img src="logo.jpg" alt="logo" class="logo-image">
-      </a>
-      <h1 class="website-name">Pick Quick</h1>
-      <nav class="nav">
-        <a href="homepage.html" class="nav-link" >Home
-        </a>
-        <span class="nav-separator">|</span>
-        <a href="dashboardsaller.html" class="nav-link">Seller page</a>
-        <span class="nav-separator">|</span>
-        <a href="Userpage.html" class="nav-link" >User page</a>
-        <span class="nav-separator">|</span>
-        <a href="Women.html" class="nav-link">Women's page</a>
-        <span class="nav-separator">|</span>
-        <a href="Men.html" class="nav-link">Men's page</a>
-        <span class="nav-separator">|</span>
-        <a href="Kids.html" class="nav-link">kid's page</a>
-        <span class="nav-separator">|</span>
-        <a href="Accessories.html" class="nav-link">Accessories's page</a>
-        <span class="nav-separator">|</span>
-        <a href="CARTpage.html" class="nav-link">Cart</a>
-       
-      </nav>
-    </div>
-  </header>
-
 <body>
- 
-  
-    <div class="dashboard">
+    <main>
         <h1>Seller Dashboard</h1>
-        <a href="add_product.html"> <button>Add new product</button></a>
-        <a href="offers.html" ><button>Manage offers</button></a>
-    </div>
+        <div id="product-list-container" class="product-list">
+            <!-- Products will be dynamically inserted here -->
+        </div>
+    </main>
 
-    <!-- Women’s Fashion -->
-    <div class="category-title">Women’s Fashion</div>
-    <div class="category">
-        <div class="product">
-            <img src="picture1.jpg" alt="Beige women’s jacket Image">
-            <p class="name">Name: Beige  jacket </p>
-           <p>Beige women’s jacket </p>
-        </div>
-        <div class="product">
-            <img src="picture2.jpg" alt="women’s bag Image">
-            <p class="name">Name: Beige Tote bag </p>
-           <p>Beige women’s Tote bag  </p>
-        </div>
-        <div class="product">
-            <img src="picture3.jpg" alt="women’s heel Image">
-            <p class="name">Name: Silver heel </p>
-            <p> Silver women’s heel  </p>
-        </div>
-        <div class="product">
-            <img src="picture4.jpg" alt="Grey women’s jacket Image ">
-            <p class="name">Name: Grey  jacket  4</p>
-           <p> Grey women’s jacket </p>
-        </div>
-        <div class="product">
-            <img src="picture5.jpg" alt="Black women’s Sunglasses Image">
-            <p class="name">Name: Black Sunglasses</p>
-        <p>Black women’s Sunglasses </p>
-    
-        </div>
-        <div class="product">
-            <img src="picture6.jpg" alt="Red women’s jacket Image">
-            <p class="name">Name: Red jacket </p>
-             <p> Red women’s jacket  </p>
-        </div>
-        <div class="product">
-            <img src="picture7.jpg" alt="Three women’s bags Image">
-            <p class="name">Name: Three bag's </p>
-            <p>Three women’s bag's  </p>
-        </div>
-    </div>
-    <div class="pagination-container">
-        <div class="pagination">
-            <span class="dot active"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-        </div>
-    </div>
-    
-    <!-- Men’s Fashion -->
-    <div class="category-title">Men’s Fashion</div>
-    <div class="category">
-        <div class="product">
-            <img src="picture8.jpg" alt="Burgundy men’s jacket Image">
-            <p class="name">Name: Burgundy man’s jacket</p>
-             <p>Burgundy men’s jacket</p>
-        </div>
-        <div class="product">
-            <img src="picture9.jpg" alt="green men’s jacket Image">
-            <p class="name">Name:  Green man’s jacket </p>
-          <p>Green men’s jacket </p>
-        </div>
-        <div class="product">
-            <img src="picture10.jpg" alt=" men’s eyeglass Image">
-            <p class="name"> Name:men’s eyeglass </p>
-          <p> Men’s eyeglass with diffrent frame </p>
-        </div>
-        <div class="product">
-            <img src="picture11.jpg" alt=" men’s shoes Image">
-            <p class="name">Name:Black shoes </p>
-            <p>Black men’s shoes</p>
-        </div>
-        <div class="product">
-            <img src="picture12.jpg" alt="Brown men’s bag Image">
-            <p class="name">Name: Brown bag </p>
-            <p>Brown men’s bag with strap</p>
-        </div>
-        <div class="product">
-            <img src="picture13.jpg" alt="BLack men’s bag Image">
-            <p class="name">Name: Black men’s bag</p>
-            <p> Back men’s bag with strap</p>
-        </div>
-        <div class="product">
-            <img src="picture14.jpg" alt="men’s shoes Image">
-            <p class="name">Name: Black shoes</p>
-           <p>Black elegant  men’s shoes </p>
-        </div>
-    </div>
-    <div class="pagination-container">
-        <div class="pagination">
-            <span class="dot active"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-        </div>
-    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const productListContainer = document.getElementById("product-list-container");
 
-    <!-- Kids’ Fashion -->
-    <div class="category-title">Kids’ Fashion</div>
-    <div class="category">
-        <div class="product">
-            <img src="picture15.jpg" alt=" Children clothes image ">
-            <p class="name"> Name: Children clothes</p>
-            <p>Children clothes , Girls and Boys</p>
-        </div>
-        <div class="product">
-            <img src="picture16.jpg" alt=" Boys shoes Image">
-            <p class="name">Name: Boys shoes </p>
-         <p> Boys red shoes with white tip</p>
-        </div>
-        <div class="product">
-            <img src="picture17.jpg" alt="Girls shoes image">
-            <p class="name">Name: Girls shoes</p>
-           <p> Girls bink shoes with roeses</p>
-        </div>
-        <div class="product">
-            <img src="picture18.jpg" alt=" Girls bag image">
-            <p class="name">Name:  Girls bag </p> 
-         <p>Girls black bag </p>
-        </div>
-        <div class="product">
-            <img src="picture19.jpg" alt=" Boys bag Image">
-            <p class="name">Name: Boys bag </p>
-            <p>Boys blue bag </p>
-        </div>
-        <div class="product">
-            <img src="picture20.jpg" alt="Boys T-shirt Image">
-            <p class="name">Name:Boys T-shirt </p>
-            <p> Boys turquoise T-shirt</p>
-        </div>
-        <div class="product">
-            <img src="picture21.jpg" alt="Girls T-shirt Image">
-            <p class="name">Name: Girls T-shirt </p>
-            <p>Girls white T-shirt </p>
-        </div>
-    </div>
-    <div class="pagination-container">
-        <div class="pagination">
-            <span class="dot active"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-        </div>
-    </div>
-    
-    
-    <!-- Accessories -->
-    <div class="category-title">Accessories</div>
-    <div class="category">
-        <div class="product">
-            <img src="picture22.jpg" alt=" men’s Brown Image">
-            <p class="name">Name: Brown watch</p>
-            <p> Brown men’s watch</p>
-        </div>
-        <div class="product">
-            <img src="picture23.jpg" alt=" women’s gold watch Image">
-            <p class="name">Name:  Gold watch</p>
-           <p> Gold men’s watch</p>
-        </div>
-        <div class="product">
-            <img src="picture24.jpg" alt=" women’s silver ring Image">
-            <p class="name">Name: Silver ring</p>
-             <p> Women’s silver ring with crystals</p>
-        </div>
-        <div class="product">
-            <img src="picture25.jpg" alt=" men’s ring Image">
-            <p class="name">Name: men’s ring  </p>
-            <p> Three men’s rings in different colors</p>
-        </div>
-        <div class="product">
-            <img src="picture26.jpg" alt=" men’s wallet Image">
-            <p class="name">Name: Brown  wallet </p>
-           <p>Brown men’s wallet with two pockets</p>
-        </div>
-        <div class="product">
-            <img src="picture27.jpg" alt="Gold necklace Image">
-            <p class="name"> Name: Gold necklace</p>
-            <p> Shiny Crystal circle necklace</p>
-        </div>
-        <div class="product">
-            <img src="picture28.jpg" alt="earrings Image">
-            <p class="name">Name: silver earrings </p>
-           <p>Shiny Silver necklace</p>
-        </div>
-    </div>
-    <footer class="site-footer">
-        <div class="footer-title">contact</div>
-        <div class="footer-content">
-          <div class="contact-info">
-            <a href="#" class="contact-item">
-              <img src="phone.png" alt=" " class="icon">
-              <span>+966 xx xxx xxxx</span>
-            </a>
-            <a href="#" class="contact-item">
-              <img src="emmail.JPG" alt=" " class="icon">
-              
-              <span>pick-quick@shopping.com</span>
-            </a>
-          </div>
-          
-          <div class="social-media">
-            
-            <a href="https://www.facebook.com/" class="social-icon">
-              <img src="facebook.jpg" alt=" ">
-            </a>
-            <a href="https://twitter.com/?lang=en" class="social-icon">
-              <img src="x.jpg" alt=" ">
-            </a>
-            <a href="https://www.instagram.com/" class="social-icon">
-              <img src="instgram.jpg" alt=" ">
-            </a>
-          </div>
-      
-          <div class="footer-text">
-            <p>© All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
-        <script src="mode.js"></script>
+            // Retrieve products from localStorage
+            const products = JSON.parse(localStorage.getItem("products")) || [];
 
+            if (products.length === 0) {
+                // Display a message if no products are found
+                productListContainer.innerHTML = '<p class="no-products">No products available. Please add products first.</p>';
+            } else {
+                // Loop through the products and display them
+                products.forEach(product => {
+                    
+                    const productItem = document.createElement("div");
+                    productItem.classList.add("product-item");
+
+                    // Add product details
+                    productItem.innerHTML = `
+                        <img src="${product.photo || 'placeholder.jpg'}" alt="${product.name}">
+                        <p class="product-name">${product.name}</p>
+                        <p class="product-price">Price: $${product.price.toFixed(2)}</p>
+                        <p class="product-quantity">Quantity: ${product.quantity}</p>
+                        <p class="product-category">Category: ${product.category}</p>
+                        <p class="product-description">${product.description}</p>
+                    `;
+
+                    productListContainer.appendChild(productItem);
+                });
+            }
+        });
+    </script>
 </body>
-
 </html>
