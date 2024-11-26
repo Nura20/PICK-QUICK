@@ -137,29 +137,45 @@
 </header>
 
 <body>
-<main>
-    <h1>Add New Product</h1>
-   <form id="add-product-form">
-    <label for="product-name">Product Name:</label>
-    <input type="text" id="product-name" required>
-    
-    <label for="product-category">Category:</label>
-    <select id="product-category" required>
-        <option value="Women’s Fashion">Women’s Fashion</option>
-        <option value="Men’s Fashion">Men’s Fashion</option>
-        <option value="Kids’ Fashion">Kids’ Fashion</option>
-        <option value="Accessories">Accessories</option>
-    </select>
-    
-    <label for="product-description">Description:</label>
-    <textarea id="product-description" required></textarea>
-    
-    <label for="product-image">Image URL:</label>
-    <input type="url" id="product-image" required>
-    
-    <button type="submit">Add Product</button>
-</form>
-</main>
+
+     <main class="containerSD">
+        <h2>Add New Product</h2>
+        <form id="product-form">
+            <label for="product-name">Product Name:</label>
+            <input type="text" id="product-name" name="product-name">
+
+            <label for="product-price">Product Price:</label>
+            <input type="text" id="product-price" name="product-price">
+
+            <label for="product-category">Product Category:</label>
+            <select id="product-category" name="product-category">
+                <option value="women">women</option>
+                <option value="men">men</option>
+                <option value="kids">kids</option>
+                  <option value="accessories">accessories</option>
+            </select>
+
+            <label for="product-quantity">Product Quantity:</label>
+            <input type="text" id="product-quantity" name="product-quantity">
+
+            <label for="product-photo">Product Photo:</label>
+            <input type="file" id="product-photo" name="product-photo" accept="image/*">
+
+         <div id="image-preview-box" class="image-preview-box">
+ 
+    <img id="image-preview" src="images/default.jpg" alt="Product image preview" style="display: none;">
+</div>
+
+
+
+
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" class="textareaSD"></textarea>
+
+            <button type="submit">Add Product</button>
+        </form>
+    </main>
+
 
 <footer class="site-footer">
     <div class="footer-title">Contact</div>
@@ -195,25 +211,160 @@
 
 <script>
    
-const addProduct = () => {
-    const name = document.querySelector("#productName").value;
-    const description = document.querySelector("#productDescription").value;
-    const image = document.querySelector("#productImage").value;
-    const category = document.querySelector("#productCategory").value;
+/* 
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/javascript.js to edit this template
+ */
 
-    const product = { name, description, image };
+document.addEventListener("DOMContentLoaded", () => {
+    displayProducts();
 
-    const products = JSON.parse(localStorage.getItem("sellerProducts")) || {};
-    if (!products[category]) {
-        products[category] = [];
+    const form = document.getElementById("product-form");
+    if (form) {
+        form.addEventListener("submit", addProduct);
     }
-    products[category].push(product);
 
-    localStorage.setItem("sellerProducts", JSON.stringify(products));
-    alert("Product added successfully!");
-};
+    const photoInput = document.getElementById("product-photo");
+    const imagePreview = document.getElementById("image-preview");
 
-document.querySelector("#addProductButton").addEventListener("click", addProduct);
+    if (photoInput && imagePreview) {
+        photoInput.addEventListener("change", function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    imagePreview.src = e.target.result;
+                    imagePreview.style.display = "block";
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    }
+});
+function displayProducts() {
+    const groceriesContainer = document.getElementById("groceries-products");
+    const healthContainer = document.getElementById("health-products");
+    const electronicsContainer = document.getElementById("electronics-products");
+
+    if (!groceriesContainer ||!healthContainer  || !electronicsContainer) {
+        console.error("One or more product containers not found.");
+        return;
+    }
+
+    groceriesContainer.innerHTML = "";
+    healthContainer.innerHTML = "";
+    electronicsContainer.innerHTML = "";
+
+    const products = JSON.parse(localStorage.getItem("products")) || [];
+
+    products.forEach(product => {
+        const productDiv = document.createElement("div");
+        productDiv.classList.add("productSD");
+
+        productDiv.innerHTML = `
+            <img src="${product.photo}" alt="${product.name} Image">
+            <h3>${product.name}</h3>
+            <p>${product.description}</p>
+        `;
+
+        if (product.category === "Groceries") {
+            groceriesContainer.appendChild(productDiv);
+        } else if (product.category === "Health") {
+            healthContainer.appendChild(productDiv);
+        } else if (product.category === "Electronics") {
+            electronicsContainer.appendChild(productDiv);
+        }
+    });
+}
+
+function addProduct(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("product-name").value.trim();
+    const price = document.getElementById("product-price").value.trim();
+    const category = document.getElementById("product-category").value.trim();
+    const quantity = document.getElementById("product-quantity").value.trim();
+    const photo = document.getElementById("product-photo").files[0];
+    const description = document.getElementById("description").value.trim();
+
+    let errorMessages = [];
+
+    if (!name) {
+        errorMessages.push("Product name is required.");
+    }
+
+    if (!price) {
+        errorMessages.push("Price is required.");
+    }
+
+    if (!category) {
+        errorMessages.push("Category is required.");
+    }
+
+    if (!quantity) {
+        errorMessages.push("Quantity is required.");
+    }
+
+    if (!photo) {
+        errorMessages.push("Product photo is required.");
+    }
+
+    if (!description) {
+        errorMessages.push("Description is required.");
+    }
+
+    if (name && /^\d/.test(name)) {
+        errorMessages.push("The product name cannot start with a number.");
+    }
+
+    // Check if price is a valid number
+    if (price && isNaN(parseFloat(price))) {
+        errorMessages.push("Price must be a valid number.");
+    }
+
+    // Check if quantity is a valid number
+    if (quantity && isNaN(parseInt(quantity))) {
+        errorMessages.push("Quantity must be a valid number.");
+    }
+
+    if (errorMessages.length > 0) {
+        alert(errorMessages.join("\n"));
+        return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = function(event) {
+        const product = {
+            name: name,
+            price: price,
+            category: category,
+            quantity: quantity,
+            photo: event.target.result,
+            description: description
+        };
+
+        const products = JSON.parse(localStorage.getItem("products")) || [];
+        products.push(product);
+        localStorage.setItem("products", JSON.stringify(products));
+
+        alert(`The product ${name} has been added successfully.`);
+
+        document.querySelector("form").reset();  
+        const imagePreview = document.getElementById("image-preview");
+        if (imagePreview) {
+            imagePreview.style.display = "none";  
+        }
+
+        const photoInput = document.getElementById("product-photo");
+        if (photoInput) {
+            photoInput.value = '';  
+        }
+
+        displayProducts();
+    };
+
+    reader.readAsDataURL(photo);
+}
 
 </script>
 </body>
