@@ -1531,3 +1531,478 @@ h2.Heading2SD-Add{
     margin: 0; 
     color: white;
 }
+
+/* Header Styles */
+.header {
+    background-color: #fff3e0;
+    padding: 2px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .header-container {
+    display: flex;
+    align-items: flex-end;
+    max-width: 1100px;
+    margin: 0 auto;
+    flex-wrap: wrap; /* Ensure it wraps on smaller screens */
+  }
+  
+  .logo-link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-image {
+    display: flex;
+    align-items: flex-end;
+    max-height: 60px;
+    width: auto;
+    margin-left: -120px;
+  }
+  
+  .website-name {
+    font-size: 20px;
+    color: #333;
+    margin-right: auto; /* Dynamically adjust spacing */
+    margin-left: -35px;
+  }
+  
+  .nav {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap; /* Allow links to wrap */
+    justify-content: flex-end;
+  }
+  
+  .nav-link {
+    color: #000000;
+    text-decoration: none;
+    font-size: 12px;
+    margin-left: 1px;
+  }
+  
+  .nav-link:hover {
+    color: #b9aaaa;
+  }
+  
+  /* Vision Section */
+  .vision {
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .vision-title {
+    font-size: 24px;
+    color: #e59e33;
+    margin-bottom: 10px;
+  }
+  
+  .vision-text {
+    font-size: 20px;
+    color: #000000;
+  }
+  
+  /* Offers Section */
+  .offers {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .offers-title {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+  
+  .offers-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .offer-item {
+    text-align: center;
+    width: 200px;
+  }
+  
+  .offer-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.2s;
+  }
+  
+  .offer-item:hover .offer-image {
+    transform: scale(1.05);
+  }
+  
+  .offer-title {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #000000;
+    font-style: normal;
+  }
+  
+  /* Categories Section */
+  .categories {
+    text-align: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    margin: 30px 0;
+  }
+  
+  .categories-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #000000;
+  }
+  
+  .categories-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .category-item a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .category-title {
+    font-size: 0.9rem;
+    color: #000000;
+    font-weight: bold;
+  }
+  
+  .category-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ccc;
+    margin-bottom: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .category-image:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Reviews Section */
+  .user-reviews {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .reviews-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #000000;
+  }
+  
+  .review {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .review-content {
+    flex: 1;
+  }
+  
+  .review-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .user-name {
+    font-weight: bold;
+  }
+  
+  .review-text {
+    line-height: 1.5;
+  }
+  
+  .review-image {
+    margin-left: 20px;
+  }
+  
+  .review-image img {
+    max-width: 100px;
+    border-radius: 50%;
+  }
+  .site-footer {
+    background-color: #fff3e0;
+    color: white;
+    padding: 2px;
+  }
+  .footer-title {
+    text-align: center; /* Center the title */
+    font-size: 18px; /* Adjust the font size as needed */
+    color: rgb(0, 0, 0); /* Title color */
+    margin-bottom: 15px; /* Space between title and content */
+  }
+  
+  .footer-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    
+  }
+  
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 20px;
+   
+  }
+  
+  .contact-item {
+    display: flex;
+    align-items: center;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    margin-bottom: 10px;
+  }
+  
+  .contact-item .icon {
+    width: 16px; /* Smaller size for contact icons */
+    height: auto;
+    margin-right: 8px;
+  }
+  
+  
+  
+  .social-media {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    margin: 0 20px;
+    justify-content: center;
+  }
+  .media-title {
+    text-align: center; /* Center the title */
+    font-size: 28px; /* Title size */
+    margin-bottom: 30px; /* Space below the title */
+    color: #000000;
+  }
+  
+  .social-icon {
+    display: block;
+    width: 30px;
+    height: auto;
+    margin: 0 10px;
+    
+    
+  }
+  
+  .social-icon img {
+    width: 24px; /* Smaller size for social media icons */
+    height: 24px; /* Maintain aspect ratio */
+    margin: 0 10px;
+    align-items: center;
+    
+  }
+  
+  
+  .footer-text {
+    text-align: right;
+    color: #000000;
+    font-size: 14px;
+    margin-top: auto; /* Pushes copyright to the bottom */
+  }
+  
+  /* Light Theme */
+  .theme-light {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  .theme-light .header {
+    background-color: #fff3e0;
+    color: #000000;
+  }
+  
+  .theme-light .site-footer {
+    background-color: #fff3e0;
+    color: #000000;
+  }
+  
+  .theme-light .vision-title,
+  .theme-light .offers-title,
+  .theme-light .footer-title {
+    color: #e59e33;
+  }
+  
+  .theme-light .nav-link {
+    color: #000000;
+  }
+  
+  .theme-light .nav-link:hover {
+    color: #b9aaaa;
+  }
+  
+  /* Dark Theme */
+  .theme-dark {
+    background-color: #7c5353; /* Dark background for the body */
+    color: #e0e0e0; /* Light text for contrast */
+  }
+  
+  .theme-dark .header {
+    background-color: #571e1e; /* Darker header */
+    color: #e0e0e0;
+  }
+  
+  .theme-dark .site-footer {
+    background-color: #571e1e;
+    color: #cccccc;
+  }
+  
+  .theme-dark .vision-title,
+  .theme-dark .offers-title,
+  .theme-dark .footer-title {
+    color: #000000; /* Highlighted text color */
+  }
+  
+  .theme-dark .nav-link {
+    color: #fff7f7;
+  }
+  
+  .theme-dark .nav-link:hover {
+    color: #e5e3e2;
+  }
+  
+  .theme-dark .offer-item {
+    background-color: #6e3d3d; /* Darker offer background */
+  }
+  
+  .theme-dark .offer-image {
+    border: 1px solid #2b1616;
+  }
+  
+  .theme-dark .review {
+    background-color: #000000; /* Darker review cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Slightly stronger shadow */
+  }
+  
+  .theme-dark .contact-item {
+    color: #f1ebeb;
+  }
+  
+  .theme-dark .social-icon img {
+    filter: invert(100%); /* Invert icons for better visibility */
+  }
+  
+  .theme-dark .footer-text {
+    color: #cccccc;
+  }
+  
+  
+  /* Theme Toggle Button Below Header */
+  #theme-toggle-btn {
+    padding: 1px 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #565d64;
+    color: #a5b8cb;
+    font-size: 16px;
+    margin: 10px auto; /* Add spacing below the header */
+    display: block; /* Center the button */
+    text-align: center;
+  }
+  
+  
+  /* Hide additional offers by default */
+  .more-offers {
+    display: none;
+  }
+  
+  /* Show more offers when checkbox is checked */
+  .show-more-checkbox:checked + .show-more-label + .more-offers {
+    display: block;
+  }
+  
+  /* Style for the "More Offers" button */
+  .show-more-label {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 5px;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  
+  /* Responsive Design for Footer */
+  @media (max-width: 768px) {
+    .site-footer {
+      flex-direction: column; /* Stack items vertically */
+      align-items: center; /* Center all items */
+      text-align: center;
+    }
+  
+    .contact-info, .footer-text {
+      align-items: center; /* Center-align content */
+      margin-bottom: 10px; /* Add spacing between sections */
+      text-align: center;
+    }
+  }
+  
+  
+  @media (max-width: 768px) {
+    .offer-item {
+      width: 100%;
+    }
+  
+    .review {
+      flex-direction: column;
+    }
+  
+    .review-image {
+      margin-left: 0;
+      margin-bottom: 10px;
+    }
+  
+    .header-container {
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+  
+    .logo-image {
+      max-height: 40px;
+      margin: 0 auto;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .website-name {
+      font-size: 16px;
+    }
+  
+    .categories-container {
+      flex-direction: column;
+    }
+  
+  
+  }
+  
