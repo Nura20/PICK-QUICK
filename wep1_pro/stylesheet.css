@@ -383,13 +383,14 @@
   cursor: pointer;
   border: none;
   border-radius: 5px;
-  background-color: #565d64;
-  color: #a5b8cb;
+  background-color: #ffefb9;
+  color: #c51616;
   font-size: 16px;
   margin: 10px auto; /* Add spacing below the header */
   display: block; /* Center the button */
   text-align: center;
 }
+
 
 
 /* Hide additional offers by default */
