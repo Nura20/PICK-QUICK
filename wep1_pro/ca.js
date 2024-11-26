@@ -180,7 +180,7 @@ document.getElementById("checkout-btn").addEventListener("click", () => {
         displayCart();
 
         // Redirect to the evaluation page
-        window.location.href = "evaluationPage.html"; // Replace with the actual evaluation page URL
+        window.location.href = "evaluation.html"; // Replace with the actual evaluation page URL
     }
 });
 
