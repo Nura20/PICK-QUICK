@@ -170,21 +170,14 @@ document.getElementById("empty-cart").addEventListener("click", () => {
 
 // Checkout
 document.getElementById("checkout-btn").addEventListener("click", () => {
-    // Get the cart items and calculate the total
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-
-    // Show a message confirming the purchase
-    alert(`Thank you for your purchase! Total: $${total.toFixed(2)}`);
-
-    // Empty the cart after purchase
-    localStorage.setItem('cart', JSON.stringify([]));
-    displayCart();
-
-    // Redirect to the evaluation page
-    window.location.href = "evaluationPage.html"; // Replace with the actual evaluation page URL
+    if (confirm("Are you sure you want to checkout?")) {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+        alert(`Thank you for your purchase! Total: $${total.toFixed(2)}`);
+        localStorage.setItem('cart', JSON.stringify([]));
+        displayCart();
+    }
 });
-
 
 // Ensure the cart is displayed on the Cart page
 if (window.location.pathname.includes("CARTpage.html")) {
