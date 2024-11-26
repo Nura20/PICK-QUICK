@@ -169,24 +169,22 @@ document.getElementById("empty-cart").addEventListener("click", () => {
     }
 });
 
-document.getElementById("checkout-btn").addEventListener("click", () => {
-    // Retrieve the cart from localStorage or initialize an empty array if cart is not present
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    
-    // Calculate the total price of all items in the cart
-    const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+// Checkout function
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("checkout-btn").addEventListener("click", () => {
+        // جلب محتوى السلة
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
-    // Show a confirmation alert to the user with the total amount
-    alert(`Thank you for your purchase! Total: $${total.toFixed(2)}`);
+        // رسالة التأكيد
+        alert(`Thank you for your purchase! Total: $${total.toFixed(2)}`);
 
-    // Clear the cart after checkout by setting it to an empty array in localStorage
-    localStorage.setItem('cart', JSON.stringify([]));
+        // تفريغ السلة
+        localStorage.setItem('cart', JSON.stringify([]));
 
-    // Optionally update the cart display (e.g., on the cart page)
-    displayCart();
-
-    // Redirect to the evaluation page after completing the checkout
-    window.location.replace("evaluation.html");
+        // إعادة توجيه المستخدم إلى صفحة التقييم
+        window.location.href = "evaluation.html";
+    });
 });
 
 
