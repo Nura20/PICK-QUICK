@@ -1,124 +1,50 @@
+// Ensure the code runs after the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", () => {
     displayProducts();
-
-    const form = document.getElementById("product-form");
-    if (form) {
-        form.addEventListener("submit", addProduct);
-    }
-
-    const photoInput = document.getElementById("product-photo");
-    const imagePreview = document.getElementById("image-preview");
-
-    if (photoInput && imagePreview) {
-        photoInput.addEventListener("change", function(event) {
-            const file = event.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    imagePreview.src = e.target.result;
-                    imagePreview.style.display = "block";
-                };
-                reader.readAsDataURL(file);
-            }
-        });
-    }
 });
 
-
+// Function to display products on the Seller Dashboard
 function displayProducts() {
-    const groceriesContainer = document.getElementById("groceries-products");
-    const healthContainer = document.getElementById("health-products");
-    const electronicsContainer = document.getElementById("electronics-products");
+    const WomenID = document.getElementById("womenID");
+    const MenID = document.getElementById("menID");
+    const KidID = document.getElementById("kidID");
+    const AccessoriesID = document.getElementById("AccessoriesID");
 
-    if (!groceriesContainer || !healthContainer || !electronicsContainer) {
-        console.error("One or more product containers not found.");
+    // Check if category elements exist
+    if (!WomenID || !MenID || !KidID || !AccessoriesID) {
+        console.error("One or more product containers not found in the Seller Dashboard.");
         return;
     }
 
-    groceriesContainer.innerHTML = "";
-    healthContainer.innerHTML = "";
-    electronicsContainer.innerHTML = "";
+    // Clear previous content in the containers
+    WomenID.innerHTML = "";
+    MenID.innerHTML = "";
+    KidID.innerHTML = "";
+    AccessoriesID.innerHTML = "";
 
+    // Fetch products from localStorage
     const products = JSON.parse(localStorage.getItem("products")) || [];
 
-    products.forEach(product => {
+    // Populate categories with products
+    products.forEach((product) => {
         const productDiv = document.createElement("div");
-        productDiv.classList.add("productSD");
+        productDiv.classList.add("product");
 
         productDiv.innerHTML = `
-            <img src="${product.photo}" alt="${product.name} Image">
-            <h3>${product.name}</h3>
+            <img src="${product.photo}" alt="${product.name} Image" class="product-image">
+            <p class="name">Name: ${product.name}</p>
             <p>${product.description}</p>
         `;
 
-        if (product.category === "Groceries") {
-            groceriesContainer.appendChild(productDiv);
-        } else if (product.category === "Health") {
-            healthContainer.appendChild(productDiv);
-        } else if (product.category === "Electronics") {
-            electronicsContainer.appendChild(productDiv);
+        // Append product to the respective category
+        if (product.category === "Women") {
+            WomenID.appendChild(productDiv);
+        } else if (product.category === "Men") {
+            MenID.appendChild(productDiv);
+        } else if (product.category === "Kids") {
+            KidID.appendChild(productDiv);
+        } else if (product.category === "Accessories") {
+            AccessoriesID.appendChild(productDiv);
         }
     });
-}
-
-function addProduct(event) {
-    event.preventDefault();
-
-    const name = document.getElementById("product-name").value.trim();
-    const price = document.getElementById("product-price").value.trim();
-    const category = document.getElementById("product-category").value.trim();
-    const quantity = document.getElementById("product-quantity").value.trim();
-    const photo = document.getElementById("product-photo").files[0];
-    const description = document.getElementById("description").value.trim();
-
-    if (!name || !price || !category || !quantity || !photo || !description) {
-        alert("All fields must be filled out.");
-        return;
-    }
-
-    if (/^\d/.test(name)) {
-        alert("The product name cannot start with a number.");
-        return;
-    }
-
-    if (isNaN(parseFloat(price)) || isNaN(parseInt(quantity))) {
-        alert("Price and quantity must be numbers.");
-        return;
-    }
-
-    const reader = new FileReader();
-    reader.onload = function(event) {
-        const product = {
-            name: name,
-            price: price,
-            category: category,
-            quantity: quantity,
-            photo: event.target.result,
-            description: description
-        };
-
-        const products = JSON.parse(localStorage.getItem("products")) || [];
-        products.push(product);
-        localStorage.setItem("products", JSON.stringify(products));
-
-        alert(`The product ${name} has been added successfully.`);
-
-    
-        document.querySelector("form").reset();  
-        const imagePreview = document.getElementById("image-preview");
-        if (imagePreview) {
-            imagePreview.style.display = "none";  
-        }
-
-   
-        const photoInput = document.getElementById("product-photo");
-        if (photoInput) {
-            photoInput.value = '';  
-        }
-
-    
-        displayProducts();
-    };
-
-    reader.readAsDataURL(photo);
 }

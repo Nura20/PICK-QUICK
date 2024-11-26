@@ -242,40 +242,50 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 function displayProducts() {
-    const groceriesContainer = document.getElementById("groceries-products");
-    const healthContainer = document.getElementById("health-products");
-    const electronicsContainer = document.getElementById("electronics-products");
+    const WomenID = document.getElementById("womenID");
+    const MenID = document.getElementById("menID");
+    const KidID = document.getElementById("kidID");
+    const AccessoriesID = document.getElementById("AccessoriesID");
 
-    if (!groceriesContainer ||!healthContainer  || !electronicsContainer) {
-        console.error("One or more product containers not found.");
+    // Check if elements exist
+    if (!WomenID || !MenID || !KidID || !AccessoriesID) {
+        console.error("One or more product containers not found in the Seller Dashboard.");
         return;
     }
 
-    groceriesContainer.innerHTML = "";
-    healthContainer.innerHTML = "";
-    electronicsContainer.innerHTML = "";
+    // Clear previous content
+    WomenID.innerHTML = "";
+    MenID.innerHTML = "";
+    KidID.innerHTML = "";
+    AccessoriesID.innerHTML = "";
 
+    // Fetch products from localStorage
     const products = JSON.parse(localStorage.getItem("products")) || [];
 
-    products.forEach(product => {
+    // Populate categories with products
+    products.forEach((product) => {
         const productDiv = document.createElement("div");
-        productDiv.classList.add("productSD");
+        productDiv.classList.add("product");
 
         productDiv.innerHTML = `
             <img src="${product.photo}" alt="${product.name} Image">
-            <h3>${product.name}</h3>
+            <p class="name">Name: ${product.name}</p>
             <p>${product.description}</p>
         `;
 
-        if (product.category === "Groceries") {
-            groceriesContainer.appendChild(productDiv);
-        } else if (product.category === "Health") {
-            healthContainer.appendChild(productDiv);
-        } else if (product.category === "Electronics") {
-            electronicsContainer.appendChild(productDiv);
+        // Append to the respective category
+        if (product.category === "Women") {
+            WomenID.appendChild(productDiv);
+        } else if (product.category === "Men") {
+            MenID.appendChild(productDiv);
+        } else if (product.category === "Kids") {
+            KidID.appendChild(productDiv);
+        } else if (product.category === "Accessories") {
+            AccessoriesID.appendChild(productDiv);
         }
     });
 }
+
 
 function addProduct(event) {
     event.preventDefault();
