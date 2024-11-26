@@ -1,96 +1,124 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Function to display products on the Seller Dashboard
-    function displayProducts() {
-        const categories = document.querySelectorAll(".category");
+    displayProducts();
 
-        // Retrieve products from local storage
-        const products = JSON.parse(localStorage.getItem("sellerProducts")) || [];
-
-        // Check if there are products to display
-        if (products.length > 0) {
-            products.forEach(product => {
-                const categoryDiv = [...categories].find(category => category.parentNode.querySelector(".category-title").innerText.includes(product.category));
-
-                if (categoryDiv) {
-                    // Create product element
-                    const productDiv = document.createElement("div");
-                    productDiv.className = "product";
-                    productDiv.innerHTML = `
-                        <img src="${product.image}" alt="${product.name} Image">
-                        <p class="name">Name: ${product.name}</p>
-                        <p>${product.description}</p>
-                    `;
-                    categoryDiv.appendChild(productDiv);
-                }
-            });
-        } else {
-            alert("No products to display. Please add products from the 'Add New Product' page.");
-        }
+    const form = document.getElementById("product-form");
+    if (form) {
+        form.addEventListener("submit", addProduct);
     }
 
-    // Function to handle adding new products
-    function handleAddProductForm() {
-        const form = document.querySelector("#addProductForm");
-        if (!form) return; // If the form doesn't exist, skip this section (for the Seller Dashboard)
+    const photoInput = document.getElementById("product-photo");
+    const imagePreview = document.getElementById("image-preview");
 
-        const productNameInput = document.querySelector("#productName");
-        const productCategoryInput = document.querySelector("#productCategory");
-        const productDescriptionInput = document.querySelector("#productDescription");
-        const productImageInput = document.querySelector("#productImage");
-
-        form.addEventListener("submit", (e) => {
-            e.preventDefault(); // Prevent form submission
-
-            const name = productNameInput.value.trim();
-            const category = productCategoryInput.value.trim();
-            const description = productDescriptionInput.value.trim();
-            const image = productImageInput.value.trim();
-
-            // Validate inputs
-            if (!name || !category || !description || !image) {
-                alert("All fields are required!");
-                return;
+    if (photoInput && imagePreview) {
+        photoInput.addEventListener("change", function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    imagePreview.src = e.target.result;
+                    imagePreview.style.display = "block";
+                };
+                reader.readAsDataURL(file);
             }
-
-            if (/^\d/.test(name)) {
-                alert("Product name can't start with numbers!");
-                return;
-            }
-
-            if (!image.match(/\.(jpg|jpeg|png|gif)$/i)) {
-                alert("Please provide a valid image URL!");
-                return;
-            }
-
-            // Retrieve existing products from local storage
-            let products = JSON.parse(localStorage.getItem("sellerProducts")) || [];
-
-            // Add new product to the array
-            const newProduct = {
-                name,
-                category,
-                description,
-                image
-            };
-            products.push(newProduct);
-
-            // Save updated products to local storage
-            localStorage.setItem("sellerProducts", JSON.stringify(products));
-
-            // Show success message
-            alert(`Product "${name}" has been added successfully!`);
-
-            // Clear the form
-            form.reset();
         });
     }
-
-    // Determine which page the script is running on
-    if (document.querySelector(".dashboard")) {
-        // If on the Seller Dashboard
-        displayProducts();
-    } else if (document.querySelector("#addProductForm")) {
-        // If on the Add a New Product page
-        handleAddProductForm();
-    }
 });
+
+
+function displayProducts() {
+    const groceriesContainer = document.getElementById("groceries-products");
+    const healthContainer = document.getElementById("health-products");
+    const electronicsContainer = document.getElementById("electronics-products");
+
+    if (!groceriesContainer || !healthContainer || !electronicsContainer) {
+        console.error("One or more product containers not found.");
+        return;
+    }
+
+    groceriesContainer.innerHTML = "";
+    healthContainer.innerHTML = "";
+    electronicsContainer.innerHTML = "";
+
+    const products = JSON.parse(localStorage.getItem("products")) || [];
+
+    products.forEach(product => {
+        const productDiv = document.createElement("div");
+        productDiv.classList.add("productSD");
+
+        productDiv.innerHTML = `
+            <img src="${product.photo}" alt="${product.name} Image">
+            <h3>${product.name}</h3>
+            <p>${product.description}</p>
+        `;
+
+        if (product.category === "Groceries") {
+            groceriesContainer.appendChild(productDiv);
+        } else if (product.category === "Health") {
+            healthContainer.appendChild(productDiv);
+        } else if (product.category === "Electronics") {
+            electronicsContainer.appendChild(productDiv);
+        }
+    });
+}
+
+function addProduct(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("product-name").value.trim();
+    const price = document.getElementById("product-price").value.trim();
+    const category = document.getElementById("product-category").value.trim();
+    const quantity = document.getElementById("product-quantity").value.trim();
+    const photo = document.getElementById("product-photo").files[0];
+    const description = document.getElementById("description").value.trim();
+
+    if (!name || !price || !category || !quantity || !photo || !description) {
+        alert("All fields must be filled out.");
+        return;
+    }
+
+    if (/^\d/.test(name)) {
+        alert("The product name cannot start with a number.");
+        return;
+    }
+
+    if (isNaN(parseFloat(price)) || isNaN(parseInt(quantity))) {
+        alert("Price and quantity must be numbers.");
+        return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = function(event) {
+        const product = {
+            name: name,
+            price: price,
+            category: category,
+            quantity: quantity,
+            photo: event.target.result,
+            description: description
+        };
+
+        const products = JSON.parse(localStorage.getItem("products")) || [];
+        products.push(product);
+        localStorage.setItem("products", JSON.stringify(products));
+
+        alert(`The product ${name} has been added successfully.`);
+
+    
+        document.querySelector("form").reset();  
+        const imagePreview = document.getElementById("image-preview");
+        if (imagePreview) {
+            imagePreview.style.display = "none";  
+        }
+
+   
+        const photoInput = document.getElementById("product-photo");
+        if (photoInput) {
+            photoInput.value = '';  
+        }
+
+    
+        displayProducts();
+    };
+
+    reader.readAsDataURL(photo);
+}
