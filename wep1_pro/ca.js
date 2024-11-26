@@ -152,6 +152,7 @@ function removeFromCart(productName) {
     cart = cart.filter(item => item.name !== productName);
     localStorage.setItem('cart', JSON.stringify(cart));
     displayCart();
+    
 }
 
 function updateCartTotal() {
@@ -170,15 +171,20 @@ document.getElementById("empty-cart").addEventListener("click", () => {
 
 // Checkout
 document.getElementById("checkout-btn").addEventListener("click", () => {
-    if (confirm("Are you sure you want to checkout?")) {
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
-        const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-        alert(`Thank you for your purchase! Total: $${total.toFixed(2)}`);
-        localStorage.setItem('cart', JSON.stringify([]));
-        displayCart();
-    }
-    window.location.href='evaluation.html';
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+    // Show a message confirming the purchase
+    alert(`Thank you for your purchase! Total: $${total.toFixed(2)}`);
+
+    // Empty the cart after purchase
+    localStorage.setItem('cart', JSON.stringify([]));
+    displayCart();
+
+    // Redirect to the evaluation page
+    window.location.href = "evaluation.html"; // Replace with the actual evaluation page URL
 });
+
 
 // Ensure the cart is displayed on the Cart page
 if (window.location.pathname.includes("CARTpage.html")) {
