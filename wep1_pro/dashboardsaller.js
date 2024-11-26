@@ -28,7 +28,7 @@ function displayProducts() {
     const WomenID = document.getElementById("womenID");
     const MenID = document.getElementById("menID");
     const KidID = document.getElementById("kidID");
-    const AccessoriesID = document.getElementById("AccessoriesID");
+    const AccessoriesID = document.getElementById("accessoriesID");
 
     // Check if elements exist
     if (!WomenID || !MenID || !KidID || !AccessoriesID) {
@@ -140,7 +140,7 @@ function addProduct(event) {
         }
 
         // Display the products again
-        displayProducts();
+        displayProducts();  // This line ensures the page is updated with the newly added product
     };
 
     reader.readAsDataURL(photo);  // Read the photo as base64 data
