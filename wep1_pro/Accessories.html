@@ -81,22 +81,14 @@
    
 
 <body>
-  <div class="sort-by">
-    Sort By:
-    <select>
-      <optgroup label="Price">
-        <option value="price-low-high">Price Low to High</option>
-        <option value="price-high-low">Price High to Low</option>
-      </optgroup>
-      <optgroup label="Name">
-        <option value="name-a-z">Name A-Z</option>
-        <option value="name-z-a">Name Z-A</option>
-      </optgroup>
-      <optgroup label="Rating">
-        <option value="rating-high-low">Rating High to Low</option>
-        <option value="rating-low-high">Rating Low to High</option>
-      </optgroup>
-    </select>
+  <div>
+      <label for="sort-options">Sort by:</label>
+      <select id="sort-options" onchange="sortProducts()">
+          <option value="low-to-high">Price: Low to High</option>
+          <option value="high-to-low">Price: High to Low</option>
+          <option value="a-to-z">Name: A to Z</option>
+          <option value="z-to-a">Name: Z to A</option>
+      </select>
   </div>
 
 <div class="product-grid">
