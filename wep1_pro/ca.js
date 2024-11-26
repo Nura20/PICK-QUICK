@@ -152,6 +152,7 @@ function removeFromCart(productName) {
     cart = cart.filter(item => item.name !== productName);
     localStorage.setItem('cart', JSON.stringify(cart));
     displayCart();
+    
 }
 
 function updateCartTotal() {
@@ -168,18 +169,26 @@ document.getElementById("empty-cart").addEventListener("click", () => {
     }
 });
 
-// Checkout
+// Checkout function
 document.getElementById("checkout-btn").addEventListener("click", () => {
-    console.log("Checkout button clicked!");  // Debugging line
-    if (confirm("Are you sure you want to checkout?")) {
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
-        const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-        alert(`Thank you for your purchase! Total: $${total.toFixed(2)}`);
-        localStorage.setItem('cart', JSON.stringify([]));
-        displayCart();
-    }
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+    // Show a confirmation alert to the user
+    alert(`Thank you for your purchase! Total: $${total.toFixed(2)}`);
+
+    // Clear the cart after checkout
+    localStorage.setItem('cart', JSON.stringify([]));
+
+    // Optionally, update cart display
+    displayCart();
+
+    // Redirect to evaluation page after the checkout
     window.location.replace("evaluation.html");  // Redirects user to evaluation.html
 });
+
+
+
 
 // Ensure the cart is displayed on the Cart page
 if (window.location.pathname.includes("CARTpage.html")) {
