@@ -168,7 +168,6 @@ document.getElementById("empty-cart").addEventListener("click", () => {
         displayCart();
     }
 });
-
 // Checkout
 document.getElementById("checkout-btn").addEventListener("click", () => {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -181,9 +180,12 @@ document.getElementById("checkout-btn").addEventListener("click", () => {
     localStorage.setItem('cart', JSON.stringify([]));
     displayCart();
 
-    // Redirect to the evaluation page
-    window.location.href = "evaluation.html"; // Replace with the actual evaluation page URL
+    // Redirect to the evaluation page after a slight delay (500ms)
+    setTimeout(() => {
+        window.location.href = "evaluation.html"; // Replace with the actual evaluation page URL
+    }, 500); // Delay in milliseconds (adjust as needed)
 });
+
 
 
 // Ensure the cart is displayed on the Cart page
