@@ -174,8 +174,13 @@ document.getElementById("checkout-btn").addEventListener("click", () => {
         const cart = JSON.parse(localStorage.getItem('cart')) || [];
         const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
         alert(`Thank you for your purchase! Total: $${total.toFixed(2)}`);
+        
+        // Empty the cart after purchase
         localStorage.setItem('cart', JSON.stringify([]));
         displayCart();
+
+        // Redirect to the evaluation page
+        window.location.href = "evaluationPage.html"; // Replace with the actual evaluation page URL
     }
 });
 
