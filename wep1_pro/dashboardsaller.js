@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+
 function displayProducts() {
     const groceriesContainer = document.getElementById("groceries-products");
     const healthContainer = document.getElementById("health-products");
@@ -102,17 +103,20 @@ function addProduct(event) {
 
         alert(`The product ${name} has been added successfully.`);
 
+    
         document.querySelector("form").reset();  
         const imagePreview = document.getElementById("image-preview");
         if (imagePreview) {
             imagePreview.style.display = "none";  
         }
 
+   
         const photoInput = document.getElementById("product-photo");
         if (photoInput) {
             photoInput.value = '';  
         }
 
+    
         displayProducts();
     };
 
