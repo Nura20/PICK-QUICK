@@ -2,99 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="newSD_style.css">
-        <title>Seller  Dashboard</title>
- 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="header">
-        <div class="header-container">
-            <a href="#" class="logo-link">
-                <img src="logo.jpg" alt="logo" class="logo-image">
-            </a>
-            <h1 class="website-name">Pick Quick</h1>
-            <nav class="nav">
-                <a href="homepage.html" class="nav-link">Home</a>
-                <span class="nav-separator">|</span>
-                <a href="dashboardsaller.html" class="nav-link">Seller page</a>
-                <span class="nav-separator">|</span>
-                <a href="Userpage.html" class="nav-link">User page</a>
-                <span class="nav-separator">|</span>
-                <a href="Women.html" class="nav-link">Women's page</a>
-                <span class="nav-separator">|</span>
-                <a href="Men.html" class="nav-link">Men's page</a>
-                <span class="nav-separator">|</span>
-                <a href="Kids.html" class="nav-link">Kid's page</a>
-                <span class="nav-separator">|</span>
-                <a href="Accessories.html" class="nav-link">Accessories's page</a>
-                <span class="nav-separator">|</span>
-                <a href="CARTpage.html" class="nav-link">Cart</a>
-            </nav>
-        </div>
-    </header>
-    
-    
-    
-    <div class="dashboard">
+    <div id="dashboard">
         <h1>Seller Dashboard</h1>
-        <a href="add_product.html"> <button>Add new product</button></a>
-        <a href="offers.html" ><button>Manage offers</button></a>
-    </div>
-        
-        
-
-        <div class="categorySD">
-            <h2 class="Heading2SD">Groceries</h2>
-            <div class="product-listSD" id="groceries-products"></div>
-        </div>
-
-        <div class="categorySD">
-            <h2 class="Heading2SD">Health</h2>
-            <div class="product-listSD" id="health-products"></div>
-        </div>
-
-        <div class="categorySD">
-            <h2 class="Heading2SD">Electronics</h2>
-            <div class="product-listSD" id="electronics-products"></div>
-        </div>
-       
-       
-       
-       
-        <footer class="site-footer">
-            <div class="footer-title">Contact</div>
-            <div class="footer-content">
-                <div class="contact-info">
-                    <a href="#" class="contact-item">
-                        <img src="phone.png" alt=" " class="icon">
-                        <span>+966 xx xxx xxxx</span>
-                    </a>
-                    <a href="#" class="contact-item">
-                        <img src="emmail.JPG" alt=" " class="icon">
-                        <span>pick-quick@shopping.com</span>
-                    </a>
-                </div>
-        
-                <div class="social-media">
-                    <a href="https://www.facebook.com/" class="social-icon">
-                        <img src="facebook.jpg" alt=" ">
-                    </a>
-                    <a href="https://twitter.com/?lang=en" class="social-icon">
-                        <img src="x.jpg" alt=" ">
-                    </a>
-                    <a href="https://www.instagram.com/" class="social-icon">
-                        <img src="instgram.jpg" alt=" ">
-                    </a>
-                </div>
-        
-                <div class="footer-text">
-                    <p>© All rights reserved.</p>
-                </div>
-            </div>
-        </footer>
+        <h2>Groceries</h2>
+        <div id="groceries-products"></div>
+        <h2>Health</h2>
+        <div id="health-products"></div>
+        <h2>Electronics</h2>
+        <div id="electronics-products"></div>
     </div>
 
-    <script src="dashboardsaller.js"></script>
+    <h1>Add a New Product</h1>
+    <form id="product-form">
+        <label for="product-name">Product Name:</label>
+        <input type="text" id="product-name" required>
+        <label for="product-price">Price:</label>
+        <input type="text" id="product-price" required>
+        <label for="product-category">Category:</label>
+        <select id="product-category" required>
+            <option value="">Select a category</option>
+            <option value="Groceries">Groceries</option>
+            <option value="Health">Health</option>
+            <option value="Electronics">Electronics</option>
+        </select>
+        <label for="product-quantity">Quantity:</label>
+        <input type="number" id="product-quantity" required>
+        <label for="product-photo">Photo:</label>
+        <input type="file" id="product-photo" accept="image/*" required>
+        <img id="image-preview" style="display: none;" alt="Product Preview">
+        <label for="description">Description:</label>
+        <textarea id="description" required></textarea>
+        <button type="submit">Add Product</button>
+    </form>
+
+    <script src="script.js"></script>
 </body>
 </html>
