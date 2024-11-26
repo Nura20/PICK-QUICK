@@ -5,103 +5,50 @@
   <title>Pick Quick - Kids' Page</title>
   <link rel="stylesheet" href="stylesheet.css">
   <style>
-    /* Style adjustments */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-
-    .header-container {
-      display: flex;
-      align-items: center;
-      padding: 10px;
-    }
-
-    .logo-link img {
-      width: 50px;
-      height: 50px;
-    }
-
-    .website-name {
-      font-size: 24px;
-      color: black;
-      margin-left: 10px;
-    }
-
-    .nav {
-      margin-left: auto;
-    }
-
-    .nav-link, .nav-separator {
-      font-size: 14px;
-      color: black;
-      text-decoration: none;
-      margin: 0 5px;
-    }
-
+    .product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal-width columns */
+    gap: 20px; /* Spacing between products */
+}
+.product {
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
     .sort-by {
-      margin: 20px;
+      margin-bottom: 20px;
     }
-
-    .content {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      padding: 20px;
-    }
-
-    .product {
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      padding: 10px;
-      text-align: center;
-    }
-
-    .product img {
-      max-width: 100%;
-      height: auto;
-    }
-
-    .rating {
-      font-size: 18px;
-      color: #FFD700;
-    }
-
-    .site-footer {
-      text-align: center;
-      padding: 20px;
-      margin-top: 20px;
-    }
-
-    .footer-title {
-      font-size: 18px;
-      color: #333;
-    }
-
-    .footer-content {
+    .quantity-controls {
       display: flex;
       justify-content: center;
-      gap: 40px;
+      margin-top: 10px;
     }
-
-    .contact-item {
-      color: #333;
-      text-decoration: none;
-      font-size: 14px;
-      display: flex;
-      align-items: center;
-      gap: 5px;
+    .quantity-controls button {
+      margin: 0 5px;
+      padding: 5px;
     }
-
-    .contact-item img, .social-icon img {
-      width: 25px;
-      height: 25px;
+    .add-to-cart-container {
+      text-align: center;
+      margin-top: 10px;
     }
+    .my-cart-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff; /* Change this color to any you'd like */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px; /* Rounded corners */
+    font-weight: bold;
+  }
 
-    .footer-text {
-      font-size: 14px;
-      color: #999;
+  .my-cart-btn:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+  }
+    my-cart-btn {
+      margin-top: 20px;
+      text-align: center;
     }
   </style>
 </head>
@@ -131,117 +78,76 @@
       </nav>
     </div>
   </header>
-   
-
-  <div class="sort-by">
-    Sort By:
-    <select>
-      <optgroup label="Price">
-        <option value="price-low-high">Price Low to High</option>
-        <option value="price-high-low">Price High to Low</option>
-      </optgroup>
-      <optgroup label="Name">
-        <option value="name-a-z">Name A-Z</option>
-        <option value="name-z-a">Name Z-A</option>
-      </optgroup>
-      <optgroup label="Rating">
-        <option value="rating-high-low">Rating High to Low</option>
-        <option value="rating-low-high">Rating Low to High</option>
-      </optgroup>
-    </select>
+   <div>
+      <label for="sort-options">Sort by:</label>
+      <select id="sort-options" onchange="sortProducts()">
+          <option value="low-to-high">Price: Low to High</option>
+          <option value="high-to-low">Price: High to Low</option>
+          <option value="a-to-z">Name: A to Z</option>
+          <option value="z-to-a">Name: Z to A</option>
+      </select>
   </div>
 
-      <div class="content">
-        <div class="product">
+      <div class="product-grid">
+        <div class="product" data-id="1"data-name="Cardigan" data-price="19.99">
           <img src="Cardigan.jpg" alt="cardigan" height="150" >
-          <h3>Cardigan</h3>
+          <h3>Cardigan</h3><div class="rating">⭐⭐⭐⭐⭐</div>
           <p>$19.99</p>
-          <div class="quantity-controls">
-            <button class="minus-btn">-</button>
-            <span class="quantity">1</span>
-            <button class="plus-btn">+</button>
-          </div>
-          <div class="add-to-cart-container">
-            <input type="checkbox" class="add-to-cart-checkbox"> Add to Cart
-          </div>
+         <button onclick="decrementQuantity(this)">-</button>
+          <span class="quantity">1</span>
+          <button onclick="incrementQuantity(this)">+</button>
+          <button onclick="addToCart(this)">Add to Cart</button>
         </div>
-        <div class="product">
+         <div class="product" data-id="2"data-name="Dress" data-price="24.99">
             <img src="DressK.JPG" alt="dress" height="150">
-            <h3>dress</h3>
+            <h3>dress</h3><div class="rating">⭐⭐⭐⭐</div>
             <p>$24.99</p>
-            <div class="quantity-controls">
-              <button class="minus-btn">-</button>
-              <span class="quantity">1</span>
-              <button class="plus-btn">+</button>
-            </div>
-            <div class="add-to-cart-container">
-              <input type="checkbox" class="add-to-cart-checkbox"> Add to Cart
-            </div>
+         <button onclick="decrementQuantity(this)">-</button>
+            <span class="quantity">1</span>
+            <button onclick="incrementQuantity(this)">+</button>
+            <button onclick="addToCart(this)">Add to Cart</button>
           </div>
-          <div class="product">
+          
+         <div class="product" data-id="3"data-name="Girl Shirt" data-price="14.99">
             <img src="GShirtK.jpg" alt="Shirt" height="150">
-            <h3>Girl Shirt</h3>
+            <h3>Girl Shirt</h3><div class="rating">⭐⭐⭐</div>
             <p>$14.99</p>
-            <div class="quantity-controls">
-              <button class="minus-btn">-</button>
-              <span class="quantity">1</span>
-              <button class="plus-btn">+</button>
-            </div>
-            <div class="add-to-cart-container">
-              <input type="checkbox" class="add-to-cart-checkbox"> Add to Cart
-            </div>
+           <button onclick="decrementQuantity(this)">-</button>
+            <span class="quantity">1</span>
+            <button onclick="incrementQuantity(this)">+</button>
+            <button onclick="addToCart(this)">Add to Cart</button>
           </div>
-          <div class="product">
+          
+         <div class="product" data-id="4"data-name="Boy Set" data-price="29.99">
             <img src="BSetK.jpg" alt="Set"height="150">
-            <h3>Boy Set</h3>
+            <h3>Boy Set</h3><div class="rating">⭐⭐⭐⭐⭐</div>
             <p>$29.99</p>
-            <div class="quantity-controls">
-              <button class="minus-btn">-</button>
-              <span class="quantity">1</span>
-              <button class="plus-btn">+</button>
-            </div>
-            <div class="add-to-cart-container">
-              <input type="checkbox" class="add-to-cart-checkbox"> Add to Cart
-            </div>
+          <button onclick="decrementQuantity(this)">-</button>
+            <span class="quantity">1</span>
+            <button onclick="incrementQuantity(this)">+</button>
+            <button onclick="addToCart(this)">Add to Cart</button>
           </div>
-          <div class="product">
+        
+         <div class="product" data-id="5"data-name="Jumpsuit" data-price="9.99">
             <img src="Jumpsuit.jpg" alt="jumpsuit"height="150">
-            <h3>jumpsuit</h3>
+            <h3>jumpsuit</h3><div class="rating">⭐⭐⭐⭐</div>
             <p>$9.99</p>
-            <div class="quantity-controls">
-              <button class="minus-btn">-</button>
-              <span class="quantity">1</span>
-              <button class="plus-btn">+</button>
-            </div>
-            <div class="add-to-cart-container">
-              <input type="checkbox" class="add-to-cart-checkbox"> Add to Cart
-            </div>
-          </div>
-          <div class="product">
+           <button onclick="decrementQuantity(this)">-</button>
+            <span class="quantity">1</span>
+            <button onclick="incrementQuantity(this)">+</button>
+            <button onclick="addToCart(this)">Add to Cart</button>
+         </div
+         <div class="product" data-id="6"data-name="Boy Shirt" data-price="34.99">
             <img src="BShirtK.jpg" alt="Shirt" height="150">
-            <h3>Boy Shirt</h3>
+            <h3>Boy Shirt</h3><div class="rating">⭐⭐⭐⭐⭐</div>
             <p>$34.99</p>
-            <div class="quantity-controls">
-              <button class="minus-btn">-</button>
-              <span class="quantity">1</span>
-              <button class="plus-btn">+</button>
-            </div>
-            <div class="add-to-cart-container">
-              <input type="checkbox" class="add-to-cart-checkbox"> Add to Cart
-            </div>
+           <button onclick="decrementQuantity(this)">-</button>
+            <span class="quantity">1</span>
+            <button onclick="incrementQuantity(this)">+</button>
+            <button onclick="addToCart(this)">Add to Cart</button>
           </div>
-      </div>
-    
-      <div class="pagination">
-        <a href="#">«</a>
-        <a href="#" class="active">1</a>
-        <a href="#">2</a>
-        <a href="#">3</a>
-        <a href="#">4</a>
-        <a href="#">5</a>
-        <a href="#">»</a>
-      </div>
-    
+      </div
+         <a href="CARTpage.html" class="my-cart-btn">My Cart</a>
       <footer class="site-footer">
         <div class="footer-title">contact</div>
         <div class="footer-content">
@@ -275,74 +181,8 @@
           </div>
         </div>
       </footer>
-      <script src="category.js"></script>
-    </body>
-    <script>
-      const cart = [];
-  
-      // Sorting Function
-      document.getElementById('sortOptions').addEventListener('change', function() {
-        const sortValue = this.value;
-        const products = Array.from(document.querySelectorAll('.product'));
-  
-        products.sort((a, b) => {
-          const priceA = parseFloat(a.querySelector('p').innerText.replace('$', ''));
-          const priceB = parseFloat(b.querySelector('p').innerText.replace('$', ''));
-          const nameA = a.querySelector('h3').innerText;
-          const nameB = b.querySelector('h3').innerText;
-  
-          switch (sortValue) {
-            case 'price-low-high': return priceA - priceB;
-            case 'price-high-low': return priceB - priceA;
-            case 'name-a-z': return nameA.localeCompare(nameB);
-            case 'name-z-a': return nameB.localeCompare(nameA);
-          }
-        });
-  
-        const content = document.querySelector('.content');
-        content.innerHTML = '';
-        products.forEach(product => content.appendChild(product));
-      });
-  
-      // Quantity and Add to Cart Functionality
-      document.querySelectorAll('.product').forEach(product => {
-        let quantity = 1;
-        const quantityDisplay = product.querySelector('.quantity');
-  
-        product.querySelector('.plus-btn').addEventListener('click', () => {
-          quantity++;
-          quantityDisplay.innerText = quantity;
-        });
-  
-        product.querySelector('.minus-btn').addEventListener('click', () => {
-          if (quantity > 1) {
-            quantity--;
-            quantityDisplay.innerText = quantity;
-          }
-        });
-  
-        const addToCartCheckbox = product.querySelector('.add-to-cart-checkbox');
-        addToCartCheckbox.addEventListener('change', () => {
-          const productName = product.querySelector('h3').innerText;
-          const productPrice = parseFloat(product.querySelector('p').innerText.replace('$', ''));
-  
-          if (addToCartCheckbox.checked) {
-            cart.push({ name: productName, price: productPrice, quantity });
-          } else {
-            const index = cart.findIndex(item => item.name === productName);
-            if (index !== -1) cart.splice(index, 1);
-          }
-  
-          localStorage.setItem('cart', JSON.stringify(cart));
-        });
-      });
-  
-      // My Cart Button
-      document.getElementById('myCartButton').addEventListener('click', () => {
-        localStorage.setItem('cart', JSON.stringify(cart));
-        window.location.href = 'CARTpage.html';
-      });
-    </script>
+     <script src="ca.js"></script>
+   <script src="mode.js"></script>
   </body>
     </html>
 
