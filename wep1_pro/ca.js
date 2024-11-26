@@ -177,6 +177,7 @@ document.getElementById("checkout-btn").addEventListener("click", () => {
         localStorage.setItem('cart', JSON.stringify([]));
         displayCart();
     }
+    window.location.href='evaluation.html';
 });
 
 // Ensure the cart is displayed on the Cart page
