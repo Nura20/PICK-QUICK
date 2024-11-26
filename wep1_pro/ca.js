@@ -169,23 +169,26 @@ document.getElementById("empty-cart").addEventListener("click", () => {
     }
 });
 
-// Checkout function
 document.getElementById("checkout-btn").addEventListener("click", () => {
+    // Retrieve the cart from localStorage or initialize an empty array if cart is not present
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+    // Calculate the total price of all items in the cart
     const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
-    // Show a confirmation alert to the user
+    // Show a confirmation alert to the user with the total amount
     alert(`Thank you for your purchase! Total: $${total.toFixed(2)}`);
 
-    // Clear the cart after checkout
+    // Clear the cart after checkout by setting it to an empty array in localStorage
     localStorage.setItem('cart', JSON.stringify([]));
 
-    // Optionally, update cart display
+    // Optionally update the cart display (e.g., on the cart page)
     displayCart();
 
-    // Redirect to evaluation page after the checkout
-    window.location.replace("evaluation.html");  // Redirects user to evaluation.html
+    // Redirect to the evaluation page after completing the checkout
+    window.location.replace("evaluation.html");
 });
+
 
 
 
